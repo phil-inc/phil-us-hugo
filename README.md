@@ -12,13 +12,13 @@ hugo serve
 
 This will run a server and listen for changes. Any change to the files will trigger a rebuild.
 
-To display draft contents,
+To display draft contents:
 
 ```
 hugo serve -D
 ```
 
-To enable full re-render on change
+To enable full re-render on change:
 
 ```
 hugo server -D --disableFastRender
@@ -32,12 +32,12 @@ hugo server -D --disableFastRender
 hugo add privacy.md
 ```
 
-This will create `content/privacy.md`. The file's content will be in markdown format.
+This will create `content/privacy.md`. The file's content will be in markdown format. The url will be https://phil.us/privacy.
 
 The page can also be in html format.
 
 ```
-hugo add privary.html
+hugo add privacy.html
 ```
 
 ### Adding Press Release
@@ -45,6 +45,9 @@ hugo add privary.html
 ```
 hugo add press-releases/news-title.md
 ```
+
+The url will be at https://phil.us/press-releases/news-title. The list of press releases will be at https://phil.us/press-releases.
+
 
 ## Layouts
 
