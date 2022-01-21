@@ -1,0 +1,5 @@
+baseURL: https://phil.us/
+languageCode: en-us
+title: The Phil Platform
+params:
+  description: Phil is an affordable, next-generation market access platform delivering unprecedented outcomes for patients, prescribers, manufacturers and all other stakeholders.

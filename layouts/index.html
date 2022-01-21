@@ -1,0 +1,58 @@
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+    <div>
+
+        <div class="PRBanner">
+            <div class="Container">
+                {{ range ( where .Site.RegularPages "Type" "press-releases" | first 1 ) }} Press Release: {{ .Title }}.
+                <a href="{{ .Permalink }}">Read more</a> {{end}}
+            </div>
+        </div>
+
+        {{ partial "header.html" . }}
+
+        <div class="HomePage">
+            <div class="Container">
+                <div class="TwoEvenColumnsGrid HomePage__welcome">
+                    <div class="Container TwoEvenColumnsGrid__container">
+                        <div class="TwoEvenColumnsGrid__left-column HomePage__left-section">
+                            <div class="Container TwoEvenColumnsGrid__left-column-container">
+                                <h1 class="HomePage__heading">Modern Access <br> Solutions for <br> Better Outcomes</h1>
+                            </div>
+                        </div>
+                        <div class="TwoEvenColumnsGrid__right-column HomePage__right-section">
+                            <div class="Container TwoEvenColumnsGrid__right-column-container">
+                                <div class="HomePage__right-section-content">
+                                    <p class="HomePage__sub-text">For Patients</p>
+                                    <h2 class="HomePage__sub-heading">Lowest Accessible Pricing Plus Free Shipping</h2>
+                                    <div class="HomePage__block">
+                                        <p class="HomePage__text">Already created a patient account?</p><a href="https://my.phil.us/login" title="Log in to Phil" class="LinkButton SecondaryLinkButton HomePage__button-link">Log In</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="HomePage__footer">
+                    <div class="HomePage__manufacturers">
+                        <div class="Container ">
+                            <div class="HomePage__manufacturers-section HomePage__right-section-content">
+                                <p class="HomePage__sub-text">For Manufacturers</p>
+                                <h2 class="HomePage__sub-heading HomePage__sub-heading--long">Customizable Market Access Solutions at a Fraction of the Cost</h2><a class="IconTextLink clearfix HomePage__link HomePage__link--footer" title="Explore Our Market Access Platform" href="/manufacturers"><span
+                                        class="IconTextLink__icon">→</span><span class="IconTextLink__text">Explore Our
+                                        Patient Access Platform</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ block "main" . }}{{ end }} {{ partial "footer.html" . }}
+    </div>
+
+</body>
+
+</html>

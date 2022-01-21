@@ -1,0 +1,19 @@
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+    <div>
+        {{ partial "header.html" . }}
+
+        <div class="Container">
+            <div>separate template for manufacturers page</div>
+
+            {{ block "main" . }}{{ end }}
+        </div>
+
+        {{ partial "footer.html" . }}
+    </div>
+
+</body>
+
+</html>
