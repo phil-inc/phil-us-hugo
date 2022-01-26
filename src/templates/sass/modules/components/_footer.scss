@@ -1,0 +1,165 @@
+.footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  min-height: 360px;
+  //   position: absolute;
+  padding: 32px 0 84px;
+  background-color: $pale-blue;
+
+  @include for-size(364) {
+    min-height: 332px;
+  }
+
+  @include for-size(small) {
+    min-height: 352px;
+    padding-top: 50px;
+  }
+
+  @include for-size(large) {
+    min-height: 298px;
+    padding: 60px 0 84px;
+  }
+
+  @include e(container) {
+    padding: 0 10px;
+
+    @include for-size(320) {
+      padding: 0 30px;
+    }
+  }
+
+  @include e(nav) {
+    display: inline-block;
+
+    @include for-size(320) {
+      max-width: 308px;
+    }
+
+    @include for-size(small) {
+      max-width: none;
+    }
+  }
+
+  @include e(nav-links) {
+    @include for-size(320) {
+      display: inline;
+    }
+
+    @include for-size(small) {
+      display: inline-block;
+    }
+
+    @include for-size(large) {
+      float: left;
+      min-width: 100px;
+      margin-right: 44px;
+    }
+
+    li {
+      margin-right: 6px;
+      display: inline-block;
+
+      @include for-size(320) {
+        margin-right: 16px;
+      }
+
+      @include for-size(small) {
+        margin-right: 25px;
+      }
+
+      @include for-size(large) {
+        display: block;
+      }
+
+      a {
+        display: inline-block;
+        color: $rolling-stone;
+        letter-spacing: normal;
+        font: normal 500 14px/2.71 $font-family--secondary;
+
+        @include for-size(small) {
+          font: normal 500 16px/2.5 $font-family--secondary;
+        }
+
+        @include for-size(large) {
+          display: block;
+          line-height: 1.75;
+        }
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &::after {
+      @include for-size(320) {
+        display: inline;
+      }
+    }
+  }
+
+  @include e(description) {
+    margin-top: 28px;
+    color: $rolling-stone;
+    font: normal 300 14px/2 $font-family--secondary;
+
+    @include for-size(small) {
+      font-size: 16px;
+      margin-top: 16px;
+      line-height: 1.75;
+    }
+
+    @include for-size(large) {
+      float: right;
+      width: 362px;
+      margin-top: 0;
+    }
+  }
+
+  @include e(address) {
+    & + & {
+      margin-top: 8px;
+
+      @include for-size(large) {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  @include e(email-address) {
+    color: $navy-blue;
+    line-height: 1;
+    margin-top: 8px;
+
+    img {
+      vertical-align: middle;
+      margin: 10px 0px 1px 2px;
+      height: 13px;
+
+      @include for-size(small) {
+        height: auto;
+      }
+
+      @include for-size(370) {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  @include e(version) {
+    margin-top: 14px;
+
+    @include for-size(small) {
+      font-size: 14px;
+      margin-top: 16px;
+    }
+
+    @include for-size(large) {
+      font-size: 14px;
+    }
+  }
+}

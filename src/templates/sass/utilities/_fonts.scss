@@ -1,0 +1,37 @@
+// $typefaces
+// Configuration of webfonts imports.
+// $typefaces - {map}
+// @family - {string}
+// @weight - {integer} or {keyword} i.e. 800, bold
+// @style - {keyword} i.e. normal, italic
+
+@font-face {
+  font-family: "MarkOTBook";
+  src: url("../../fonts/FontFontMarkOTBook.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../fonts/FontFontMarkOTBook.woff") format("woff"),
+    url("../../fonts/FontFontMarkOTBook.ttf") format("truetype"),
+    url("../../fonts/FontFontMarkOTBook.svg#FontFontMarkOTBook") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MarkOTMedium";
+  src: url("../../fonts/FontFontMarkOTMedium.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../fonts/FontFontMarkOTMedium.woff") format("woff"),
+    url("../../fonts/FontFontMarkOTMedium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MarkOTBold";
+  src: url("../../fonts/FontFontMarkOTBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../../fonts/FontFontMarkOTBold.woff") format("woff"),
+    url("../../fonts/FontFontMarkOTBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
