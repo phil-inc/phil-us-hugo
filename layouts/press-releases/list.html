@@ -1,27 +1,32 @@
 {{ define "main" }}
-<div class="container two-even-columns-grid__container releases-columns-grid">
     {{ $.Scratch.Set "counter" 0 }}
     {{ range .Pages }}
-        {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
-        <div class="two-even-columns-grid__left-column">
-            <div class="container two-even-columns-grid__left-column-container">
-                <div class="releases-columns-grid__content">
-                    <h2 class="releases-columns-grid__content__title">
-                        {{.Title}}
-                    </h2>
-                    <p>
-                        <span class="news-page__date-posted">{{.Date}}</span><a class="IconTextLink clearfix left"
-                            title="{{.Title}}" href="{{.Permalink}}"><span class="IconTextLink__icon--right">→</span><span
-                                class="IconTextLink__text--auto">Read more</span></a>
-                    </p>
+            {{ $.Scratch.Set "counter" (add ($.Scratch.Get "counter") 1) }}
+            {{$counter := $.Scratch.Get "counter"}}
+            {{$div := ""}}
+            {{if eq $counter 1}}
+                <div class="container two-even-columns-grid__container releases-columns-grid">
+                {{$div = "two-even-columns-grid__left-column"}}
+            {{else}}
+                {{$div = "two-even-columns-grid__right-column"}}
+            {{end}}
+            <div class="{{$div}}">
+                <div class="container two-even-columns-grid__left-column-container">
+                    <div class="releases-columns-grid__content">
+                        <h2 class="releases-columns-grid__content__title">
+                            {{.Title}}
+                        </h2>
+                        <p>
+                            <span class="news-page__date-posted">{{.Date}}</span><a class="IconTextLink clearfix left"
+                                title="{{.Title}}" href="{{.Permalink}}"><span class="IconTextLink__icon--right">→</span><span
+                                    class="IconTextLink__text--auto">Read more</span></a>
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- {{$counter := $.Scratch.Get "counter"}}
             {{if eq $counter 2}}
-                <div><hr></div>
-            {{ $.Scratch.Set "counter" 0 }}
-        {{end}} -->
+                </div>
+                {{ $.Scratch.Set "counter" 0 }}
+            {{end}}
     {{ end }}
-</div>
 {{ end }}
