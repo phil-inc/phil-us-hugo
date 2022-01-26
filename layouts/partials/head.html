@@ -13,5 +13,9 @@
     <meta property="og:image:alt" content="The Phil Platform">
     <meta property="og:description" content="{{ $.Site.Params.Description }}" >
     <meta name="description" content="{{ $.Site.Params.Description }}" >
-    <link rel="stylesheet" href="/css/main.css">
+
+    {{ $css := resources.Get "sass/style.scss"}}
+    {{ $css = $css | toCSS}}
+
+    <link rel="stylesheet" href="{{$css.RelPermalink}}">
 </head>

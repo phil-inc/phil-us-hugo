@@ -1,0 +1,32 @@
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+    <div>
+        {{ partial "news_header.html" . }}
+        <div class="news-press-banner">
+            <div class="container">
+                <h1 class="home-page__heading">News & Press</h1>
+            </div>
+        </div>
+        <div class="two-even-columns-grid spotlight-column-grid">
+            {{ partial "news_spotlight.html" . }}
+        </div>
+        <div class="releases">
+            <div class="two-even-columns-grid">
+                <div class="container two-even-columns-grid__container releases-columns-grid">
+                    <div class="news-page__title clearfix">
+                        <div class="left">
+                            <img src="/img/icons/news.svg" alt="" />
+                        </div>
+                        <h5 class="news-page__title__heading">All Releases</h5>
+                    </div>
+                </div>
+                {{ block "main" . }}{{ end }}
+            </div>
+        </div>
+        {{ partial "footer.html" . }}
+    </div>
+</body>
+
+</html>

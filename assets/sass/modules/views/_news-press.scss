@@ -1,0 +1,128 @@
+.news-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+}
+.news-press-banner {
+  padding: 150px 0 130px;
+  background-image: url("../../img/news-banner.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+}
+.spotlight-column-grid {
+  padding-top: 84px;
+  padding-bottom: 70px;
+  background-color: #f4f9fe;
+}
+.news-page {
+  @include e(title) {
+    margin-bottom: 24px;
+    img {
+      margin-top: 1px;
+      margin-right: 11px;
+    }
+    @include e(heading) {
+      font-size: 26px;
+      color: $navy-blue;
+    }
+  }
+  @include e(heading) {
+    color: $caribbean-green;
+    font-size: 36px;
+    line-height: 52px;
+    font: normal bold 32px/1.31 $font-family--primary-bold;
+  }
+  @include e(date) {
+    font-size: 16px;
+    line-height: 24px;
+    display: inline-block;
+    margin: 16px 0;
+  }
+  @include e(left-content) {
+    padding-right: 90px;
+    color: $rolling-stone;
+    font-size: 18px;
+    line-height: 26px;
+    .IconTextLink {
+      font: normal 500 16px/1.56 "MarkOTMedium", arial, sans-serif;
+      margin-top: 24px;
+    }
+  }
+  @include e(content) {
+    @include m(no-image) {
+      padding-right: 0;
+    }
+  }
+  @include e(right-section-content) {
+    @include e(image-wrapper) {
+      border-radius: 14px;
+      overflow: hidden;
+    }
+  }
+  @include e(date-posted) {
+    float: left;
+    margin-right: 5px;
+    padding-right: 10px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 15px;
+      background-color: $rolling-stone;
+    }
+  }
+}
+.releases {
+  padding: 84px 0 calc(84px - 32px);
+  .releases-columns-grid {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 36px;
+      right: 36px;
+      height: 1px;
+      background-color: #d1d1d1;
+    }
+    &:last-child,
+    &:first-child {
+      &::before {
+        display: none;
+      }
+    }
+    &:first-child {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+.releases-columns-grid {
+  margin: 16px auto;
+
+  @include e(content) {
+    color: $rolling-stone;
+    font-size: 16px;
+    line-height: 24px;
+
+    @include e(title) {
+      font-size: 26px;
+      line-height: 40px;
+      color: $navy-blue;
+      margin-bottom: 12px;
+    }
+
+    .IconTextLink {
+      font: normal 500 16px/1.56 "MarkOTMedium", arial, sans-serif;
+    }
+  }
+}
