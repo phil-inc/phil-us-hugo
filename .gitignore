@@ -2,15 +2,16 @@ _site/
 .sass-cache/
 .jekyll-metadata
 js/*.tsv
-Gemfile.lock
+# Gemfile.lock
 public/
 nohup.out
 /node_modules
-.idea
+/src/phil-us/node_modules
+# .idea
 static/js/main.min.js
 static/css/main.min.css
-resources/_gen/
-.hugo_build.lock
+# resources/_gen/
+# .hugo_build.lock
 .vscode/
 .DS_Store
 
