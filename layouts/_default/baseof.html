@@ -2,15 +2,13 @@
 {{ partial "head.html" . }}
 
 <body>
-    <div>
+    <div class="main-container-wrapper">
+        <div class="series-dpr">
         {{ partial "header.html" . }}
-        
-        <div class="Container">
             {{ block "main" . }}{{ end }}
-        </div>
-
         {{ partial "footer.html" . }}
     </div>
+</div>
 
 </body>
 

@@ -6,49 +6,113 @@
   background-color: transparent;
 }
 .news-press-banner {
-  padding: 150px 0 130px;
+  padding: 120px 0 78px;
   background-image: url("../../img/news-banner.png");
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top right;
+  background-position: 100px top;
+  background-size: 300px;
+
+  .home-page__heading {
+    max-width: 116px;
+    @include for-size(small) {
+      max-width: 100%;
+    }
+  }
+
+  @include for-size(small) {
+    background-size: contain;
+    background-position: top right;
+    padding: 120px 0 166px;
+  }
+
+  @include for-size(medium) {
+    padding: 180px 0 187px;
+  }
 }
 .spotlight-column-grid {
-  padding-top: 84px;
-  padding-bottom: 70px;
-  background-color: #f4f9fe;
+  .news-page__title {
+    margin-bottom: 16px;
+    @include for-size(medium) {
+      margin-bottom: 24px;
+    }
+  }
+
+  @include for-size(medium) {
+    padding-top: 84px;
+  }
 }
 .news-page {
   @include e(title) {
-    margin-bottom: 24px;
+    @include for-size(medium) {
+      margin-bottom: 12px;
+    }
     img {
       margin-top: 1px;
       margin-right: 11px;
+      @include for-size(medium) {
+        margin-top: 8px;
+      }
     }
     @include e(heading) {
-      font-size: 26px;
+      // font-size: 26px;
       color: $navy-blue;
+      font-size: 16px;
+      line-height: 24px;
+
+      @include for-size(small) {
+        font-size: 18px;
+        line-height: 26px;
+      }
+
+      @include for-size(medium) {
+        font-size: 26px;
+        line-height: 40px;
+      }
     }
   }
   @include e(heading) {
     color: $caribbean-green;
-    font-size: 36px;
-    line-height: 52px;
-    font: normal bold 32px/1.31 $font-family--primary-bold;
+    font: normal bold 18px/26px $font-family--primary-bold;
+
+    @include for-size(small) {
+      font: normal bold 26px/40px $font-family--primary-bold;
+    }
+
+    @include for-size(medium) {
+      font: normal bold 36px/52px $font-family--primary-bold;
+    }
+  }
+
+  @include e(mobile-image) {
+    margin-bottom: 16px;
+    @include for-size(small) {
+      margin-bottom: 24px;
+    }
+    @include for-size(medium) {
+      display: none;
+    }
   }
   @include e(date) {
-    font-size: 16px;
-    line-height: 24px;
+    // font-size: 16px;
+    // line-height: 24px;
+    font-size: 12px;
+    line-height: 18px;
     display: inline-block;
     margin: 16px 0;
   }
   @include e(left-content) {
-    padding-right: 90px;
     color: $rolling-stone;
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 24px;
     .IconTextLink {
       font: normal 500 16px/1.56 "MarkOTMedium", arial, sans-serif;
       margin-top: 24px;
+    }
+
+    @include for-size(medium) {
+      padding-right: 90px;
+      font-size: 18px;
+      line-height: 26px;
     }
   }
   @include e(content) {
@@ -56,12 +120,21 @@
       padding-right: 0;
     }
   }
+
   @include e(right-section-content) {
     @include e(image-wrapper) {
       border-radius: 14px;
       overflow: hidden;
+      display: none;
+
+      @include for-size(medium) {
+        display: block;
+        max-width: 510px;
+        margin-left: auto;
+      }
     }
   }
+
   @include e(date-posted) {
     float: left;
     margin-right: 5px;
@@ -82,17 +155,46 @@
 .releases {
   padding: 84px 0 calc(84px - 32px);
   .releases-columns-grid {
-    padding-top: 16px;
-    padding-bottom: 16px;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 36px;
-      right: 36px;
-      height: 1px;
-      background-color: #d1d1d1;
+    @include e(content) {
+      color: $rolling-stone;
+      font-size: 12px;
+      line-height: 18px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #d1d1d1;
+
+      @include e(title) {
+        font-size: 16px;
+        line-height: 24px;
+        color: $navy-blue;
+        margin-bottom: 12px;
+
+        @include for-size(small) {
+          font-size: 18px;
+          line-height: 26px;
+        }
+
+        @include for-size(medium) {
+          font-size: 26px;
+          line-height: 40px;
+        }
+      }
+
+      .IconTextLink {
+        font: normal 500 12px/1.56 "MarkOTMedium", arial, sans-serif;
+        @include for-size(small) {
+          font: normal 500 16px/1.56 "MarkOTMedium", arial, sans-serif;
+        }
+      }
+
+      @include for-size(small) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      @include for-size(medium) {
+        border-bottom: none;
+      }
     }
     &:last-child,
     &:first-child {
@@ -104,25 +206,20 @@
       padding-top: 0;
       padding-bottom: 0;
     }
-  }
-}
-.releases-columns-grid {
-  margin: 16px auto;
 
-  @include e(content) {
-    color: $rolling-stone;
-    font-size: 16px;
-    line-height: 24px;
-
-    @include e(title) {
-      font-size: 26px;
-      line-height: 40px;
-      color: $navy-blue;
-      margin-bottom: 12px;
-    }
-
-    .IconTextLink {
-      font: normal 500 16px/1.56 "MarkOTMedium", arial, sans-serif;
+    @include for-size(medium) {
+      position: relative;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 36px;
+        right: 36px;
+        height: 1px;
+        background-color: #d1d1d1;
+      }
     }
   }
 }
