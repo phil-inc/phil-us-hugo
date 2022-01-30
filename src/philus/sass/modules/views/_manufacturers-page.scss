@@ -209,6 +209,29 @@
   @include e(accordion-box) {
     padding: 10px;
     background-color: $pale-blue;
+    .cursor--pointer {
+      position: relative;
+
+      input {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+      }
+    }
+
+    input {
+      + p {
+        display: none;
+      }
+      &:checked {
+        + p {
+          display: block;
+        }
+      }
+    }
 
     @include for-size(medium) {
       float: left;

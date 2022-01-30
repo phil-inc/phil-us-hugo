@@ -2294,6 +2294,19 @@ img {
 .manufacturers-page__accordion-box {
   padding: 10px;
   background-color: #f4f9fe; }
+  .manufacturers-page__accordion-box .cursor--pointer {
+    position: relative; }
+    .manufacturers-page__accordion-box .cursor--pointer input {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      cursor: pointer; }
+  .manufacturers-page__accordion-box input + p {
+    display: none; }
+  .manufacturers-page__accordion-box input:checked + p {
+    display: block; }
   @media (min-width: 800px) {
     .manufacturers-page__accordion-box {
       float: left;
@@ -2479,3 +2492,64 @@ img {
 .manufacturers-page__error-text {
   margin-top: 30px;
   font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
+
+.patient-contact-page {
+  padding-top: 65px; }
+  @media (min-width: 600px) {
+    .patient-contact-page {
+      padding-top: 0; } }
+  .patient-contact-page__content {
+    max-width: 500px;
+    padding: 40px 0 60px; }
+    @media (min-width: 800px) {
+      .patient-contact-page__content {
+        padding: 40px 0 90px; } }
+  .patient-contact-page__heading {
+    margin-bottom: 20px;
+    color: #00ccae;
+    font: normal 500 24px/1.33 "MarkOTMedium", arial, sans-serif; }
+    @media (min-width: 600px) {
+      .patient-contact-page__heading {
+        font-size: 36px;
+        margin-bottom: 40px; } }
+  .patient-contact-page__text {
+    color: #797c80;
+    font: normal normal 18px/1.56 "Lato", arial, sans-serif; }
+  .patient-contact-page__form {
+    margin-top: 30px; }
+    @media (min-width: 600px) {
+      .patient-contact-page__form {
+        margin-top: 40px; } }
+  .patient-contact-page__button {
+    margin-top: 10px;
+    min-width: 128px;
+    padding: 9px 0 10px;
+    letter-spacing: 1px;
+    font: normal 500 18px "MarkOTMedium", arial, sans-serif; }
+    @media (min-width: 600px) {
+      .patient-contact-page__button {
+        margin-top: 30px; } }
+  .patient-contact-page__confirmation-message {
+    margin-top: 30px;
+    color: #4a90e2; }
+    @media (min-width: 600px) {
+      .patient-contact-page__confirmation-message {
+        margin-top: 60px; } }
+    @media (min-width: 800px) {
+      .patient-contact-page__confirmation-message {
+        width: 550px; } }
+  .patient-contact-page__form-text {
+    color: #292a2e;
+    margin-bottom: 30px;
+    font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
+    @media (min-width: 600px) {
+      .patient-contact-page__form-text {
+        max-width: 500px;
+        margin: 30px 0;
+        font: normal 300 22px/1.36 "Lato", arial, sans-serif; } }
+    @media (min-width: 992px) {
+      .patient-contact-page__form-text {
+        max-width: none; } }
+  .patient-contact-page__error-text {
+    margin-top: 30px;
+    font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
