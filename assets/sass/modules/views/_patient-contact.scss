@@ -1,0 +1,86 @@
+.patient-contact-page {
+  padding-top: 65px;
+
+  @include for-size(small) {
+    padding-top: 0;
+  }
+
+  @include e(content) {
+    max-width: 500px;
+    padding: 40px 0 60px;
+
+    @include for-size(medium) {
+      padding: 40px 0 90px;
+    }
+  }
+
+  @include e(heading) {
+    margin-bottom: 20px;
+    color: $primary-color;
+    font: normal 500 24px/1.33 $font-family--primary-medium;
+
+    @include for-size(small) {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+  }
+
+  @include e(text) {
+    color: $rolling-stone;
+    font: normal normal 18px/1.56 $font-family--secondary;
+  }
+
+  @include e(form) {
+    margin-top: 30px;
+
+    @include for-size(small) {
+      margin-top: 40px;
+    }
+  }
+
+  @include e(button) {
+    margin-top: 10px;
+    min-width: 128px;
+    padding: 9px 0 10px;
+    letter-spacing: 1px;
+    font: normal 500 18px $font-family--primary-medium;
+
+    @include for-size(small) {
+      margin-top: 30px;
+    }
+  }
+
+  @include e(confirmation-message) {
+    margin-top: 30px;
+    color: $havelock-blue;
+
+    @include for-size(small) {
+      margin-top: 60px;
+    }
+
+    @include for-size(medium) {
+      width: 550px;
+    }
+  }
+
+  @include e(form-text) {
+    color: $black;
+    margin-bottom: 30px;
+    font: normal 300 16px/1.38 $font-family--secondary;
+
+    @include for-size(small) {
+      max-width: 500px;
+      margin: 30px 0;
+      font: normal 300 22px/1.36 $font-family--secondary;
+    }
+
+    @include for-size(large) {
+      max-width: none;
+    }
+  }
+
+  @include e(error-text) {
+    margin-top: 30px;
+    font: normal 300 16px/1.38 $font-family--secondary;
+  }
+}

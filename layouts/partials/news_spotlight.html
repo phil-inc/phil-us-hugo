@@ -11,23 +11,14 @@
         <div class="container two-even-columns-grid__left-column-container">
             <div class="news-page__left-content">
                 <h1 class="news-page__heading">
-                    Phil Announces up to $100M Strategic Growth Investment
+                    {{ $.Site.Params.sp_title }}
                 </h1>
-                <span class="news-page__date">June 3, 2021</span>
+                <span class="news-page__date">{{ dateFormat "Jan 2, 2006" $.Site.Params.date}}</span>
                 <p>
-                    Phil, a software therapy deployment platform, today
-                    announced a $56 million Series D fundraise led by Warburg
-                    Pincus, a leading global growth investor. The investment is
-                    part of an arrangement for Warburg Pincus to invest up to
-                    $100 million and enables Phil to accelerate the
-                    development.The investment is part of an arrangement for
-                    Warburg Pincus to invest up to $100 million and enables Phil
-                    to accelerate the development. The investment is part of an
-                    arrangement for Warburg Pincus to invest up to $100 million
-                    and enables Phil to accelerate the development.
+                    {{ $.Site.Params.sp_long_desc }}
                 </p>
                 <a class="IconTextLink clearfix left" title="Explore Our Market Access Platform"
-                    href="/press-releases/phill_announce"><span class="IconTextLink__icon--right">→</span><span
+                    href={{ printf "%s" $.Site.Params.link }}><span class="IconTextLink__icon--right">→</span><span
                         class="IconTextLink__text--auto">Read more</span></a>
             </div>
         </div>
