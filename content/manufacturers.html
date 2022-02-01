@@ -288,10 +288,9 @@ type: manufacturers
             e.preventDefault();
             var baseUrl = "https://capi.dev.phil.us/api/web/v1/manufacturers/inquiry";
             var headers = {
-                'Access-Control-Allow-Origin': '*',
+                // 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Origin': 'https://web.dev.phil.us'
+                'Accept': 'application/json'
             }
 
             var body = $('#manufacturersInquiry').serializeArray();
