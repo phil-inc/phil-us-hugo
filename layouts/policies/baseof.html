@@ -1,0 +1,15 @@
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+    <div class="main-container-wrapper">
+        <div class="series-dpr">
+        {{ partial "header.html" . }}
+            {{ block "main" . }}{{ end }}
+        {{ partial "footer.html" . }}
+    </div>
+</div>
+
+</body>
+
+</html>
