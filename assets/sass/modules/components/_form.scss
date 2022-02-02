@@ -46,8 +46,8 @@
       font: normal normal 18px $font-family--secondary;
     }
 
-    @include m(error) {
-      .FormInput__input {
+    @include e(error) {
+      .form__input__input {
         border-color: $monza;
       }
     }
@@ -109,8 +109,8 @@
       font: normal normal 18px $font-family--secondary;
     }
 
-    @include m(error) {
-      .FormTextArea__input {
+    @include e(error) {
+      .form__textarea__input {
         border-color: $monza;
       }
     }

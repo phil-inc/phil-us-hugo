@@ -233,33 +233,34 @@ type: manufacturers
                             <div class="form__group">
                                 <label class="form__label">Your name</label>
                                 <div class="form__input fs-block">
-                                    <input name="ownerName" type="text" class="form__input__input" value="" required />
+                                    <input name="ownerName" type="text" class="form__input__input" value="" autocomplete="off" data-name="name" />
                                 </div>
                             </div>
                             <div class="form__group">
                                 <label class="form__label">Your title</label>
                                 <div class="form__input">
-                                    <input name="ownerTitle" type="text" class="form__input__input" value="" />
+                                    <input name="ownerTitle" type="text" class="form__input__input" value="" autocomplete="off" data-name="title"/>
                                 </div>
                             </div>
                             <div class="form__group">
                                 <label class="form__label">Your company</label>
                                 <div class="form__input fs-block">
-                                    <input name="ownerCompany" type="text" class="form__input__input" value="" />
+                                    <input name="ownerCompany" type="text" class="form__input__input" value="" autocomplete="off" data-name="company name" />
                                 </div>
                             </div>
                             <div class="form__group">
                                 <label class="form__label">Email</label>
                                 <div class="form__input fs-block">
-                                    <input name="contactEmail" type="email" class="form__input__input" value="" />
+                                    <input name="contactEmail" class="form__input__input" value="" autocomplete="off" data-name="email address"/>
                                 </div>
                             </div>
                             <div class="form__group">
                                 <label class="form__label">Phone number (optional)</label>
                                 <div class="form__input fs-block">
-                                    <input name="phone" type="text" class="form__input__input" value="" required />
+                                    <input name="phone" type="text" class="form__input__input" value="" autocomplete="off" />
                                 </div>
                             </div>
+                            <p class="manufacturers-page__form-text" style="display: none;">Thank you for your interest, we will follow up with you shortly.</p>
                             <button type="submit" class="button primary-button manufacturers-page__button">
                                 Submit</button>
                         </form>
@@ -281,8 +282,7 @@ type: manufacturers
                 $(this).find('span.manufacturers-page__accordion-icon').html("-");
                 $(this).find('p.manufacturers-page__accordion-text').css('display','block');
             }
-           
-        })
+        });
 
         $("#manufacturersInquiry").submit(function (e) {
             e.preventDefault();
@@ -294,20 +294,58 @@ type: manufacturers
             }
 
             var body = $('#manufacturersInquiry').serializeArray();
-            console.log(body);
-            $.ajax({
-                type: "POST",
-                url: baseUrl,
-                headers: headers,
-                data: body,
-                success: function (result) {
-                    console.log(result);
-                },
-                error: function (error) {
-                    console.log(error);
+
+            if(formValidation(body)) {
+                //JUST FOR TESTING THE RESPONSE MESSAGE
+                $('.manufacturers-page__button').prop('disabled',true);
+                setTimeout(function() { 
+                    $('.manufacturers-page__button').css('display','none');
+                    $('.manufacturers-page__form-text').css('display','block');
+                    $('.form__input__input').val("");
+                }, 2000);
+                
+                $.ajax({
+                    type: "POST",
+                    url: baseUrl,
+                    headers: headers,
+                    data: body,
+                    success: function (result) {
+                        console.log(result);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            }
+        });
+
+        function formValidation(body){
+            var validation = true;
+            body.forEach(function(e,i){
+                if (e.name != 'phone' && e.value == "") {
+                    validation = false;
+                    $('input[name='+e.name+']').addClass('form__error');
+                    $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
+                    $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a '+$('input[name='+e.name+']').attr('data-name')+'.</span>');
+                } else if (e.name == "contactEmail" && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.value))) {
+                    validation = false;
+                    $('input[name='+e.name+']').addClass('form__error');
+                    $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
+                    $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a valid email format.</span>');
                 }
             });
-        })
+
+            if (validation == false) {
+                return false;
+            }
+            return true;
+        }
+
+        $(document).on('focus','.form__error', function(){
+            $(this).removeClass('form__error');
+            $(this).closest('.form__input').removeClass('form__input__error');
+            $(this).closest('.form__input').find('span').remove();
+        });
 
     });
 </script>
