@@ -1,9 +1,11 @@
 ---
-title: "Another News"
-date: 2022-01-20T15:16:56-08:00
----
+title: Another News
+date: 2022-01-20T15:16:56.000-08:00
 
+---
 # Headline
+
+By: asdfghjkl
 
 Lorem ipsum dolor sit amet nostrud cillum sint ullamco sunt nostrud magna sint mollit deserunt adipisicing esse consectetur esse sunt ad. Nisi quis occaecat enim tempor id dolore occaecat do tempor. Dolor nulla qui tempor in incididunt irure aute ad sit dolore sunt cillum fugiat duis labore tempor adipisicing ea.
 
