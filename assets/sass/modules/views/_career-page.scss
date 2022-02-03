@@ -16,8 +16,9 @@
 
   @include e(left-section) {
     display: block;
-
+    
     @include for-size(medium) {
+      margin-bottom: 90px;
       width: 60%;
       float: left;
     }

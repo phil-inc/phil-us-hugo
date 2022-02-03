@@ -2,9 +2,14 @@
 {{ partial "head.html" . }}
 
 <body>
-    <div class="main-container-wrapper">
+    <div class="main-container-wrapper ">
         {{ partial "pr_banner.html" . }}
-        {{ partial "header.html" . }}
+        <header class="header home-page__header" id="pageHeader">
+            <div class="container">
+                <a class="header__logo" href="/" title="Phil"><img src="/img/icons/phil-logo-m.svg"
+                        alt="Logo of Phil" /></a>
+            </div>
+        </header>
         <div class="two-even-columns-grid home-page__welcome">
             <div class="container two-even-columns-grid__container">
                 <div class="two-even-columns-grid__left-column home-page__left-section">
@@ -35,21 +40,23 @@
                 </div>
             </div>
         </div>
-        <div class="home-page__manufacturers">
-            <div class="container">
-                <div class="home-page__manufacturers-section home-page__right-section-content">
-                    <p class="home-page__sub-text">For Manufacturers</p>
-                    <h2 class="home-page__sub-heading home-page__sub-heading--long">
-                        Customizable Market Access Solutions at a Fraction of the Cost
-                    </h2>
-                    <a class="IconTextLink clearfix home-page__link home-page__link--footer"
-                        title="Explore Our Market Access Platform" href="/manufacturers"><span
-                            class="IconTextLink__icon">→</span><span class="IconTextLink__text">Explore Our Patient
-                            Access Platform</span></a>
+        <div class="">
+            <div class="home-page__manufacturers">
+                <div class="container">
+                    <div class="home-page__manufacturers-section home-page__right-section-content">
+                        <p class="home-page__sub-text">For Manufacturers</p>
+                        <h2 class="home-page__sub-heading home-page__sub-heading--long">
+                            Customizable Market Access Solutions at a Fraction of the Cost
+                        </h2>
+                        <a class="IconTextLink clearfix home-page__link home-page__link--footer"
+                            title="Explore Our Market Access Platform" href="/manufacturers"><span
+                                class="IconTextLink__icon">→</span><span class="IconTextLink__text">Explore Our Patient
+                                Access Platform</span></a>
+                    </div>
                 </div>
             </div>
+            {{ partial "footer.html" . }}
         </div>
-        {{ partial "footer.html" . }}
     </div>
     <script src="./js/main.js"></script>
 </body>
