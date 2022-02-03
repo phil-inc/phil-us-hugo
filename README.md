@@ -29,7 +29,7 @@ hugo server -D --disableFastRender
 ### Adding page
 
 ```
-hugo add privacy.md
+hugo new privacy.md
 ```
 
 This will create `content/privacy.md`. The file's content will be in markdown format. The url will be https://phil.us/privacy.
@@ -37,13 +37,13 @@ This will create `content/privacy.md`. The file's content will be in markdown fo
 The page can also be in html format.
 
 ```
-hugo add privacy.html
+hugo new privacy.html
 ```
 
 ### Adding Press Release
 
 ```
-hugo add press-releases/news-title.md
+hugo new press-releases/news-title.md
 ```
 
 The url will be at https://phil.us/press-releases/news-title. The list of press releases will be at https://phil.us/press-releases.
