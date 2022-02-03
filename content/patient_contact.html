@@ -3,57 +3,57 @@ title: "Patient Contact"
 date: 2022-01-20T15:12:58-08:00
 url: contact/patient
 ---
-
-<div class="patient-contact-page__content">
-    <h2 class="patient-contact-page__heading">Contact Us</h2>
-    <div>
-        <p class="patient-contact-page__text">
-            If your doctor sent your prescription to Phil, we’ll text you to confirm
-            your order within one business day. If you haven’t received a message from
-            us, please complete the form below.
-        </p>
-        <div class="patient-contact-page__form">
-            <form id="patientContact" method="post">
-                <div class="form__group">
-                    <label class="form__label">First name</label>
-                    <div class="form__input">
-                        <input name="firstName" type="text" class="form__input__input" value="" autocomplete="off" data-name="first name" />
+<div class="container">
+    <div class="patient-contact-page__content">
+        <h2 class="patient-contact-page__heading">Contact Us</h2>
+        <div>
+            <p class="patient-contact-page__text">
+                If your doctor sent your prescription to Phil, we’ll text you to confirm
+                your order within one business day. If you haven’t received a message from
+                us, please complete the form below.
+            </p>
+            <div class="patient-contact-page__form">
+                <form id="patientContact" method="post">
+                    <div class="form__group">
+                        <label class="form__label">First name</label>
+                        <div class="form__input">
+                            <input name="firstName" type="text" class="form__input__input" value="" autocomplete="off" data-name="first name" />
+                        </div>
                     </div>
-                </div>
-                <div class="form__group">
-                    <label class="form__label">Last name</label>
-                    <div class="form__input">
-                        <input name="lastName" type="text" class="form__input__input" value="" autocomplete="off" data-name="last name" />
+                    <div class="form__group">
+                        <label class="form__label">Last name</label>
+                        <div class="form__input">
+                            <input name="lastName" type="text" class="form__input__input" value="" autocomplete="off" data-name="last name" />
+                        </div>
                     </div>
-                </div>
-                <div class="form__group">
-                    <label class="form__label">Date of birth (MM/DD/YYYY)</label>
-                    <div class="form__input">
-                        <input name="dateOfBirth" type="date" class="form__input__input" value="" autocomplete="off" data-name="date of birth" />
+                    <div class="form__group">
+                        <label class="form__label">Date of birth (MM/DD/YYYY)</label>
+                        <div class="form__input">
+                            <input name="dateOfBirth" type="text" class="form__input__input" value="" autocomplete="off" data-name="date of birth" />
+                        </div>
                     </div>
-                </div>
-                <div class="form__group">
-                    <label class="form__label">Email</label>
-                    <div class="form__input">
-                        <input name="email" class="form__input__input" value="" autocomplete="off" data-name="email" />
+                    <div class="form__group">
+                        <label class="form__label">Email</label>
+                        <div class="form__input">
+                            <input name="email" class="form__input__input" value="" autocomplete="off" data-name="email" />
+                        </div>
                     </div>
-                </div>
-                <div class="form__group">
-                    <label class="form__label">Description</label>
-                    <div class="form__textarea">
-                        <textarea class="form__textarea__input" name="description" autocomplete="off" data-name="description" ></textarea>
+                    <div class="form__group">
+                        <label class="form__label">Description</label>
+                        <div class="form__textarea">
+                            <textarea class="form__textarea__input" name="description" autocomplete="off" data-name="description" ></textarea>
+                        </div>
                     </div>
-                </div>
-                <p class="patient-contact-page__form-text" style="display: none;">Thank you for your interest, we will follow up with you shortly.</p>
-                <button type="submit" class="button primary-button patient-contact-page__button">
-                    Submit</button>
-            </form>
+                    <p class="patient-contact-page__form-text" style="display: none;">Thank you for your interest, we will follow up with you shortly.</p>
+                    <button type="submit" class="button primary-button patient-contact-page__button">
+                        Submit</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 <script>
     $(document).ready(function () {
-        alert('here');
         $("#patientContact").submit(function (e) {
             e.preventDefault();
             var baseUrl = "https://capi.dev.phil.us/api/web/v1/contact-us";
@@ -64,7 +64,6 @@ url: contact/patient
             }
 
             var body = $('#patientContact').serializeArray();
-            alert('here');
             if(formValidation(body)) {
                 //JUST FOR TESTING THE RESPONSE MESSAGE
                 $('.patient-contact-page__button').prop('disabled',true);
