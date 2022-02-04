@@ -1,0 +1,132 @@
+---
+title: "Patient Contact"
+date: 2022-01-20T15:12:58-08:00
+url: contact/patient
+---
+<div class="container">
+    <div class="patient-contact-page__content">
+        <h2 class="patient-contact-page__heading">Contact Us</h2>
+        <div>
+            <p class="patient-contact-page__text">
+                If your doctor sent your prescription to Phil, we’ll text you to confirm
+                your order within one business day. If you haven’t received a message from
+                us, please complete the form below.
+            </p>
+            <div class="patient-contact-page__form">
+                <form id="patientContact" method="post">
+                    <div class="form__group">
+                        <label class="form__label">First name</label>
+                        <div class="form__input">
+                            <input name="firstName" type="text" class="form__input__input" value="" autocomplete="off" data-name="first name" />
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label">Last name</label>
+                        <div class="form__input">
+                            <input name="lastName" type="text" class="form__input__input" value="" autocomplete="off" data-name="last name" />
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label">Date of birth (MM/DD/YYYY)</label>
+                        <div class="form__input">
+                            <input name="dateOfBirth" type="text" class="form__input__input" value="" autocomplete="off" data-name="date of birth" />
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label">Email</label>
+                        <div class="form__input">
+                            <input name="email" class="form__input__input" value="" autocomplete="off" data-name="email" />
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label">Description</label>
+                        <div class="form__textarea">
+                            <textarea class="form__textarea__input" name="description" autocomplete="off" data-name="description" ></textarea>
+                        </div>
+                    </div>
+                    <p class="patient-contact-page__form-text" style="display: none;">Thank you for your interest, we will follow up with you shortly.</p>
+                    <button type="submit" class="button primary-button patient-contact-page__button">
+                        Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#patientContact").submit(function (e) {
+            e.preventDefault();
+            var baseUrl = "https://capi.dev.phil.us/api/web/v1/contact-us";
+            var headers = {
+                // 'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+
+            var body = $('#patientContact').serializeArray();
+            if(formValidation(body)) {
+                //JUST FOR TESTING THE RESPONSE MESSAGE
+                $('.patient-contact-page__button').prop('disabled',true);
+                setTimeout(function() { 
+                    $('.patient-contact-page__button').css('display','none');
+                    $('.patient-contact-page__form-text').css('display','block');
+                    $('.form__input__input').val("");
+                    $('.form__textarea__input').val("");
+                }, 2000);
+                
+                $.ajax({
+                    type: "POST",
+                    url: baseUrl,
+                    headers: headers,
+                    data: body,
+                    success: function (result) {
+                        console.log(result);
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            }
+        });
+
+        function formValidation(body){
+            var validation = true;
+            body.forEach(function(e,i){
+                if (e.value == "") {
+                    validation = false;
+                    if (e.name == "description") {
+                        $('textarea[name='+e.name+']').addClass('form__error');
+                        $('textarea[name='+e.name+']').closest('.form__textarea').addClass('form__textarea__error');
+                        $('textarea[name='+e.name+']').after('<span class="form__textarea__error-text">Please provide a '+$('textarea[name='+e.name+']').attr('data-name')+'.</span>');
+                    } else {
+                        $('input[name='+e.name+']').addClass('form__error');
+                        $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
+                        $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a '+$('input[name='+e.name+']').attr('data-name')+'.</span>');
+                    }
+                } else if (e.name == "email" && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.value))) {
+                    validation = false;
+                    $('input[name='+e.name+']').addClass('form__error');
+                    $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
+                    $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a valid email format.</span>');
+                } else if (e.name == "date") {
+
+                }
+
+            });
+
+            if (validation == false) {
+                return false;
+            }
+            return true;
+        }
+
+        $(document).on('focus','.form__error', function(){
+            $(this).removeClass('form__error');
+            $(this).closest('.form__input').removeClass('form__input__error');
+            $(this).closest('.form__input').find('span').remove();
+            $(this).closest('.form__textarea').removeClass('form__textarea__error');
+            $(this).closest('.form__textarea').find('span').remove();
+        });
+
+    });
+</script>

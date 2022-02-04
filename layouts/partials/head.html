@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" >
     <title>{{ .Site.Title }}</title>
     <meta property="og:title" content="{{ $.Site.Title }}">
     <meta property="og:url" content="{{ $.Site.BaseURL }}">
@@ -11,7 +12,30 @@
     <meta property="og:image" content="/static/img/Jobs-Page-Illustration_m-tb@2x.jpg">
     <meta property="og:image:secure_url" content="/static/img/Jobs-Page-Illustration_m-tb@2x.jpg">
     <meta property="og:image:alt" content="The Phil Platform">
-    <meta property="og:description" content="{{ $.Site.Params.Description }}" >
-    <meta name="description" content="{{ $.Site.Params.Description }}" >
-    <link rel="stylesheet" href="/css/main.css">
+    <meta property="og:description" content="{{ $.Site.Params.Description }}">
+    <meta name="description" content="{{ $.Site.Params.Description }}">
+    <meta name="facebook-domain-verification" content="sacfa7h69axwhn0aeqxhr2346bl0v0" />
+
+    {{ $css := resources.Get "sass/style.scss"}}
+    {{ $css = $css | toCSS}}
+
+    <link rel="stylesheet" href="{{$css.RelPermalink}}">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js-na1.hs-scripts.com/20880193.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <script>
+        (function (options) {
+            var s = document.createElement("script");
+            s.async = true;
+            s.src =
+                "https://metadata-static-files.sfo2.cdn.digitaloceanspaces.com/pixel/lp.js";
+            s.onload = function () {
+                window.Metadata.pixel.init(options);
+            };
+            document.head.appendChild(s);
+        })({ primaryKey: "name" });
+    </script>
 </head>

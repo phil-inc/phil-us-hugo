@@ -1,0 +1,86 @@
+.terms-page {
+  padding-top: 65px;
+
+  @include for-size(small) {
+    padding-top: 0;
+  }
+
+  @include e(wrapper) {
+    margin: 60px 0 50px;
+  }
+
+  @include e(main-header) {
+    margin: 30px 0;
+    text-align: left;
+
+    @include for-size(small) {
+      margin: 80px 0 40px;
+    }
+  }
+
+  @include e(primary-heading) {
+    color: $black;
+    font: normal bold 30px/1.14 $font-family--primary-bold;
+
+    @include for-size(small) {
+      font: normal bold 40px/1.14 $font-family--primary-bold;
+    }
+  }
+
+  @include e(secondary-heading) {
+    margin: 22px 0 17px;
+    color: $black;
+    font: normal 22px/1.14 $font-family--primary-medium;
+
+    @include for-size(small) {
+      margin: 35px 0 28px;
+      font: normal 35px/1.14 $font-family--primary-medium;
+    }
+  }
+
+  @include e(tertiary-heading) {
+    margin: 15px 0 5px;
+    color: $black;
+    font: normal 18px/1.14 $font-family--primary;
+
+    @include for-size(small) {
+      font: normal 22px/1.14 $font-family--primary;
+    }
+  }
+
+  @include e(last-update) {
+    margin-top: 5px;
+    color: $silver-sand;
+    letter-spacing: normal;
+    font: normal 16px/1.14 $font-family--primary;
+  }
+
+  @include e(paragraph) {
+    font: normal 16px/1.5 $font-family--primary;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+
+    @include for-size(small) {
+      font: normal 17px/1.5 $font-family--primary;
+    }
+  }
+
+  @include e(list) {
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    font: normal 16px/1.5 $font-family--primary;
+    @include for-size(small) {
+      font: normal 17px/1.5 $font-family--primary;
+    }
+
+    @include m(list-style) {
+      @include m(disc) {
+        list-style-type: disc;
+      }
+
+      @include m(decimal) {
+        list-style-type: decimal;
+      }
+    }
+  }
+}

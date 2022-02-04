@@ -1,0 +1,19 @@
+{{ define "main" }} 
+<div class="container">
+    <div class="content-div terms-wrapper">
+        {{ .Content }} 
+    </div>
+</div>
+<!-- <script>
+    $(document).ready(function(){
+        var sliceUrl = window.location.href.split("/").slice(-3);   
+        if (sliceUrl != undefined) {
+            if (sliceUrl != undefined && sliceUrl[0] == "press-releases") {
+                $('.content-div').addClass('press-release');
+            } else {
+                $('.content-div').addClass('terms-wrapper');
+            }
+        }
+    });
+</script> -->
+{{ end }}

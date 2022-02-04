@@ -1,0 +1,83 @@
+.terms-wrapper{
+    padding-top: 0px;
+    margin: 60px 0 50px;
+
+    p{
+        font: normal 16px/1.5 $font-family--primary;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+
+        @include for-size(small) {
+        font: normal 17px/1.5 $font-family--primary;
+        }
+    }
+
+    @include for-size(small) {
+        padding-top: 0 !important;
+    }
+
+    h1 {
+        margin: 30px 0 0;
+        text-align: left;
+    
+        @include for-size(small) {
+          margin: 80px 0 0;
+        }
+    
+        color: $black;
+        font: normal bold 30px/1.14 $font-family--primary-bold;
+    
+        @include for-size(small) {
+          font: normal bold 40px/1.14 $font-family--primary-bold;
+        }
+    }
+    
+    h4{
+        margin-top: 5px;
+        margin: 0 0 30px;
+        color: $silver-sand;
+        letter-spacing: normal;
+        font: normal 16px/1.14 $font-family--primary;
+
+        @include for-size(small) {
+            margin: 5px 0 40px;
+          }
+    }
+
+    h2 {
+        margin: 22px 0 17px;
+        color: $black;
+        font: normal 22px/1.14 $font-family--primary-medium;
+
+        @include for-size(small) {
+        margin: 35px 0 28px;
+        font: normal 35px/1.14 $font-family--primary-medium;
+        }
+    }
+
+    h3 {
+        margin: 15px 0 5px;
+        color: $black;
+        font: normal 18px/1.14 $font-family--primary;
+
+        @include for-size(small) {
+        font: normal 22px/1.14 $font-family--primary;
+        }
+    }
+
+    ol {
+        margin-bottom: 10px;
+        word-wrap: break-word;
+        font: normal 16px/1.5 $font-family--primary;
+
+        @include for-size(small) {
+            font: normal 17px/1.5 $font-family--primary;
+        }
+        list-style-type: disc;
+    }
+
+    a{
+        color : $primary-color;
+    }
+}
+

@@ -2,16 +2,12 @@
 {{ partial "head.html" . }}
 
 <body>
-    <div>
-        {{ partial "header.html" . }}
+    {{ partial "manufacturer_header.html" . }}
+        
+    {{ block "main" . }}{{ end }}
 
-        <div class="Container">
-            <div>separate template for manufacturers page</div>
-
-            {{ block "main" . }}{{ end }}
-        </div>
-
-        {{ partial "footer.html" . }}
+    {{ partial "footer.html" . }}
+    </div>
     </div>
 
 </body>

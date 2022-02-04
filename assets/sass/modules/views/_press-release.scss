@@ -1,0 +1,88 @@
+.press-release {
+  padding: 40px 0 24px;
+  letter-spacing: normal;
+
+  @include for-size(medium) {
+    padding: 60px 0 20px;
+  }
+
+  @include e(heading) {
+    margin-bottom: 28px;
+    color: $primary-color;
+    font: normal bold 30px $font-family--primary-bold;
+
+    @include for-size(medium) {
+      font-size: 40px;
+      line-height: 1.28;
+      margin-bottom: 32px;
+    }
+  }
+
+  @include e(text) {
+    margin-bottom: 16px;
+    color: $rolling-stone;
+    font: normal normal 16px/1.75 $font-family--secondary;
+
+    @include for-size(medium) {
+      font-size: 20px;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+  }
+
+  @include e(section) {
+    margin-top: 32px;
+
+    @include for-size(medium) {
+      margin-top: 40px;
+    }
+  }
+
+  @include e(secondary-heading) {
+    margin-bottom: 12px;
+    color: $dark-navy-blue;
+    font: normal 500 22px/1.27 $font-family--primary-medium;
+
+    @include for-size(medium) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include e(list) {
+    li {
+      padding-left: 14px;
+      position: relative;
+      margin-bottom: 12px;
+      color: $rolling-stone;
+      font: normal normal 16px/1.75 $font-family--secondary;
+
+      @include for-size(medium) {
+        font-size: 20px;
+        line-height: 1.4;
+      }
+
+      &::before {
+        left: 0;
+        top: 10px;
+        width: 6px;
+        height: 6px;
+        content: "";
+        border-radius: 50%;
+        position: absolute;
+        background-color: $primary-color;
+
+        @include for-size(medium) {
+          top: 12px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  a {
+    color: $primary-color;
+  }
+}
