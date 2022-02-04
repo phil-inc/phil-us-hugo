@@ -148,7 +148,7 @@
   }
 
   @include e(right-section) {
-    padding: 64px 0 64px;
+    padding: 64px 0;
     background-color: $pale-blue;
 
     @include for-size(medium) {

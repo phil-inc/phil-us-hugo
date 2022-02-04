@@ -8,14 +8,14 @@
 
 .spotlight_left-column{
   @include for-size(medium) {
-    width: 55% !important;
+    width: 55%;
     float: left;
   }
 }
 
 .spotlight_right-column{
   @include for-size(medium) {
-    width: 45% !important;
+    width: 45%;
     float: right;
   }
 }
