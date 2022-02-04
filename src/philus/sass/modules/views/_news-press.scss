@@ -6,7 +6,7 @@
   background-color: transparent;
 }
 .news-press-banner {
-  padding: 120px 0 78px;
+  padding: 120px 0 58px;
   background-image: url("../../img/news-banner.png");
   background-repeat: no-repeat;
   background-position: 100px top;
@@ -14,15 +14,22 @@
 
   .home-page__heading {
     max-width: 116px;
+
     @include for-size(small) {
       max-width: 100%;
+      font: normal bold 16px/1.31 "MarkOTBold", arial, sans-serif;
+    }
+
+    @include for-size(medium) {
+      font: normal bold 46px/1.31 "MarkOTBold", arial, sans-serif;
+      margin-bottom: 0;
     }
   }
 
   @include for-size(small) {
     background-size: contain;
     background-position: top right;
-    padding: 120px 0 166px;
+    padding: 120px 0 134px;
   }
 
   @include for-size(medium) {
@@ -36,19 +43,23 @@
   background-size: 170px;
   padding-bottom: 64px;
   > div {
-    background: white;
+    background: $pale-blue;
     padding-bottom: 20px;
+    padding-top: 20px;
 
     @include for-size(small) {
       padding-bottom: 32px;
+      padding-top: 32px;
     }
 
     @include for-size(extra-large) {
       padding-bottom: 84px;
+      padding-top: 84px;
     }
   }
   .news-page__title {
     margin-bottom: 16px;
+
     @include for-size(medium) {
       margin-bottom: 24px;
     }
@@ -57,8 +68,8 @@
   @include for-size(extra-large) {
     padding-top: 84px;
     padding-bottom: 84px;
-    background-position: left 115%;
-    background-size: 410px;
+    background-position: left 112%;
+    background-size: 403px;
   }
 }
 .news-page {
@@ -73,8 +84,8 @@
         margin-top: 8px;
       }
     }
+
     @include e(heading) {
-      // font-size: 26px;
       color: $navy-blue;
       font-size: 16px;
       line-height: 24px;
@@ -90,6 +101,7 @@
       }
     }
   }
+
   @include e(heading) {
     color: $caribbean-green;
     font: normal bold 18px/26px $font-family--primary-bold;
@@ -105,21 +117,23 @@
 
   @include e(mobile-image) {
     margin-bottom: 16px;
+
     @include for-size(small) {
       margin-bottom: 24px;
     }
+
     @include for-size(medium) {
       display: none;
     }
   }
+
   @include e(date) {
-    // font-size: 16px;
-    // line-height: 24px;
     font-size: 12px;
     line-height: 18px;
     display: inline-block;
     margin: 16px 0;
   }
+
   @include e(left-content) {
     color: $rolling-stone;
     font-size: 16px;
@@ -173,7 +187,6 @@
   }
 }
 .releases {
-  // padding: 84px 0 calc(84px - 32px);
   .releases-columns-grid {
     @include e(content) {
       color: $rolling-stone;
@@ -202,6 +215,7 @@
 
       .IconTextLink {
         font: normal 500 12px/1.56 "MarkOTMedium", arial, sans-serif;
+
         @include for-size(small) {
           font: normal 500 16px/1.56 "MarkOTMedium", arial, sans-serif;
         }
