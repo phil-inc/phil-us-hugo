@@ -13,15 +13,15 @@
             {{ partial "news_spotlight.html" . }}
         </div>
         <div class="releases">
-            <div class="two-even-columns-grid">
-                <div class="container two-even-columns-grid__container releases-columns-grid">
-                    <div class="news-page__title clearfix">
-                        <div class="left">
-                            <img src="/img/icons/news.svg" alt="" />
-                        </div>
-                        <h5 class="news-page__title__heading">All Releases</h5>
+            <div class="container">
+                <div class="news-page__title clearfix">
+                    <div class="left">
+                        <img src="/img/icons/news.svg" alt="" />
                     </div>
+                    <h5 class="news-page__title__heading">All Releases</h5>
                 </div>
+            </div>
+            <div class="two-even-columns-grid">
                 {{ block "main" . }}{{ end }}
             </div>
         </div>

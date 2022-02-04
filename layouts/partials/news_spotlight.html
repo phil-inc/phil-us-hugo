@@ -7,14 +7,19 @@
     </div>
 </div>
 <div class="container two-even-columns-grid__container">
-    <div class="two-even-columns-grid__left-column">
+    <div class="two-even-columns-grid__left-column spotlight_left-column">
         <div class="container two-even-columns-grid__left-column-container">
             <div class="news-page__left-content">
                 <h1 class="news-page__heading">
                     {{ $.Site.Params.sp_title }}
                 </h1>
                 <span class="news-page__date">{{ dateFormat "Jan 2, 2006" $.Site.Params.date}}</span>
-                <p>
+                <div class="news-page__responsive-view">
+                    <div class="news-page__responsive-view__image">
+                        <img src="/img/spotlight.png" alt="" />
+                    </div>
+                </div>
+                <p class="desktop-view-paragraph">
                     {{ $.Site.Params.sp_long_desc }}
                 </p>
                 <a class="IconTextLink clearfix left" title="Explore Our Market Access Platform"
@@ -23,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="two-even-columns-grid__right-column">
+    <div class="two-even-columns-grid__right-column spotlight_right-column">
         <div class="container two-even-columns-grid__right-column-container">
             <div class="news-page__right-section-content">
                 <div class="news-page__right-section-content__image-wrapper">
