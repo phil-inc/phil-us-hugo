@@ -1,7 +1,6 @@
 ---
 title: "Hippa"
 date: 2022-01-27T14:30:38+05:45
-draft: true
 type: policies
 ---
 

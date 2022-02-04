@@ -1,7 +1,6 @@
 ---
 title: "Terms"
 date: 2022-01-27T14:48:31+05:45
-draft: true
 type: policies
 ---
 

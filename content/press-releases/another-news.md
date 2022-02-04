@@ -1,7 +1,6 @@
 ---
 title: "Another News"
 date: 2022-01-25T16:54:07+05:45
-draft: true
 type: press-releases-content
 ---
 
