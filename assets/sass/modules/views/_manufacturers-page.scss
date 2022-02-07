@@ -409,7 +409,11 @@
   }
 
   @include e(form) {
-    margin: 30px 0 52px;
+    margin: 30px 0 26px;
+
+    @include for-size(small) {
+      margin-bottom: 46px;
+    }
 
     @include for-size(medium) {
       margin-bottom: 30px;
