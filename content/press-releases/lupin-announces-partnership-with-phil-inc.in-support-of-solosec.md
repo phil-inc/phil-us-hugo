@@ -1,6 +1,5 @@
 +++
 date = 2021-02-01T01:14:00Z
-draft = true
 title = "Lupin Announces Partnership with Phil, Inc. in Support of SOLOSEC"
 type = "press-releases-content"
 url = "press-releases/Lupin-Announces-Partnership-with-Phil-Inc-in-Support-of-SOLOSEC-secnidazole"
