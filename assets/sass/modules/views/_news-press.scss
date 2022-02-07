@@ -45,18 +45,53 @@
   }
 }
 .spotlight-column-grid {
-  padding: 20px 0 20px;
-  background-color: $pale-blue;
+  // padding: 20px 0 20px;
+  // background-color: $pale-blue;
 
+  // .news-page__title {
+  //   margin-bottom: 16px;
+  //   @include for-size(medium) {
+  //     margin-bottom: 24px;
+  //   }
+  // }
+
+  // @include for-size(medium) {
+  //   padding: 84px 0 84px;
+  // }
+
+  background-image: url("../../img/yellow-dot.png");
+  background-repeat: no-repeat;
+  background-position: left 101%;
+  background-size: 170px;
+  padding-bottom: 64px;
+  > div {
+    background: $pale-blue;
+    padding-bottom: 20px;
+    padding-top: 20px;
+
+    @include for-size(small) {
+      padding-bottom: 32px;
+      padding-top: 32px;
+    }
+
+    @include for-size(extra-large) {
+      padding-bottom: 84px;
+      padding-top: 84px;
+    }
+  }
   .news-page__title {
     margin-bottom: 16px;
+
     @include for-size(medium) {
       margin-bottom: 24px;
     }
   }
 
-  @include for-size(medium) {
-    padding: 84px 0 84px;
+  @include for-size(extra-large) {
+    padding-top: 84px;
+    padding-bottom: 84px;
+    background-position: left 112%;
+    background-size: 403px;
   }
 }
 .news-page {
@@ -211,7 +246,7 @@
   }
 }
 .releases {
-  padding: 84px 0 calc(84px - 32px);
+  //padding: 84px 0 calc(84px - 32px);
   .releases-columns-grid {
     @include e(content) {
       color: $rolling-stone;
