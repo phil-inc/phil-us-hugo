@@ -1,0 +1,139 @@
+.linkedin-page {
+  @include e(banner) {
+    height: 816px;
+    background: url("../img/icons/linkedin-landing-bg-mobile.png") no-repeat
+      center bottom;
+    background-size: cover;
+
+    @include for-size(small) {
+      height: 380px;
+      background-position-x: calc(100% + 30px);
+      background-image: url("../img/icons/linkedin-landing-bg-desktop.png");
+    }
+
+    @include for-size(medium) {
+      height: 500px;
+    }
+
+    @include for-size(large) {
+      height: 615px;
+      background-position-x: right;
+    }
+
+    @include for-size(extra-large) {
+      background-size: contain;
+    }
+  }
+
+  @include e(header) {
+    background-color: transparent;
+    position: static;
+
+    &.Header--fixed-top {
+      background-color: $white;
+      position: fixed;
+
+      @include for-size(small) {
+        position: static;
+        background-color: transparent;
+      }
+    }
+  }
+
+  @include e(banner-heading) {
+    margin-top: 40px;
+    color: $primary-color;
+    font: normal bold 26px/1.54 $font-family--primary-bold;
+
+    @include for-size(medium) {
+      font-size: 42px;
+      line-height: 1.52;
+      margin-top: 43px;
+    }
+  }
+
+  @include e(banner-text) {
+    margin-top: 30px;
+    color: $rolling-stone;
+    font: normal normal 22px/1.45 $font-family--primary;
+
+    @include for-size(small) {
+      margin-top: 30px;
+      max-width: 305px;
+    }
+
+    @include for-size(medium) {
+      max-width: 390px;
+      margin-top: 30px;
+    }
+
+    @include for-size(large) {
+      margin-top: 30px;
+    }
+  }
+
+  @include e(section) {
+    padding: 60px 0 64px;
+
+    @include for-size(small) {
+      padding-bottom: 84px;
+    }
+
+    @include for-size(large) {
+      padding-bottom: 90px;
+    }
+
+    @include for-size(large) {
+      padding-top: 80px;
+    }
+  }
+
+  @include e(form-section) {
+    @include for-size(medium) {
+      padding-left: 30px;
+    }
+
+    @include for-size(extra-large) {
+      width: 100%;
+      float: right;
+      padding-left: 0;
+      max-width: 500px;
+    }
+  }
+
+  @include e(form) {
+    margin: 20px 0 0;
+  }
+
+  @include e(contact-section) {
+    @include for-size(medium) {
+      padding-top: 200px;
+    }
+  }
+
+  @include e(form-text) {
+    color: $navy-blue;
+    font: normal normal 16px/1.63 $font-family--primary;
+
+    @include for-size(medium) {
+      font-size: 26px;
+      max-width: 395px;
+    }
+  }
+
+  @include e(form-group) {
+    margin-bottom: 32px;
+  }
+
+  @include e(button) {
+    min-width: 138px;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font: normal 500 16px $font-family--primary-medium;
+  }
+
+  @include e(error-text) {
+    margin-top: 30px;
+    font: normal 300 16px/1.38 $font-family--secondary;
+  }
+}

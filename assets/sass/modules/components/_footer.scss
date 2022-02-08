@@ -3,23 +3,15 @@
   right: 0;
   bottom: 0;
   top: auto;
-  min-height: 360px;
-  //   position: absolute;
-  padding: 64px 0 84px;
+  padding: 32px 0;
   background-color: $pale-blue;
 
-  @include for-size(364) {
-    min-height: 332px;
-  }
-
   @include for-size(small) {
-    min-height: 352px;
-    padding-top: 50px;
+    padding-bottom: 64px;
   }
 
   @include for-size(large) {
-    min-height: 298px;
-    padding: 90px 0 84px;
+    padding: 64px 0;
   }
 
   @include e(container) {
@@ -80,12 +72,12 @@
         font: normal 500 14px/2.71 $font-family--secondary;
 
         @include for-size(small) {
-          font: normal 500 16px/2.5 $font-family--secondary;
+          font: normal 500 14px/38px $font-family--secondary;
         }
 
         @include for-size(large) {
           display: block;
-          line-height: 1.75;
+          font: normal 500 16px/28px $font-family--secondary;
         }
 
         &:hover,

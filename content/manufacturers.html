@@ -233,25 +233,25 @@ type: manufacturers
                             <div class="form__group">
                                 <label class="form__label">Your name</label>
                                 <div class="form__input fs-block">
-                                    <input name="ownerName" type="text" class="form__input__input" value="" autocomplete="off" data-name="name" />
+                                    <input name="ownerName" type="text" class="form__input__input" value="" autocomplete="off" data-name="a name" />
                                 </div>
                             </div>
                             <div class="form__group">
                                 <label class="form__label">Your title</label>
                                 <div class="form__input">
-                                    <input name="ownerTitle" type="text" class="form__input__input" value="" autocomplete="off" data-name="title"/>
+                                    <input name="ownerTitle" type="text" class="form__input__input" value="" autocomplete="off" data-name="a title"/>
                                 </div>
                             </div>
                             <div class="form__group">
                                 <label class="form__label">Your company</label>
                                 <div class="form__input fs-block">
-                                    <input name="ownerCompany" type="text" class="form__input__input" value="" autocomplete="off" data-name="company name" />
+                                    <input name="ownerCompany" type="text" class="form__input__input" value="" autocomplete="off" data-name="a company name" />
                                 </div>
                             </div>
                             <div class="form__group">
                                 <label class="form__label">Email</label>
                                 <div class="form__input fs-block">
-                                    <input name="contactEmail" class="form__input__input" value="" autocomplete="off" data-name="email address"/>
+                                    <input name="contactEmail" class="form__input__input" value="" autocomplete="off" data-name="an email address"/>
                                 </div>
                             </div>
                             <div class="form__group">
@@ -270,6 +270,7 @@ type: manufacturers
         </div>
     </div>
 </div>
+<script src="/js/form-submission.js"></script>
 <script>
     $(document).ready(function () {
         $('.manufacturers-page__accordion').click(function(e){
@@ -283,69 +284,5 @@ type: manufacturers
                 $(this).find('p.manufacturers-page__accordion-text').css('display','block');
             }
         });
-
-        $("#manufacturersInquiry").submit(function (e) {
-            e.preventDefault();
-            var baseUrl = "https://capi.dev.phil.us/api/web/v1/manufacturers/inquiry";
-            var headers = {
-                // 'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-
-            var body = $('#manufacturersInquiry').serializeArray();
-
-            if(formValidation(body)) {
-                //JUST FOR TESTING THE RESPONSE MESSAGE
-                $('.manufacturers-page__button').prop('disabled',true);
-                setTimeout(function() { 
-                    $('.manufacturers-page__button').css('display','none');
-                    $('.manufacturers-page__form-text').css('display','block');
-                    $('.form__input__input').val("");
-                }, 2000);
-                
-                $.ajax({
-                    type: "POST",
-                    url: baseUrl,
-                    headers: headers,
-                    data: body,
-                    success: function (result) {
-                        console.log(result);
-                    },
-                    error: function (error) {
-                        console.log(error);
-                    }
-                });
-            }
-        });
-
-        function formValidation(body){
-            var validation = true;
-            body.forEach(function(e,i){
-                if (e.name != 'phone' && e.value == "") {
-                    validation = false;
-                    $('input[name='+e.name+']').addClass('form__error');
-                    $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
-                    $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a '+$('input[name='+e.name+']').attr('data-name')+'.</span>');
-                } else if (e.name == "contactEmail" && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.value))) {
-                    validation = false;
-                    $('input[name='+e.name+']').addClass('form__error');
-                    $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
-                    $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a valid email format.</span>');
-                }
-            });
-
-            if (validation == false) {
-                return false;
-            }
-            return true;
-        }
-
-        $(document).on('focus','.form__error', function(){
-            $(this).removeClass('form__error');
-            $(this).closest('.form__input').removeClass('form__input__error');
-            $(this).closest('.form__input').find('span').remove();
-        });
-
     });
 </script>

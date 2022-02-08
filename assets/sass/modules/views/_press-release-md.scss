@@ -1,9 +1,13 @@
 .press-release {
-  padding: 40px 0 24px;
+  padding: 40px 0 64px;
   letter-spacing: normal;
 
+  @include for-size(small) {
+    padding: 60px 0 84px;
+  }
+
   @include for-size(medium) {
-    padding: 60px 0 20px;
+    padding: 60px 0 90px;
   }
 
   p {

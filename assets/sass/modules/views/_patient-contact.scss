@@ -7,7 +7,11 @@
 
   @include e(content) {
     max-width: 500px;
-    padding: 40px 0 60px;
+    padding: 40px 0 64px;
+
+    @include for-size(small) {
+      padding: 40px 0 84px;
+    }
 
     @include for-size(medium) {
       padding: 40px 0 90px;
