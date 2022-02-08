@@ -1,0 +1,550 @@
+.pharmacy-page {
+  padding-top: 65px;
+
+  @include for-size(small) {
+    padding-top: 0;
+  }
+
+  @include e(banner) {
+    background: url("../img/pharmacist-photo-m.jpg") no-repeat center center;
+    background-size: cover;
+
+    @include for-size(small) {
+      height: 318px;
+      background-image: url("../img/pharmacist-photo.jpg");
+    }
+
+    @include for-size(large) {
+      height: 400px;
+      padding-top: 24px;
+    }
+
+    .container {
+      position: relative;
+    }
+  }
+
+  @include e(banner-sub-text) {
+    display: none;
+
+    @include for-size(large) {
+      display: block;
+      color: $white;
+      position: absolute;
+      right: 36px;
+      top: 6px;
+      text-align: right;
+      font: normal bold 14px/1.29 $font-family--primary-bold;
+    }
+  }
+
+  @include e(banner-text-block) {
+    color: $white;
+    max-width: 256px;
+    padding: 20px 32px;
+    transform: translateY(140px);
+    font: normal bold 18px $font-family--primary-bold;
+    background-color: $caribbean-green;
+
+    @include for-size(360) {
+      padding: 20px 36px;
+    }
+
+    @include for-size(small) {
+      font-size: 30px;
+      max-width: 410px;
+      padding: 40px 94px;
+      padding: 31px 16px;
+      transform: translateY(222px);
+    }
+
+    @include for-size(large) {
+      margin: 0;
+      width: 344px;
+      height: 344px;
+      transform: none;
+      text-align: left;
+      padding: 96px 57px;
+      border-radius: 50% 50% 0 50%;
+    }
+  }
+
+  @include e(top-content) {
+    padding-top: 45px;
+
+    @include for-size(small) {
+      padding-top: 82px;
+    }
+
+    @include for-size(large) {
+      padding-top: 0;
+      background: linear-gradient(90deg, $white 60%, $pale-blue 40%);
+    }
+  }
+
+  @include e(top-content-heading) {
+    max-width: 226px;
+    margin: 0 auto 30px;
+    font: normal bold 28px $font-family--primary-bold;
+
+    @include for-size(small) {
+      max-width: 409px;
+      font-size: 36px;
+      margin-bottom: 73px;
+    }
+
+    @include for-size(large) {
+      max-width: none;
+      margin: 0 0 51px;
+    }
+  }
+
+  @include e(list) {
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+
+      @include for-size(small) {
+        margin-bottom: 65px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include e(list-item-icon) {
+    width: 50px;
+    margin-right: 18px;
+
+    @include for-size(small) {
+      width: 72px;
+      margin-right: 30px;
+    }
+  }
+
+  @include e(list-item-description) {
+    color: $black;
+    width: calc(100% - 68px);
+
+    @include for-size(small) {
+      width: calc(100% - 102px);
+    }
+  }
+
+  @include e(list-item-title) {
+    display: inline-block;
+    font: normal 500 16px/1.57 $font-family--primary-medium;
+
+    @include for-size(small) {
+      font-size: 22px;
+      line-height: 1.67;
+    }
+  }
+
+  @include e(list-item-text) {
+    font: normal 300 14px/1.57 $font-family--secondary;
+
+    @include for-size(small) {
+      font-size: 18px;
+      line-height: 1.67;
+    }
+  }
+
+  @include e(success-column) {
+    text-align: center;
+    background-color: $pale-blue;
+
+    @include for-size(large) {
+      text-align: left;
+    }
+  }
+
+  @include e(success-column-text) {
+    max-width: 358px;
+    margin: 0 auto 9px;
+    color: $primary-color;
+    font: normal 500 16px/1.75 $font-family--primary-medium;
+
+    @include for-size(small) {
+      margin-bottom: 41px;
+      font-size: 22px;
+      line-height: 1.36;
+    }
+
+    @include for-size(large) {
+      max-width: 308px;
+      margin: 0 0 50px;
+    }
+  }
+
+  @include e(success-column-image) {
+    width: 190px;
+    margin: 0 auto;
+
+    @include for-size(small) {
+      width: 250px;
+    }
+
+    @include for-size(large) {
+      margin: 0;
+      width: 263px;
+    }
+  }
+
+  @include e(work-section) {
+    padding: 40px 0 60px;
+    background-color: $dandelion;
+  }
+
+  @include e(work-section-heading) {
+    margin-bottom: 50px;
+    font-family: $font-family--primary-bold;
+
+    @include for-size(small) {
+      font-size: 42px;
+      margin-bottom: 40px;
+    }
+
+    @include for-size(large) {
+      margin-bottom: 60px;
+    }
+  }
+
+  @include e(work-col-title) {
+    font: normal normal 22px/1.36 $font-family--primary;
+
+    @include for-size(small) {
+      font-size: 28px;
+      line-height: 1.29;
+    }
+
+    @include for-size(large) {
+      max-width: 224px;
+
+      &::after {
+        content: "";
+        height: 1px;
+        width: 100%;
+        margin: 30px 0;
+        display: block;
+        background-color: $white;
+      }
+    }
+  }
+
+  @include e(work-col-text) {
+    line-height: 1.5;
+
+    @include for-size(large) {
+      max-width: 224px;
+    }
+  }
+
+  @include e(bottom-content) {
+    @include for-size(large) {
+      background: linear-gradient(90deg, $pale-blue 60%, $white 40%);
+    }
+  }
+
+  @include e(bottom-content-heading) {
+    font: normal bold 28px/1.29 $font-family--primary-bold;
+
+    @include for-size(small) {
+      line-height: 1;
+      font-size: 36px;
+    }
+  }
+
+  @include e(testimonials-section) {
+    background-color: $pale-blue;
+
+    @include for-size(large) {
+      background-color: transparent;
+    }
+  }
+
+  @include e(testimonials-section-container) {
+    max-width: 500px;
+    margin: 0 auto;
+
+    @include for-size(large) {
+      margin-right: 12px;
+    }
+
+    @include for-size(extra-large) {
+      margin-right: 105px;
+    }
+  }
+
+  @include e(testimonial-container) {
+    margin-top: 40px;
+
+    @include for-size(small) {
+      margin-top: 60px;
+    }
+  }
+
+  @include e(nametag-container) {
+    display: flex;
+    margin-bottom: 22px;
+    justify-content: space-between;
+
+    @include for-size(small) {
+      margin-bottom: 40px;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include e(nametag) {
+    opacity: 0.2;
+    min-width: 70px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    @include m(active) {
+      opacity: 1;
+
+      .PharmacyPage__nametag-caret {
+        display: inline-block;
+      }
+    }
+  }
+
+  @include e(empty-div) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  @include e(nametag-initial) {
+    width: 46px;
+    height: 46px;
+    padding: 12px;
+    display: flex;
+    color: $alabaster;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 auto 16px;
+    align-items: center;
+    justify-content: center;
+    background-color: $primary-color;
+    font: normal bold 22px/1 $font-family--primary-bold;
+
+    @include for-size(small) {
+      width: 66px;
+      height: 66px;
+      font-size: 36px;
+    }
+  }
+
+  @include e(nametag-text) {
+    color: $navy-blue;
+    font: normal bold 16px $font-family--secondary;
+
+    @include for-size(small) {
+      font-size: 22px;
+    }
+
+    @include m(light) {
+      color: $rolling-stone;
+      font: normal normal 14px/1.57 $font-family--secondary;
+
+      @include for-size(small) {
+        font-size: 18px;
+        line-height: 1.67;
+      }
+    }
+  }
+
+  @include e(nametag-caret) {
+    top: auto;
+    right: auto;
+    content: "";
+    z-index: 10;
+    width: 18px;
+    height: 18px;
+    bottom: -32px;
+    display: none;
+    position: absolute;
+    border-style: solid;
+    left: calc(50% - 9px);
+    background: $pale-blue;
+    border-width: 2px 0 0 2px;
+    border-color: $primary-color;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+    @include for-size(small) {
+      bottom: -49px;
+    }
+  }
+
+  @include e(testimonial) {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 20px 12px;
+    border: 2px solid $primary-color;
+    font: normal normal 14px/1.57 $font-family--secondary;
+
+    @include for-size(small) {
+      padding: 30px;
+      font-size: 18px;
+      line-height: 1.22;
+    }
+  }
+
+  @include e(testimonial-text) {
+    color: $navy-blue;
+    margin-bottom: 20px;
+
+    @include for-size(small) {
+      margin-bottom: 40px;
+      font-size: 22px;
+      line-height: 1.36;
+    }
+  }
+
+  @include e(testimonial-btn) {
+    color: $primary-color;
+    display: inline-block;
+
+    &:hover {
+      span {
+        text-decoration: underline;
+      }
+
+      .PharmacyPage__testimonial-btn-icon {
+        text-decoration: none;
+      }
+    }
+  }
+
+  @include e(testimonial-btn-icon) {
+    font-family: $font-family--primary-medium;
+  }
+
+  @include e(form-text) {
+    font: normal 300 16px/1.38 $font-family--secondary;
+
+    @include for-size(small) {
+      font-size: 22px;
+    }
+  }
+
+  @include e(form) {
+    margin-top: 30px;
+  }
+
+  @include e(form-group) {
+    @include for-size(small) {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include e(button) {
+    min-width: 138px;
+    margin-top: 10px;
+    padding: 12px 20px;
+    font: normal 500 16px $font-family--primary-medium;
+
+    @include for-size(small) {
+      margin-top: 20px;
+    }
+  }
+
+  @include e(bottom-banner) {
+    padding: 40px 0;
+    background-color: $dark-blue;
+
+    @include for-size(small) {
+      padding: 55px 0;
+    }
+
+    @include for-size(large) {
+      padding: 80px 0;
+    }
+  }
+
+  @include e(bottom-banner-text) {
+    color: $white;
+    text-align: center;
+    font: normal 300 16px/1.38 $font-family--secondary;
+
+    @include for-size(small) {
+      margin: 0 auto;
+      font-size: 22px;
+      max-width: 480px;
+    }
+
+    @include for-size(large) {
+      font-size: 30px;
+      line-height: 1.4;
+      max-width: 960px;
+    }
+  }
+
+  @include e(modal) {
+    .PharmacyPage__nametag-initial {
+      margin-bottom: 12px;
+
+      @include for-size(small) {
+        margin-bottom: 16px;
+      }
+    }
+
+    .PharmacyPage__nametag-text {
+      @include for-size(large) {
+        font-size: 24px;
+      }
+    }
+
+    .PharmacyPage__nametag-text--light {
+      font-size: 20px;
+    }
+
+    .PharmacyPage__nametag-caret {
+      bottom: -31px;
+      background-color: $white;
+
+      @include for-size(small) {
+        bottom: -50px;
+      }
+    }
+
+    .PharmacyPage__testimonial {
+      padding: 20px 16px;
+
+      @include for-size(small) {
+        padding: 30px;
+      }
+    }
+  }
+
+  @include e(modal-testimonial-text) {
+    font: normal normal 16px/1.38 $font-family--secondary;
+
+    @include for-size(small) {
+      font-size: 22px;
+      line-height: 1.36;
+    }
+  }
+
+  @include e(error-text) {
+    margin-top: 30px;
+    font: normal 300 16px/1.38 $font-family--secondary;
+  }
+}

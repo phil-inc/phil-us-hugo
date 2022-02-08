@@ -17,116 +17,76 @@ url: contact/patient
                     <div class="form__group">
                         <label class="form__label">First name</label>
                         <div class="form__input">
-                            <input name="firstName" type="text" class="form__input__input" value="" autocomplete="off" data-name="first name" />
+                            <input name="firstName" type="text" class="form__input__input" value="" autocomplete="off" data-name="a first name" />
                         </div>
                     </div>
                     <div class="form__group">
                         <label class="form__label">Last name</label>
                         <div class="form__input">
-                            <input name="lastName" type="text" class="form__input__input" value="" autocomplete="off" data-name="last name" />
+                            <input name="lastName" type="text" class="form__input__input" value="" autocomplete="off" data-name="a last name" />
                         </div>
                     </div>
                     <div class="form__group">
                         <label class="form__label">Date of birth (MM/DD/YYYY)</label>
                         <div class="form__input">
-                            <input name="dateOfBirth" type="text" class="form__input__input" value="" autocomplete="off" data-name="date of birth" />
+                            <input name="dateOfBirth" type="text" class="form__input__input numeric" value="" maxlength="10" autocomplete="off" data-name=" date of birth" />
                         </div>
                     </div>
                     <div class="form__group">
                         <label class="form__label">Email</label>
                         <div class="form__input">
-                            <input name="email" class="form__input__input" value="" autocomplete="off" data-name="email" />
+                            <input name="email" class="form__input__input" value="" autocomplete="off" data-name="an email address" />
                         </div>
                     </div>
                     <div class="form__group">
                         <label class="form__label">Description</label>
                         <div class="form__textarea">
-                            <textarea class="form__textarea__input" name="description" autocomplete="off" data-name="description" ></textarea>
+                            <textarea class="form__textarea__input" name="description" autocomplete="off" data-name="a description" ></textarea>
                         </div>
                     </div>
                     <p class="patient-contact-page__form-text" style="display: none;">Thank you for your interest, we will follow up with you shortly.</p>
-                    <button type="submit" class="button primary-button patient-contact-page__button">
+                    <button type="submit" class="button primary-button patient-contact-page__button" disabled>
                         Submit</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<script src="/js/form-submission.js"></script>
 <script>
-    $(document).ready(function () {
-        $("#patientContact").submit(function (e) {
-            e.preventDefault();
-            var baseUrl = "https://capi.dev.phil.us/api/web/v1/contact-us";
-            var headers = {
-                // 'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-
-            var body = $('#patientContact').serializeArray();
-            if(formValidation(body)) {
-                //JUST FOR TESTING THE RESPONSE MESSAGE
-                $('.patient-contact-page__button').prop('disabled',true);
-                setTimeout(function() { 
-                    $('.patient-contact-page__button').css('display','none');
-                    $('.patient-contact-page__form-text').css('display','block');
-                    $('.form__input__input').val("");
-                    $('.form__textarea__input').val("");
-                }, 2000);
-                
-                $.ajax({
-                    type: "POST",
-                    url: baseUrl,
-                    headers: headers,
-                    data: body,
-                    success: function (result) {
-                        console.log(result);
-                    },
-                    error: function (error) {
-                        console.log(error);
-                    }
-                });
+    $(document).ready(function(e){
+        $(document).on("input", ".numeric", function() {
+            if (this.value.match(/^[0-9/]*$/)) {
+                if (this.value.length == 2 || this.value.length == 5) {
+                    this.value = this.value+'/';
+                }
+            } else {
+                this.value = this.value.slice(0,-1);
             }
         });
 
-        function formValidation(body){
-            var validation = true;
+        $("input").change(function(e){
+            enableSubmit();
+        });
+
+        $("textarea").change(function(e){
+            enableSubmit();
+        });
+
+        function enableSubmit(body){
+            var body = $('#patientContact').serializeArray();
+            var allEntered = true;
             body.forEach(function(e,i){
                 if (e.value == "") {
-                    validation = false;
-                    if (e.name == "description") {
-                        $('textarea[name='+e.name+']').addClass('form__error');
-                        $('textarea[name='+e.name+']').closest('.form__textarea').addClass('form__textarea__error');
-                        $('textarea[name='+e.name+']').after('<span class="form__textarea__error-text">Please provide a '+$('textarea[name='+e.name+']').attr('data-name')+'.</span>');
-                    } else {
-                        $('input[name='+e.name+']').addClass('form__error');
-                        $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
-                        $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a '+$('input[name='+e.name+']').attr('data-name')+'.</span>');
-                    }
-                } else if (e.name == "email" && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.value))) {
-                    validation = false;
-                    $('input[name='+e.name+']').addClass('form__error');
-                    $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
-                    $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a valid email format.</span>');
-                } else if (e.name == "date") {
-
+                    allEntered = false;
                 }
-
             });
 
-            if (validation == false) {
-                return false;
+            if (allEntered){
+                $('.patient-contact-page__button').prop('disabled',false);
+            } else {
+                $('.patient-contact-page__button').prop('disabled',true);
             }
-            return true;
         }
-
-        $(document).on('focus','.form__error', function(){
-            $(this).removeClass('form__error');
-            $(this).closest('.form__input').removeClass('form__input__error');
-            $(this).closest('.form__input').find('span').remove();
-            $(this).closest('.form__textarea').removeClass('form__textarea__error');
-            $(this).closest('.form__textarea').find('span').remove();
-        });
-
     });
 </script>
