@@ -6,17 +6,11 @@
   padding: 32px 0;
   background-color: $pale-blue;
 
-  @include for-size(364) {
-    //min-height: 332px;
-  }
-
   @include for-size(small) {
-    //min-height: 352px;
     padding-bottom: 64px;
   }
 
   @include for-size(large) {
-    //min-height: 298px;
     padding: 64px 0;
   }
 

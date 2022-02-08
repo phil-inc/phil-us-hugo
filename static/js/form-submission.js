@@ -4,7 +4,6 @@ $(document).ready(function(e){
         e.preventDefault();
         var baseUrl = "https://capi.dev.phil.us/api/web/v1/manufacturers/inquiry";
         var headers = {
-            // 'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         }
@@ -55,18 +54,18 @@ $(document).ready(function(e){
                 $('.form__input__input').val("");
             }, 2000);
             
-            // $.ajax({
-            //     type: "POST",
-            //     url: baseUrl,
-            //     headers: headers,
-            //     data: body,
-            //     success: function (result) {
-            //         console.log(result);
-            //     },
-            //     error: function (error) {
-            //         console.log(error);
-            //     }
-            // });
+            $.ajax({
+                type: "POST",
+                url: baseUrl,
+                headers: headers,
+                data: body,
+                success: function (result) {
+                    console.log(result);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
         }
     });
 
@@ -75,7 +74,6 @@ $(document).ready(function(e){
         e.preventDefault();
         var baseUrl = "https://capi.dev.phil.us/api/web/v1/contact-us";
         var headers = {
-            // 'Access-Control-Allow-Origin': '*',
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         }
