@@ -1042,6 +1042,76 @@ img {
     .numbered-flow-chart__column-text {
       font: normal 300 22px/1.36 "Lato", arial, sans-serif; } }
 
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  background-color: rgba(209, 214, 220, 0.9); }
+  @media (min-width: 600px) {
+    .modal {
+      overflow-y: auto; } }
+  .modal__container {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    position: absolute; }
+    @media (min-width: 600px) {
+      .modal__container {
+        width: 100%;
+        max-width: 600px;
+        position: static;
+        margin: 70px auto;
+        overflow: initial; } }
+    @media (min-width: 600px) and (min-height: 769px) {
+      .modal__container {
+        top: 50%;
+        left: 50%;
+        margin: 0;
+        bottom: auto;
+        position: absolute;
+        transform: translate(-50%, -50%); } }
+    @media (min-width: 992px) {
+      .modal__container {
+        max-width: 700px; } }
+  .modal__content {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    background-color: #fff; }
+  .modal__close-btn {
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    background: transparent;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 24px; }
+    .modal__close-btn:hover, .modal__close-btn:focus {
+      outline: none; }
+    @media (min-width: 600px) {
+      .modal__close-btn {
+        top: 25px;
+        right: 20px;
+        width: 30px; } }
+    @media (min-width: 992px) {
+      .modal__close-btn {
+        top: 16px;
+        right: 16px; } }
+  .modal__body {
+    padding: 55px 25px 30px; }
+    @media (min-width: 600px) {
+      .modal__body {
+        padding: 89px 50px 45px; } }
+    @media (min-width: 992px) {
+      .modal__body {
+        padding: 40px 60px; } }
+
 .header {
   top: 0;
   left: 0;
