@@ -29,6 +29,10 @@
       max-width: 308px;
     }
 
+    @include for-size(425) {
+      max-width: none;
+    }
+
     @include for-size(small) {
       max-width: none;
     }
@@ -46,7 +50,7 @@
     @include for-size(large) {
       float: left;
       min-width: 100px;
-      margin-right: 44px;
+      margin-right: 64px;
     }
 
     li {
@@ -55,10 +59,20 @@
 
       @include for-size(320) {
         margin-right: 16px;
+        &:nth-child(3) {
+          margin-right: 0px;
+        }
+      }
+
+      @include for-size(425) {
+        margin-right: 6px;
+        &:nth-child(3) {
+          margin-right: 6px;
+        }
       }
 
       @include for-size(small) {
-        margin-right: 25px;
+        margin-right: 25px !important;
       }
 
       @include for-size(large) {
