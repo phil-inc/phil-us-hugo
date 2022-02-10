@@ -14,18 +14,31 @@
       background-position: calc(100% - 7px) bottom;
 
       @include for-size(small) {
-        width: 50%;
-        left: auto;
-        height: 482px;
-        background-image: url("../../img/icons/mfn-banner-desktop.png");
-        background-position-x: 0;
-        background-size: auto 475px;
+        width: 100%;
+        left: 0;
+        height: 325px;
+        background-position-x: left;
+        background-size: auto 325px;
       }
 
       @include for-size(medium) {
+        width: 50%;
+        left: auto;
         background-size: auto;
-        height: 582px;
-        background-size: auto 582px;
+        height: 345px;
+        background-position-x: right;
+        background-size: auto 345px;
+        background-image: url("../../img/icons/mfn-banner-desktop.png");
+      }
+
+      @include for-size(extra-large) {
+        width: 50%;
+        left: auto;
+        background-size: auto;
+        height: 100%;
+        background-position-x: right;
+        background-size: auto 550px;
+        background-image: url("../../img/icons/mfn-banner-desktop.png");
       }
     }
   }
@@ -34,7 +47,7 @@
     background-color: transparent;
     position: static;
 
-    &.Header--fixed-top {
+    &.header--fixed-top {
       background-color: $white;
       position: fixed;
 
@@ -50,11 +63,14 @@
     padding: 23px 0 0;
 
     @include for-size(small) {
-      height: 340px;
+      height: 590px;
+      padding-top: 32px;
     }
 
     @include for-size(medium) {
       height: 454px;
+      padding-top: 77px;
+      height: 570px;
     }
   }
 
@@ -64,10 +80,16 @@
     color: $primary-color;
     font: normal bold 30px $font-family--primary-bold;
 
+    @include for-size(small) {
+      font: normal bold 26px $font-family--primary-bold;
+      max-width: 415px;
+      margin-bottom: 32px;
+    }
+
     @include for-size(medium) {
-      font-size: 40px;
-      max-width: 440px;
+      font-size: 42px;
       margin-bottom: 60px;
+      line-height: 64px;
     }
   }
 
@@ -75,6 +97,11 @@
     max-width: 303px;
     color: $rolling-stone;
     font: normal normal 16px/1.5 $font-family--secondary;
+
+    @include for-size(small) {
+      max-width: 415px;
+    }
+
 
     @include for-size(medium) {
       max-width: 370px;
@@ -422,7 +449,7 @@
 
   @include e(button) {
     min-width: 138px;
-    margin-top: 30px;
+    margin-top: 32px;
     padding: 12px 20px;
     font: normal 500 16px $font-family--primary-medium;
   }

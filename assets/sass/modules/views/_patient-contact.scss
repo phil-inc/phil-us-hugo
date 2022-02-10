@@ -1,6 +1,4 @@
 .patient-contact-page {
-  padding-top: 65px;
-
   @include for-size(small) {
     padding-top: 0;
   }
@@ -14,7 +12,7 @@
     }
 
     @include for-size(medium) {
-      padding: 40px 0 90px;
+      padding: 77px 0 90px;
     }
   }
 

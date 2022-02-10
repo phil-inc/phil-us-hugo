@@ -1,10 +1,44 @@
 <div class="main-container-wrapper manufacturers-page">
     {{ partial "pr_banner.html" . }}
     <div class="manufacturers-page__banner-wrapper">
-        <header class="header manufacturers-page__header">
+        <header class="header" id="pageHeader">
             <div class="container">
-                <a class="header__logo" href="/" title="Phil"><img src="/img/icons/phil-logo-m.svg"
-                        alt="Logo of Phil" /></a>
+                <div class="clearfix">
+                    <a class="header__logo" href="/" title="Phil"><img src="/img/icons/phil-logo-m.svg"
+                            alt="Logo of Phil" /></a>
+                    <button class="button header__navbar-switch mobile-view" onclick="toggleMobileNavigation()">
+                        <img src="/img/icons/hamburger.svg" alt="Logo of Phil" class="button__image-hamburger" />
+                        <img src="/img/icons/times.svg" alt="Logo of Phil" class="button__image-close" />
+                    </button>
+                    <div class="desktop-view">
+                        <ul class="header__nav">
+                            <li class="header__nav__item">
+                                <a href="/manufacturers" class="header__nav__link manufacturer_link">Manufacturer Inquiry</a>
+                            </li>
+                            <li class="header__nav__item">
+                                <a href="https://blog.phil.us" class="header__nav__link">Insights</a>
+                            </li>
+                            <li class="header__nav__item">
+                                <a href="/press-releases" class="header__nav__link">News & Press</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="header__dropdown mobile-view" id="headerDropdown">
+                <div class="container">
+                    <ul class="header__dropdown__nav">
+                        <li class="header__dropdown__item">
+                            <a href="/manufacturers" class="header__dropdown__link manufacturer_link">Manufacturer Inquiry</a>
+                        </li>
+                        <li class="header__dropdown__item">
+                            <a href="https://blog.phil.us" class="header__dropdown__link">Insights</a>
+                        </li>
+                        <li class="header__dropdown__item">
+                            <a href="/press-releases" class="header__dropdown__link">News & Press</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </header>
         <div class="manufacturers-page__banner">
