@@ -1,9 +1,9 @@
 .news-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: transparent;
+  padding: 13px 0;
+
+  @include for-size(medium) {
+    padding: 28px 0;
+  }
 }
 
 .spotlight_left-column{
@@ -21,27 +21,36 @@
 }
 
 .news-press-banner {
-  padding: 120px 0 43px;
+  padding: calc(120px - 61px) 0 58px;
   background-image: url("../../img/news-banner.png");
   background-repeat: no-repeat;
-  background-position: 100px top;
+  background-position: 100px bottom;
   background-size: 300px;
 
   .home-page__heading {
     max-width: 116px;
+
     @include for-size(small) {
       max-width: 100%;
+      font: normal bold 26px/1.31 "MarkOTBold", arial, sans-serif;
+    }
+    
+    @include for-size(medium) {
+      font: normal bold 46px/1.31 "MarkOTBold", arial, sans-serif;
+      margin-bottom: 0;
     }
   }
 
   @include for-size(small) {
     background-size: contain;
     background-position: top right;
-    padding: 120px 0 166px;
+    padding-bottom: 134px;
   }
 
   @include for-size(medium) {
-    padding: 180px 0 187px;
+    padding: calc(180px - 107px) 0 187px;
+    background-size: 615px;
+    background-position: right bottom;
   }
 }
 .spotlight-column-grid {

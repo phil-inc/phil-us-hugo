@@ -29,7 +29,7 @@
     background-color: transparent;
     position: static;
 
-    &.Header--fixed-top {
+    &.header--fixed-top {
       background-color: $white;
       position: fixed;
 
@@ -48,7 +48,7 @@
     @include for-size(medium) {
       font-size: 42px;
       line-height: 1.52;
-      margin-top: 43px;
+      margin-top: 77px;
     }
   }
 

@@ -29,3 +29,22 @@ function headerSticky() {
     header.classList.remove("Header--fixed-top");
   }
 }
+
+function toggleMobileNavigation() {
+  document
+    .getElementById("headerDropdown")
+    .classList.toggle("header__dropdown--visible");
+  document.getElementById("pageHeader").classList.toggle("header--open");
+}
+
+$(document).ready(function(e){
+  var url = $(location).attr('href'),
+  parts = url.split("/"),
+  last_part = parts[parts.length-2];
+  
+  if (last_part == "press-releases") {
+    $('.news_press_link').addClass('active');
+  } else {
+    $('.manufacturer_link').addClass('active');
+  }
+ });

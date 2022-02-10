@@ -63,7 +63,7 @@
       padding-top: 43px;
     }
 
-    &.Header--fixed-top {
+    &.header--fixed-top {
       position: fixed;
 
       @include for-size(small) {
@@ -74,7 +74,7 @@
 
   @include e(welcome) {
     @include for-size(medium) {
-      padding: 60px 0 100px;
+      padding: 77px 0 100px;
     }
   }
 
