@@ -1,6 +1,5 @@
 +++
 date = 2021-09-27T18:15:00Z
-draft = true
 title = "Phil Announces Partnership with Impel NeuroPharma in Support of Trudhesa"
 type = "press-releases-content"
 url = "press-releases/Impel-Announces-Partnership-with-Phil-Inc-in-support-of-Trudhesa"
