@@ -29,7 +29,6 @@
 
   @include for-size(small) {
     position: relative;
-    //padding: 13px 0;
   }
 
   @include m(fixed-top) {

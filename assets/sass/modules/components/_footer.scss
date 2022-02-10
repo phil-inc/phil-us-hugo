@@ -57,20 +57,6 @@
       margin-right: 6px;
       display: inline-block;
 
-      // @include for-size(320) {
-      //   margin-right: 16px;
-      //   &:nth-child(3) {
-      //     margin-right: 0px;
-      //   }
-      // }
-
-      // @include for-size(425) {
-      //   margin-right: 6px;
-      //   &:nth-child(3) {
-      //     margin-right: 6px;
-      //   }
-      // }
-
       @include for-size(small) {
         margin-right: 25px !important;
       }
