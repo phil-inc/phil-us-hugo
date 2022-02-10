@@ -24,8 +24,15 @@ var sticky = header.offsetTop;
 
 function headerSticky() {
   if (window.pageYOffset > sticky) {
-    header.classList.add("Header--fixed-top");
+    header.classList.add("header--fixed-top");
   } else {
-    header.classList.remove("Header--fixed-top");
+    header.classList.remove("header--fixed-top");
   }
+}
+
+function toggleMobileNavigation() {
+  document
+    .getElementById("headerDropdown")
+    .classList.toggle("header__dropdown--visible");
+  document.getElementById("pageHeader").classList.toggle("header--open");
 }

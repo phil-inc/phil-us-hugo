@@ -14,465 +14,523 @@
     <link rel="stylesheet" href="css/style.css" />
     <!--endbuild-->
   </head>
-  <div class="main-container-wrapper pharmacy-page">
-    <header class="header">
-      <div class="container">
-        <a class="header__logo" href="/" title="Phil"
-          ><img src="./img/icons/phil-logo-m.svg" alt="Logo of Phil"
-        /></a>
-      </div>
-    </header>
-    <section class="banner pharmacy-page__banner">
-      <div class="container">
-        <p class="pharmacy-page__banner-sub-text">
-          Jerry T., Phil partner and owner of an<br />108-yr-old family pharmacy
-        </p>
-        <div class="banner__text-block pharmacy-page__banner-text-block">
-          <p>Reach more specialty Rx patients in your community</p>
-        </div>
-      </div>
-    </section>
-    <div
-      class="TwoUnevenColumnsGrid TwoUnevenColumnsGrid--inverse--left pharmacy-page__top-content"
-    >
-      <div class="TwoUnevenColumnsGrid__left-column">
+  <body>
+    <div class="main-container-wrapper pharmacy-page">
+      <header class="header" id="pageHeader">
         <div class="container">
-          <div class="TwoUnevenColumnsGrid__left-column-content">
-            <h2
-              class="primary-bordered-heading pharmacy-page__top-content-heading"
+          <div class="clearfix">
+            <a class="header__logo" href="/" title="Phil"
+              ><img src="./img/icons/phil-logo-m.svg" alt="Logo of Phil"
+            /></a>
+            <button
+              class="button header__navbar-switch mobile-view"
+              onclick="toggleMobileNavigation()"
             >
-              Partner With Phil to Grow Your Specialty Business
-            </h2>
-            <ul class="pharmacy-page__list">
-              <li>
-                <img
-                  src="../img/icons/grow.svg"
-                  alt="Grow"
-                  class="pharmacy-page__list-item-icon"
-                />
-                <div class="pharmacy-page__list-item-description">
-                  <span class="pharmacy-page__list-item-title"
-                    >Access to thousands of new customers</span
-                  >
-                  <p class="pharmacy-page__list-item-text">
-                    Our platform connects highly-rated independent pharmacies
-                    with doctors prescribing specialty medications.
-                  </p>
-                </div>
+              <img
+                src="./img/icons/hamburger.svg"
+                alt="Logo of Phil"
+                class="button__image-hamburger"
+              />
+              <img
+                src="./img/icons/times.svg"
+                alt="Logo of Phil"
+                class="button__image-close"
+              />
+            </button>
+            <div class="desktop-view">
+              <ul class="header__nav">
+                <li class="header__nav__item">
+                  <a href="#" class="header__nav__link">Manufacturer Inquiry</a>
+                </li>
+                <li class="header__nav__item">
+                  <a href="#" class="header__nav__link">Insights</a>
+                </li>
+                <li class="header__nav__item">
+                  <a href="#" class="header__nav__link">News & Press</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="header__dropdown mobile-view" id="headerDropdown">
+          <div class="container">
+            <ul class="header__dropdown__nav">
+              <li class="header__dropdown__item">
+                <a href="#" class="header__dropdown__link"
+                  >Manufacturer Inquiry</a
+                >
               </li>
-              <li>
-                <img
-                  src="../img/icons/money.svg"
-                  alt="Money"
-                  class="pharmacy-page__list-item-icon"
-                />
-                <div class="pharmacy-page__list-item-description">
-                  <span class="pharmacy-page__list-item-title"
-                    >Zero upfront costs</span
-                  >
-                  <p class="pharmacy-page__list-item-text">
-                    You pay only when new customers use the Phil software. Fast
-                    30 minute setup. No upfront costs or licensing fees!
-                  </p>
-                </div>
+              <li class="header__dropdown__item">
+                <a href="#" class="header__dropdown__link">Insights</a>
               </li>
-              <li>
-                <img
-                  src="../img/icons/apps.svg"
-                  alt="Apps"
-                  class="pharmacy-page__list-item-icon"
-                />
-                <div class="pharmacy-page__list-item-description">
-                  <span class="pharmacy-page__list-item-title"
-                    >Fill more Rx, spend less time on the phone</span
-                  >
-                  <p class="pharmacy-page__list-item-text">
-                    ‘Made in Silicon Valley’ technology keeps your customers
-                    informed, so you can fill more prescriptions and spend less
-                    time on the phone.
-                  </p>
-                </div>
+              <li class="header__dropdown__item">
+                <a href="#" class="header__dropdown__link">News & Press</a>
               </li>
             </ul>
           </div>
         </div>
-      </div>
-      <div
-        class="TwoUnevenColumnsGrid__right-column pharmacy-page__success-column"
-      >
+      </header>
+      <section class="banner pharmacy-page__banner">
         <div class="container">
-          <div class="TwoUnevenColumnsGrid__right-column-content">
-            <div class="pharmacy-page__success-column-content">
+          <p class="pharmacy-page__banner-sub-text">
+            Jerry T., Phil partner and owner of an<br />108-yr-old family
+            pharmacy
+          </p>
+          <div class="banner__text-block pharmacy-page__banner-text-block">
+            <p>Reach more specialty Rx patients in your community</p>
+          </div>
+        </div>
+      </section>
+      <div
+        class="TwoUnevenColumnsGrid TwoUnevenColumnsGrid--inverse--left pharmacy-page__top-content"
+      >
+        <div class="TwoUnevenColumnsGrid__left-column">
+          <div class="container">
+            <div class="TwoUnevenColumnsGrid__left-column-content">
               <h2
                 class="primary-bordered-heading pharmacy-page__top-content-heading"
               >
-                Proven Success
+                Partner With Phil to Grow Your Specialty Business
               </h2>
-              <p class="pharmacy-page__success-column-text">
-                Over 36,000 doctors in all major states are prescribing to the
-                fast-growing Phil network.
-              </p>
-              <img
-                src="../img/icons/grayMap.svg"
-                alt="Map"
-                class="pharmacy-page__success-column-image"
-              />
+              <ul class="pharmacy-page__list">
+                <li>
+                  <img
+                    src="../img/icons/grow.svg"
+                    alt="Grow"
+                    class="pharmacy-page__list-item-icon"
+                  />
+                  <div class="pharmacy-page__list-item-description">
+                    <span class="pharmacy-page__list-item-title"
+                      >Access to thousands of new customers</span
+                    >
+                    <p class="pharmacy-page__list-item-text">
+                      Our platform connects highly-rated independent pharmacies
+                      with doctors prescribing specialty medications.
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="../img/icons/money.svg"
+                    alt="Money"
+                    class="pharmacy-page__list-item-icon"
+                  />
+                  <div class="pharmacy-page__list-item-description">
+                    <span class="pharmacy-page__list-item-title"
+                      >Zero upfront costs</span
+                    >
+                    <p class="pharmacy-page__list-item-text">
+                      You pay only when new customers use the Phil software.
+                      Fast 30 minute setup. No upfront costs or licensing fees!
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <img
+                    src="../img/icons/apps.svg"
+                    alt="Apps"
+                    class="pharmacy-page__list-item-icon"
+                  />
+                  <div class="pharmacy-page__list-item-description">
+                    <span class="pharmacy-page__list-item-title"
+                      >Fill more Rx, spend less time on the phone</span
+                    >
+                    <p class="pharmacy-page__list-item-text">
+                      ‘Made in Silicon Valley’ technology keeps your customers
+                      informed, so you can fill more prescriptions and spend
+                      less time on the phone.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="TwoUnevenColumnsGrid__right-column pharmacy-page__success-column"
+        >
+          <div class="container">
+            <div class="TwoUnevenColumnsGrid__right-column-content">
+              <div class="pharmacy-page__success-column-content">
+                <h2
+                  class="primary-bordered-heading pharmacy-page__top-content-heading"
+                >
+                  Proven Success
+                </h2>
+                <p class="pharmacy-page__success-column-text">
+                  Over 36,000 doctors in all major states are prescribing to the
+                  fast-growing Phil network.
+                </p>
+                <img
+                  src="../img/icons/grayMap.svg"
+                  alt="Map"
+                  class="pharmacy-page__success-column-image"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="pharmacy-page__work-section">
-      <div class="container">
-        <div class="numbered-flow-chart">
-          <h2
-            class="primary-bordered-heading numbered-flow-chart__heading pharmacy-page__work-section-heading"
-          >
-            How It Works
-          </h2>
-          <div class="numbered-flow-chart__row">
-            <div class="numbered-flow-chart__column">
-              <div class="numbered-flow-chart__number"><span>1</span></div>
-              <div
-                class="numbered-flow-chart__column-title pharmacy-page__work-col-title"
-              >
-                Patients Visit Physicians
-              </div>
-              <p
-                class="numbered-flow-chart__column-text pharmacy-page__work-col-text"
-              >
-                Doctors prescribe specialty medications by eRx.
-              </p>
-            </div>
-            <div class="numbered-flow-chart__column">
-              <div class="numbered-flow-chart__number"><span>2</span></div>
-              <div
-                class="numbered-flow-chart__column-title pharmacy-page__work-col-title"
-              >
-                Phil Does the Heavy Lifting
-              </div>
-              <p
-                class="numbered-flow-chart__column-text pharmacy-page__work-col-text"
-              >
-                We manage “front desk” interactions like collecting insurance or
-                payments so you don’t have to.
-              </p>
-            </div>
-            <div class="numbered-flow-chart__column">
-              <div class="numbered-flow-chart__number"><span>3</span></div>
-              <div
-                class="numbered-flow-chart__column-title pharmacy-page__work-col-title"
-              >
-                You Fill Rx On Schedule
-              </div>
-              <p
-                class="numbered-flow-chart__column-text pharmacy-page__work-col-text"
-              >
-                You send the meds to patients on time and offer any counseling
-                on the phone.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="TwoUnevenColumnsGrid TwoUnevenColumnsGrid--inverse--right pharmacy-page__bottom-content"
-    >
-      <div
-        class="TwoUnevenColumnsGrid__left-column pharmacy-page__testimonials-section"
-      >
+      <div class="pharmacy-page__work-section">
         <div class="container">
-          <div class="TwoUnevenColumnsGrid__left-column-content">
-            <div class="pharmacy-page__testimonials-section-container">
-              <h2
-                class="primary-bordered-heading pharmacy-page__bottom-content-heading"
-              >
-                Hear from Our Partners
-              </h2>
-              <div class="pharmacy-page__testimonial-container">
-                <div class="pharmacy-page__nametag-container">
-                  <div class="pharmacy-page__nametag" id="first">
-                    <div class="pharmacy-page__empty-div"></div>
-                    <div class="pharmacy-page__nametag-initial">
-                      <span>K</span>
+          <div class="numbered-flow-chart">
+            <h2
+              class="primary-bordered-heading numbered-flow-chart__heading pharmacy-page__work-section-heading"
+            >
+              How It Works
+            </h2>
+            <div class="numbered-flow-chart__row">
+              <div class="numbered-flow-chart__column">
+                <div class="numbered-flow-chart__number"><span>1</span></div>
+                <div
+                  class="numbered-flow-chart__column-title pharmacy-page__work-col-title"
+                >
+                  Patients Visit Physicians
+                </div>
+                <p
+                  class="numbered-flow-chart__column-text pharmacy-page__work-col-text"
+                >
+                  Doctors prescribe specialty medications by eRx.
+                </p>
+              </div>
+              <div class="numbered-flow-chart__column">
+                <div class="numbered-flow-chart__number"><span>2</span></div>
+                <div
+                  class="numbered-flow-chart__column-title pharmacy-page__work-col-title"
+                >
+                  Phil Does the Heavy Lifting
+                </div>
+                <p
+                  class="numbered-flow-chart__column-text pharmacy-page__work-col-text"
+                >
+                  We manage “front desk” interactions like collecting insurance
+                  or payments so you don’t have to.
+                </p>
+              </div>
+              <div class="numbered-flow-chart__column">
+                <div class="numbered-flow-chart__number"><span>3</span></div>
+                <div
+                  class="numbered-flow-chart__column-title pharmacy-page__work-col-title"
+                >
+                  You Fill Rx On Schedule
+                </div>
+                <p
+                  class="numbered-flow-chart__column-text pharmacy-page__work-col-text"
+                >
+                  You send the meds to patients on time and offer any counseling
+                  on the phone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="TwoUnevenColumnsGrid TwoUnevenColumnsGrid--inverse--right pharmacy-page__bottom-content"
+      >
+        <div
+          class="TwoUnevenColumnsGrid__left-column pharmacy-page__testimonials-section"
+        >
+          <div class="container">
+            <div class="TwoUnevenColumnsGrid__left-column-content">
+              <div class="pharmacy-page__testimonials-section-container">
+                <h2
+                  class="primary-bordered-heading pharmacy-page__bottom-content-heading"
+                >
+                  Hear from Our Partners
+                </h2>
+                <div class="pharmacy-page__testimonial-container">
+                  <div class="pharmacy-page__nametag-container">
+                    <div class="pharmacy-page__nametag" id="first">
+                      <div class="pharmacy-page__empty-div"></div>
+                      <div class="pharmacy-page__nametag-initial">
+                        <span>K</span>
+                      </div>
+                      <div class="pharmacy-page__nametag-text">Kamal</div>
+                      <div
+                        class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
+                      >
+                        Florida
+                      </div>
+                      <span class="pharmacy-page__nametag-caret"></span>
                     </div>
-                    <div class="pharmacy-page__nametag-text">Kamal</div>
+                    <div class="pharmacy-page__nametag" id="second">
+                      <div class="pharmacy-page__empty-div"></div>
+                      <div class="pharmacy-page__nametag-initial">
+                        <span>L</span>
+                      </div>
+                      <div class="pharmacy-page__nametag-text">Lisa</div>
+                      <div
+                        class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
+                      >
+                        Lousiana
+                      </div>
+                      <span class="pharmacy-page__nametag-caret"></span>
+                    </div>
                     <div
-                      class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
+                      class="pharmacy-page__nametag pharmacy-page__nametag--active"
+                      id="third"
                     >
-                      Florida
+                      <div class="pharmacy-page__empty-div"></div>
+                      <div class="pharmacy-page__nametag-initial">
+                        <span>M</span>
+                      </div>
+                      <div class="pharmacy-page__nametag-text">Marc</div>
+                      <div
+                        class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
+                      >
+                        Lousiana
+                      </div>
+                      <span class="pharmacy-page__nametag-caret"></span>
                     </div>
-                    <span class="pharmacy-page__nametag-caret"></span>
                   </div>
-                  <div class="pharmacy-page__nametag" id="second">
-                    <div class="pharmacy-page__empty-div"></div>
-                    <div class="pharmacy-page__nametag-initial">
-                      <span>L</span>
+                  <div class="pharmacy-page__testimonial">
+                    <p class="pharmacy-page__testimonial-text no-display">
+                      Phil has helped me to expand my business without the
+                      stress of marketing and adding additional personnel for
+                      specialty prescriptions growth.
+                    </p>
+                    <p class="pharmacy-page__testimonial-text no-display">
+                      Phil technology makes you more efficient, and is detail
+                      oriented in the steps you take when filling scripts.
+                    </p>
+                    <p class="pharmacy-page__testimonial-text">
+                      Phil opens us up to a new vertical we would have not been
+                      exposed to without our Phil Partnership.
+                    </p>
+                    <div class="pharmacy-page__testimonial-btn">
+                      <span class="pharmacy-page__testimonial-btn-icon"
+                        >→&nbsp;</span
+                      ><span>Continue reading</span>
                     </div>
-                    <div class="pharmacy-page__nametag-text">Lisa</div>
-                    <div
-                      class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
-                    >
-                      Lousiana
-                    </div>
-                    <span class="pharmacy-page__nametag-caret"></span>
                   </div>
-                  <div
-                    class="pharmacy-page__nametag pharmacy-page__nametag--active"
-                    id="third"
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="TwoUnevenColumnsGrid__right-column pharmacy-page__form-column"
+        >
+          <div class="container">
+            <div class="TwoUnevenColumnsGrid__right-column-content">
+              <p class="pharmacy-page__form-text">
+                To enquire about Phil’s partnership program, please complete the
+                form below.
+              </p>
+              <div class="pharmacy-page__form">
+                <form>
+                  <div class="form__group pharmacy-page__form-group">
+                    <label class="form__lable">Your name</label>
+                    <div class="form__input">
+                      <input
+                        name="ownerName"
+                        type="text"
+                        class="form__input__input"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div class="form__group pharmacy-page__form-group">
+                    <label class="form__lable">Email</label>
+                    <div class="form__input">
+                      <input
+                        name="contactEmail"
+                        type="email"
+                        class="form__input__input"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div class="form__group pharmacy-page__form-group">
+                    <label class="form__lable">Phone Number (optional)</label>
+                    <div class="form__input">
+                      <input
+                        name="phone"
+                        type="text"
+                        class="form__input__input"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div class="form__group pharmacy-page__form-group">
+                    <label class="form__lable">Name of pharmacy</label>
+                    <div class="form__input">
+                      <input
+                        name="pharmacyName"
+                        type="text"
+                        class="form__input__input"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <div class="form__group pharmacy-page__form-group">
+                    <label class="form__lable">City and State</label>
+                    <div class="form__input">
+                      <input
+                        name="pharmacyAddress"
+                        type="text"
+                        class="form__input__input"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="button primary-button pharmacy-page__button"
                   >
-                    <div class="pharmacy-page__empty-div"></div>
-                    <div class="pharmacy-page__nametag-initial">
-                      <span>M</span>
-                    </div>
-                    <div class="pharmacy-page__nametag-text">Marc</div>
-                    <div
-                      class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
-                    >
-                      Lousiana
-                    </div>
-                    <span class="pharmacy-page__nametag-caret"></span>
-                  </div>
-                </div>
-                <div class="pharmacy-page__testimonial">
-                  <p class="pharmacy-page__testimonial-text no-display">
-                    Phil has helped me to expand my business without the stress
-                    of marketing and adding additional personnel for specialty
-                    prescriptions growth.
-                  </p>
-                  <p class="pharmacy-page__testimonial-text no-display">
-                    Phil technology makes you more efficient, and is detail
-                    oriented in the steps you take when filling scripts.
-                  </p>
-                  <p class="pharmacy-page__testimonial-text">
-                    Phil opens us up to a new vertical we would have not been
-                    exposed to without our Phil Partnership.
-                  </p>
-                  <div class="pharmacy-page__testimonial-btn">
-                    <span class="pharmacy-page__testimonial-btn-icon"
-                      >→&nbsp;</span
-                    ><span>Continue reading</span>
-                  </div>
-                </div>
+                    Submit</button
+                  ><input type="submit" class="hidden" />
+                </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div
-        class="TwoUnevenColumnsGrid__right-column pharmacy-page__form-column"
-      >
+      <div class="pharmacy-page__bottom-banner">
         <div class="container">
-          <div class="TwoUnevenColumnsGrid__right-column-content">
-            <p class="pharmacy-page__form-text">
-              To enquire about Phil’s partnership program, please complete the
-              form below.
+          <p class="pharmacy-page__bottom-banner-text">
+            At Phil, we believe strongly in the value of independently-owned
+            pharmacies to public health and the communities they serve. By
+            providing superior online and mobile customer care, Phil can help
+            grow your business.
+          </p>
+        </div>
+      </div>
+      <div class="modal pharmacy-page__modal">
+        <div class="modal__container">
+          <div class="modal__content">
+            <button type="button" class="modal__close-btn" title="Close">
+              <img src="img/icons/close-gray.svg" alt="Close" />
+            </button>
+            <div class="modal__body">
+              <div class="pharmacy-page__nametag-container">
+                <div
+                  class="pharmacy-page__nametag pharmacy-page__nametag--active"
+                  id="first"
+                >
+                  <div class="pharmacy-page__empty-div"></div>
+                  <div class="pharmacy-page__nametag-initial">
+                    <span>K</span>
+                  </div>
+                  <div class="pharmacy-page__nametag-text">Kamal</div>
+                  <div
+                    class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
+                  >
+                    Florida
+                  </div>
+                  <span class="pharmacy-page__nametag-caret"></span>
+                </div>
+                <div class="pharmacy-page__nametag" id="second">
+                  <div class="pharmacy-page__empty-div"></div>
+                  <div class="pharmacy-page__nametag-initial">
+                    <span>L</span>
+                  </div>
+                  <div class="pharmacy-page__nametag-text">Lisa</div>
+                  <div
+                    class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
+                  >
+                    Lousiana
+                  </div>
+                  <span class="pharmacy-page__nametag-caret"></span>
+                </div>
+                <div class="pharmacy-page__nametag" id="third">
+                  <div class="pharmacy-page__empty-div"></div>
+                  <div class="pharmacy-page__nametag-initial">
+                    <span>M</span>
+                  </div>
+                  <div class="pharmacy-page__nametag-text">Marc</div>
+                  <div
+                    class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
+                  >
+                    Lousiana
+                  </div>
+                  <span class="pharmacy-page__nametag-caret"></span>
+                </div>
+              </div>
+              <div class="pharmacy-page__testimonial">
+                <p class="pharmacy-page__modal-testimonial-text">
+                  Phil has helped me to expand my business without the stress of
+                  marketing and adding additional personnel for specialty
+                  prescriptions growth. There has been no additional homework
+                  for me in this partnership with Phil, as it is a streamlined
+                  and efficient process. The simplicity without extra marketing
+                  is wonderful. Aside from that, the Phil software is extremely
+                  user friendly. The training was exceptional and time
+                  efficient. Phil sent out their team for two days, and they
+                  walked our staff through the process until we could
+                  comfortably handle the prescriptions on our own. Since then,
+                  it has been easy for me to train my own employees now that I
+                  am up and running. I would recommend Phil to anyone who is
+                  needing a broader outreach.
+                </p>
+                <p class="pharmacy-page__modal-testimonial-text no-display">
+                  I enjoy Phil, and it has been a very positive experience in
+                  working with them. Phil allows me to reach additional
+                  patients, and also helps the workflow with our staff. The Phil
+                  account management team is very responsive, and listens to my
+                  needs in regards to the modifications I need. The Phil
+                  technology makes you more efficient, and is detail oriented in
+                  the steps you take when filling scripts. This helps to keep
+                  everyone more accountable, and keep a strong record of data.
+                  It is also user friendly.
+                </p>
+                <p class="pharmacy-page__modal-testimonial-text no-display">
+                  Partnering with Phil has been a very positive experience for
+                  me and my staff. I have been able to expand my reach to
+                  patients through partnering with Phil and it has been very
+                  beneficial, and creates a new stream of business we would not
+                  have had otherwise. Phil opens us up to a new vertical we
+                  would have not been exposed to without our Phil Partnership.
+                  Aside from, the Phil technology streamlines our process in
+                  creating a more efficient process that makes it easier to
+                  understand and more broken down for my entire staff.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container footer__container">
+          <div class="footer__nav">
+            <ul class="footer__nav-links">
+              <li>
+                <a title="Manufacturers" href="/manufacturers"
+                  >Manufacturer Inquiry</a
+                >
+              </li>
+              <li><a title="Careers at Phil" href="/about-us">Careers</a></li>
+              <li>
+                <a title="Patient Support" href="/contact">Patient Support</a>
+              </li>
+            </ul>
+            <ul class="footer__nav-links">
+              <li><a title="Terms of Use" href="/terms">Terms of Use</a></li>
+              <li>
+                <a title="Privacy Policy" href="/privacy">Privacy Policy</a>
+              </li>
+              <li><a title="HIPAA Policy" href="/hipaa">HIPAA Policy</a></li>
+            </ul>
+          </div>
+          <div class="footer__description">
+            <div>© Phil, Inc.</div>
+            <p class="footer__address">
+              234 Front Street,&nbsp;FL 4,
+              <br class="mobile-view" />San&nbsp;Francisco,&nbsp;CA&nbsp;94111
             </p>
-            <div class="pharmacy-page__form">
-              <form>
-                <div class="form__group pharmacy-page__form-group">
-                  <label class="form__lable">Your name</label>
-                  <div class="form__input">
-                    <input
-                      name="ownerName"
-                      type="text"
-                      class="form__input__input"
-                      value=""
-                    />
-                  </div>
-                </div>
-                <div class="form__group pharmacy-page__form-group">
-                  <label class="form__lable">Email</label>
-                  <div class="form__input">
-                    <input
-                      name="contactEmail"
-                      type="email"
-                      class="form__input__input"
-                      value=""
-                    />
-                  </div>
-                </div>
-                <div class="form__group pharmacy-page__form-group">
-                  <label class="form__lable">Phone Number (optional)</label>
-                  <div class="form__input">
-                    <input
-                      name="phone"
-                      type="text"
-                      class="form__input__input"
-                      value=""
-                    />
-                  </div>
-                </div>
-                <div class="form__group pharmacy-page__form-group">
-                  <label class="form__lable">Name of pharmacy</label>
-                  <div class="form__input">
-                    <input
-                      name="pharmacyName"
-                      type="text"
-                      class="form__input__input"
-                      value=""
-                    />
-                  </div>
-                </div>
-                <div class="form__group pharmacy-page__form-group">
-                  <label class="form__lable">City and State</label>
-                  <div class="form__input">
-                    <input
-                      name="pharmacyAddress"
-                      type="text"
-                      class="form__input__input"
-                      value=""
-                    />
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  class="button primary-button pharmacy-page__button"
-                >
-                  Submit</button
-                ><input type="submit" class="hidden" />
-              </form>
-            </div>
+            <p class="footer__email-address">
+              <span>Manufacturer Contact: </span
+              ><img
+                src="./img/manufacturerinquiry-phil-us.svg"
+                alt="manufacturer contact"
+              />
+            </p>
+            <div class="footer__version">Version 0.43.0</div>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
-    <div class="pharmacy-page__bottom-banner">
-      <div class="container">
-        <p class="pharmacy-page__bottom-banner-text">
-          At Phil, we believe strongly in the value of independently-owned
-          pharmacies to public health and the communities they serve. By
-          providing superior online and mobile customer care, Phil can help grow
-          your business.
-        </p>
-      </div>
-    </div>
-    <div class="modal pharmacy-page__modal">
-      <div class="modal__container">
-        <div class="modal__content">
-          <button type="button" class="modal__close-btn" title="Close">
-            <img src="img/icons/close-gray.svg" alt="Close" />
-          </button>
-          <div class="modal__body">
-            <div class="pharmacy-page__nametag-container">
-              <div
-                class="pharmacy-page__nametag pharmacy-page__nametag--active"
-                id="first"
-              >
-                <div class="pharmacy-page__empty-div"></div>
-                <div class="pharmacy-page__nametag-initial"><span>K</span></div>
-                <div class="pharmacy-page__nametag-text">Kamal</div>
-                <div
-                  class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
-                >
-                  Florida
-                </div>
-                <span class="pharmacy-page__nametag-caret"></span>
-              </div>
-              <div class="pharmacy-page__nametag" id="second">
-                <div class="pharmacy-page__empty-div"></div>
-                <div class="pharmacy-page__nametag-initial"><span>L</span></div>
-                <div class="pharmacy-page__nametag-text">Lisa</div>
-                <div
-                  class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
-                >
-                  Lousiana
-                </div>
-                <span class="pharmacy-page__nametag-caret"></span>
-              </div>
-              <div class="pharmacy-page__nametag" id="third">
-                <div class="pharmacy-page__empty-div"></div>
-                <div class="pharmacy-page__nametag-initial"><span>M</span></div>
-                <div class="pharmacy-page__nametag-text">Marc</div>
-                <div
-                  class="pharmacy-page__nametag-text pharmacy-page__nametag-text--light"
-                >
-                  Lousiana
-                </div>
-                <span class="pharmacy-page__nametag-caret"></span>
-              </div>
-            </div>
-            <div class="pharmacy-page__testimonial">
-              <p class="pharmacy-page__modal-testimonial-text">
-                Phil has helped me to expand my business without the stress of
-                marketing and adding additional personnel for specialty
-                prescriptions growth. There has been no additional homework for
-                me in this partnership with Phil, as it is a streamlined and
-                efficient process. The simplicity without extra marketing is
-                wonderful. Aside from that, the Phil software is extremely user
-                friendly. The training was exceptional and time efficient. Phil
-                sent out their team for two days, and they walked our staff
-                through the process until we could comfortably handle the
-                prescriptions on our own. Since then, it has been easy for me to
-                train my own employees now that I am up and running. I would
-                recommend Phil to anyone who is needing a broader outreach.
-              </p>
-              <p class="pharmacy-page__modal-testimonial-text no-display">
-                I enjoy Phil, and it has been a very positive experience in
-                working with them. Phil allows me to reach additional patients,
-                and also helps the workflow with our staff. The Phil account
-                management team is very responsive, and listens to my needs in
-                regards to the modifications I need. The Phil technology makes
-                you more efficient, and is detail oriented in the steps you take
-                when filling scripts. This helps to keep everyone more
-                accountable, and keep a strong record of data. It is also user
-                friendly.
-              </p>
-              <p class="pharmacy-page__modal-testimonial-text no-display">
-                Partnering with Phil has been a very positive experience for me
-                and my staff. I have been able to expand my reach to patients
-                through partnering with Phil and it has been very beneficial,
-                and creates a new stream of business we would not have had
-                otherwise. Phil opens us up to a new vertical we would have not
-                been exposed to without our Phil Partnership. Aside from, the
-                Phil technology streamlines our process in creating a more
-                efficient process that makes it easier to understand and more
-                broken down for my entire staff.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <div class="container footer__container">
-        <div class="footer__nav">
-          <ul class="footer__nav-links">
-            <li>
-              <a title="Manufacturers" href="/manufacturers"
-                >Manufacturer Inquiry</a
-              >
-            </li>
-            <li><a title="Careers at Phil" href="/about-us">Careers</a></li>
-            <li>
-              <a title="Patient Support" href="/contact">Patient Support</a>
-            </li>
-          </ul>
-          <ul class="footer__nav-links">
-            <li><a title="Terms of Use" href="/terms">Terms of Use</a></li>
-            <li>
-              <a title="Privacy Policy" href="/privacy">Privacy Policy</a>
-            </li>
-            <li><a title="HIPAA Policy" href="/hipaa">HIPAA Policy</a></li>
-          </ul>
-        </div>
-        <div class="footer__description">
-          <div>© Phil, Inc.</div>
-          <p class="footer__address">
-            234 Front Street,&nbsp;FL 4,
-            <br class="mobile-view" />San&nbsp;Francisco,&nbsp;CA&nbsp;94111
-          </p>
-          <p class="footer__email-address">
-            <span>Manufacturer Contact: </span
-            ><img
-              src="./img/manufacturerinquiry-phil-us.svg"
-              alt="manufacturer contact"
-            />
-          </p>
-          <div class="footer__version">Version 0.43.0</div>
-        </div>
-      </div>
-    </footer>
-  </div>
+    <script src="./js/main.js"></script>
+  </body>
 </html>

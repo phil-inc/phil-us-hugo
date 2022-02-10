@@ -1,5 +1,5 @@
 .about-us-page {
-  padding-top: 65px;
+  // padding-top: 65px;
 
   @include for-size(small) {
     padding-top: 0;
@@ -7,6 +7,10 @@
 
   @include e(content) {
     margin-top: 40px;
+
+    @include for-size(medium) {
+      margin-top: 77px;
+    }
   }
 
   @include e(heading) {

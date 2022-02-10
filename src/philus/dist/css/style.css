@@ -830,25 +830,26 @@ img {
     text-decoration: none;
     background-color: #00ccae; }
 
-.series-dpr {
-  padding-top: 65px; }
-  @media (min-width: 600px) {
-    .series-dpr {
-      padding-top: 0; } }
-  .series-dpr__sub-text {
-    font-size: 14px; }
-    @media (min-width: 800px) {
-      .series-dpr__sub-text {
-        font-size: 16px; } }
-  .series-dpr__list {
-    margin-bottom: 66px;
-    word-break: break-word; }
-    @media (min-width: 800px) {
-      .series-dpr__list {
-        margin-bottom: 40px; } }
-  .series-dpr__primary-link {
-    line-height: 1.5;
-    font-family: "MarkOTBook", arial, sans-serif; }
+@media (min-width: 600px) {
+  .series-dpr {
+    padding-top: 0; } }
+
+.series-dpr__sub-text {
+  font-size: 14px; }
+  @media (min-width: 800px) {
+    .series-dpr__sub-text {
+      font-size: 16px; } }
+
+.series-dpr__list {
+  margin-bottom: 66px;
+  word-break: break-word; }
+  @media (min-width: 800px) {
+    .series-dpr__list {
+      margin-bottom: 40px; } }
+
+.series-dpr__primary-link {
+  line-height: 1.5;
+  font-family: "MarkOTBook", arial, sans-serif; }
 
 .primary-bordered-heading {
   margin-bottom: 20px;
@@ -1117,13 +1118,22 @@ img {
   left: 0;
   right: 0;
   z-index: 1000;
-  position: fixed;
+  position: relative;
   padding: 16px 0 12px;
-  background-color: #fff; }
+  background-color: #fff;
+  transition: background-color 0.3s ease; }
+  .header .button__image-close {
+    display: none; }
+  .header.header--open {
+    background-color: #f4f9fe; }
+    .header.header--open .button__image-hamburger {
+      display: none; }
+    .header.header--open .button__image-close {
+      display: inline-block; }
   @media (min-width: 600px) {
     .header {
-      position: static;
-      padding: 41px 0 30px; } }
+      position: relative;
+      padding: 13px 0; } }
   .header--fixed-top {
     position: fixed;
     -moz-box-shadow: 0 1px 2px 0 rgba(141, 141, 148, 0.22);
@@ -1135,12 +1145,52 @@ img {
         position: static; } }
   .header__logo {
     display: inline-block;
-    width: 60px; }
+    width: 57px;
+    float: left; }
     @media (min-width: 600px) {
       .header__logo {
         width: 80px; } }
     .header__logo img {
       width: 100%; }
+  .header__navbar-switch {
+    float: right;
+    margin-top: 10px; }
+  .header__dropdown {
+    position: absolute;
+    background: #f4f9fe;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 100vh;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease; }
+    .header__dropdown.header__dropdown--visible {
+      opacity: 1;
+      visibility: visible; }
+    .header__dropdown__nav {
+      padding-top: 14px; }
+    .header__dropdown__item {
+      padding: 12px 0;
+      border-bottom: 1px solid #d1d6dc; }
+      .header__dropdown__item:last-child {
+        border-bottom: none; }
+    .header__dropdown__link {
+      color: #797c80;
+      font-size: 18px;
+      font-family: "Lato", arial, sans-serif; }
+  .header__nav {
+    float: right;
+    margin-top: 15px; }
+    .header__nav__item {
+      display: inline-block;
+      margin-right: 32px; }
+      .header__nav__item:last-child {
+        margin-right: 0; }
+    .header__nav__link {
+      font-size: 16px;
+      color: #797c80;
+      font-family: "Lato", arial, sans-serif; }
 
 .footer {
   left: 0;
@@ -1305,14 +1355,14 @@ img {
     @media (min-width: 800px) {
       .home-page__header {
         padding-top: 43px; } }
-    .home-page__header.Header--fixed-top {
+    .home-page__header.header--fixed-top {
       position: fixed; }
       @media (min-width: 600px) {
-        .home-page__header.Header--fixed-top {
+        .home-page__header.header--fixed-top {
           position: static; } }
   @media (min-width: 800px) {
     .home-page__welcome {
-      padding: 60px 0 100px; } }
+      padding: 77px 0 100px; } }
   .home-page__left-section {
     padding: 36px 0;
     min-height: 460px;
@@ -1590,24 +1640,23 @@ img {
     color: #00ccae; }
 
 .news-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: transparent; }
+  padding: 13px 0; }
+  @media (min-width: 800px) {
+    .news-header {
+      padding: 28px 0; } }
 
 .news-press-banner {
-  padding: 120px 0 58px;
+  padding: calc(120px - 61px) 0 58px;
   background-image: url("../../img/news-banner.png");
   background-repeat: no-repeat;
-  background-position: 100px top;
+  background-position: 100px bottom;
   background-size: 300px; }
   .news-press-banner .home-page__heading {
     max-width: 116px; }
     @media (min-width: 600px) {
       .news-press-banner .home-page__heading {
         max-width: 100%;
-        font: normal bold 16px/1.31 "MarkOTBold", arial, sans-serif; } }
+        font: normal bold 26px/1.31 "MarkOTBold", arial, sans-serif; } }
     @media (min-width: 800px) {
       .news-press-banner .home-page__heading {
         font: normal bold 46px/1.31 "MarkOTBold", arial, sans-serif;
@@ -1616,10 +1665,12 @@ img {
     .news-press-banner {
       background-size: contain;
       background-position: top right;
-      padding: 120px 0 134px; } }
+      padding-bottom: 134px; } }
   @media (min-width: 800px) {
     .news-press-banner {
-      padding: 180px 0 187px; } }
+      padding: calc(180px - 107px) 0 187px;
+      background-size: 615px;
+      background-position: right bottom; } }
 
 .spotlight-column-grid {
   background-image: url(../../img/yellow-dot.png);
@@ -1795,504 +1846,559 @@ img {
       height: 1px;
       background-color: #d1d1d1; } }
 
-.terms-page {
-  padding-top: 65px; }
-  @media (min-width: 600px) {
-    .terms-page {
-      padding-top: 0; } }
-  .terms-page__wrapper {
-    margin: 60px 0 50px; }
-  .terms-page__main-header {
-    margin: 30px 0;
-    text-align: left; }
-    @media (min-width: 600px) {
-      .terms-page__main-header {
-        margin: 80px 0 40px; } }
-  .terms-page__primary-heading {
-    color: #292a2e;
-    font: normal bold 30px/1.14 "MarkOTBold", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .terms-page__primary-heading {
-        font: normal bold 40px/1.14 "MarkOTBold", arial, sans-serif; } }
-  .terms-page__secondary-heading {
-    margin: 22px 0 17px;
-    color: #292a2e;
-    font: normal 22px/1.14 "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .terms-page__secondary-heading {
-        margin: 35px 0 28px;
-        font: normal 35px/1.14 "MarkOTMedium", arial, sans-serif; } }
-  .terms-page__tertiary-heading {
-    margin: 15px 0 5px;
-    color: #292a2e;
-    font: normal 18px/1.14 "MarkOTBook", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .terms-page__tertiary-heading {
-        font: normal 22px/1.14 "MarkOTBook", arial, sans-serif; } }
-  .terms-page__last-update {
-    margin-top: 5px;
-    color: #bbbdbf;
-    letter-spacing: normal;
-    font: normal 16px/1.14 "MarkOTBook", arial, sans-serif; }
-  .terms-page__paragraph {
-    font: normal 16px/1.5 "MarkOTBook", arial, sans-serif;
-    margin-bottom: 10px;
-    word-wrap: break-word; }
-    @media (min-width: 600px) {
-      .terms-page__paragraph {
-        font: normal 17px/1.5 "MarkOTBook", arial, sans-serif; } }
-  .terms-page__list {
-    margin-bottom: 10px;
-    word-wrap: break-word;
-    font: normal 16px/1.5 "MarkOTBook", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .terms-page__list {
-        font: normal 17px/1.5 "MarkOTBook", arial, sans-serif; } }
-    .terms-page__list--list-style--disc {
-      list-style-type: disc; }
-    .terms-page__list--list-style--decimal {
-      list-style-type: decimal; }
+@media (min-width: 600px) {
+  .terms-page {
+    padding-top: 0; } }
 
-.privacy-page {
-  padding-top: 65px; }
-  @media (min-width: 600px) {
-    .privacy-page {
-      padding-top: 0; } }
-  .privacy-page__wrapper {
-    margin: 60px 0 50px; }
-  .privacy-page__main-header {
-    margin: 30px 0 30px;
-    text-align: left; }
-    @media (min-width: 600px) {
-      .privacy-page__main-header {
-        margin: 80px 0 40px; } }
-  .privacy-page__primary-heading {
-    color: #292a2e;
-    font: normal bold 30px/1.14 "MarkOTBold", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .privacy-page__primary-heading {
-        font: normal bold 40px/1.14 "MarkOTBold", arial, sans-serif; } }
-  .privacy-page__secondary-heading {
-    margin: 22px 0 17px;
-    color: #292a2e;
-    font: normal 22px/1.14 "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .privacy-page__secondary-heading {
-        margin: 35px 0 28px;
-        font: normal 35px/1.14 "MarkOTMedium", arial, sans-serif; } }
-  .privacy-page__tertiary-heading {
-    margin: 15px 0 5px;
-    color: #292a2e;
-    font: normal 18px/1.14 "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .privacy-page__tertiary-heading {
-        font: normal 22px/1.14 "MarkOTMedium", arial, sans-serif; } }
-  .privacy-page__last-update {
-    margin-top: 5px;
-    color: #bbbdbf;
-    font: normal 16px/1.14 "MarkOTBook", arial, sans-serif; }
-  .privacy-page__paragraph {
-    font: normal 16px/1.5 "MarkOTBook", arial, sans-serif;
-    margin-bottom: 10px;
-    word-wrap: break-word; }
-    @media (min-width: 600px) {
-      .privacy-page__paragraph {
-        font: normal 17px/1.5 "MarkOTBook", arial, sans-serif; } }
+.terms-page__wrapper {
+  margin: 60px 0 50px; }
 
-.hipaa-page {
-  padding-top: 65px; }
+.terms-page__main-header {
+  margin: 30px 0;
+  text-align: left; }
   @media (min-width: 600px) {
-    .hipaa-page {
-      padding-top: 0; } }
-  .hipaa-page__wrapper {
-    margin: 60px 0 50px; }
-  .hipaa-page__main-header {
-    margin: 30px 0 30px;
-    text-align: left; }
-    @media (min-width: 600px) {
-      .hipaa-page__main-header {
-        margin: 80px 0 40px; } }
-  .hipaa-page__primary-heading {
-    color: #292a2e;
-    font: normal bold 30px/1.14 "MarkOTBold", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .hipaa-page__primary-heading {
-        font: normal bold 40px/1.14 "MarkOTBold", arial, sans-serif; } }
-  .hipaa-page__secondary-heading {
-    margin: 22px 0 17px;
-    color: #292a2e;
-    font: normal 22px/1.14 "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .hipaa-page__secondary-heading {
-        margin: 35px 0 28px;
-        font: normal 35px/1.14 "MarkOTMedium", arial, sans-serif; } }
-  .hipaa-page__last-update {
-    margin-top: 5px;
-    color: #bbbdbf;
-    font: normal 16px/1.14 "MarkOTBook", arial, sans-serif; }
-  .hipaa-page__paragraph {
-    font: normal 16px/1.5 "MarkOTBook", arial, sans-serif;
-    margin-bottom: 10px;
-    word-wrap: break-word; }
-    @media (min-width: 600px) {
-      .hipaa-page__paragraph {
-        font: normal 17px/1.5 "MarkOTBook", arial, sans-serif; } }
-  .hipaa-page__list {
-    margin-bottom: 10px;
-    word-wrap: break-word;
-    list-style-type: disc;
-    font: normal 16px/1.5 "MarkOTBook", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .hipaa-page__list {
-        font: normal 17px/1.5 "MarkOTBook", arial, sans-serif; } }
+    .terms-page__main-header {
+      margin: 80px 0 40px; } }
 
-.about-us-page {
-  padding-top: 65px; }
+.terms-page__primary-heading {
+  color: #292a2e;
+  font: normal bold 30px/1.14 "MarkOTBold", arial, sans-serif; }
   @media (min-width: 600px) {
-    .about-us-page {
-      padding-top: 0; } }
-  .about-us-page__content {
-    margin-top: 40px; }
-  .about-us-page__heading {
-    margin-bottom: 20px;
-    color: #00ccae;
-    font: normal bold 24px/1.25 "MarkOTBold", arial, sans-serif; }
-    @media (min-width: 800px) {
-      .about-us-page__heading {
-        float: left;
-        font: normal bold 36px "MarkOTBold", arial, sans-serif; } }
-  .about-us-page__right-section {
-    padding-bottom: 40px; }
-    @media (min-width: 800px) {
-      .about-us-page__right-section {
-        float: right;
-        width: 55.5%;
-        margin-right: 15px; } }
-  .about-us-page__text {
-    margin-bottom: 20px;
-    color: #797c80;
-    font: normal normal 18px/1.56 "Lato", arial, sans-serif; }
-    @media (min-width: 800px) {
-      .about-us-page__text {
-        font: normal normal 24px/1.5 "Lato", arial, sans-serif; } }
+    .terms-page__primary-heading {
+      font: normal bold 40px/1.14 "MarkOTBold", arial, sans-serif; } }
+
+.terms-page__secondary-heading {
+  margin: 22px 0 17px;
+  color: #292a2e;
+  font: normal 22px/1.14 "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .terms-page__secondary-heading {
+      margin: 35px 0 28px;
+      font: normal 35px/1.14 "MarkOTMedium", arial, sans-serif; } }
+
+.terms-page__tertiary-heading {
+  margin: 15px 0 5px;
+  color: #292a2e;
+  font: normal 18px/1.14 "MarkOTBook", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .terms-page__tertiary-heading {
+      font: normal 22px/1.14 "MarkOTBook", arial, sans-serif; } }
+
+.terms-page__last-update {
+  margin-top: 5px;
+  color: #bbbdbf;
+  letter-spacing: normal;
+  font: normal 16px/1.14 "MarkOTBook", arial, sans-serif; }
+
+.terms-page__paragraph {
+  font: normal 16px/1.5 "MarkOTBook", arial, sans-serif;
+  margin-bottom: 10px;
+  word-wrap: break-word; }
+  @media (min-width: 600px) {
+    .terms-page__paragraph {
+      font: normal 17px/1.5 "MarkOTBook", arial, sans-serif; } }
+
+.terms-page__list {
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  font: normal 16px/1.5 "MarkOTBook", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .terms-page__list {
+      font: normal 17px/1.5 "MarkOTBook", arial, sans-serif; } }
+  .terms-page__list--list-style--disc {
+    list-style-type: disc; }
+  .terms-page__list--list-style--decimal {
+    list-style-type: decimal; }
+
+@media (min-width: 600px) {
+  .privacy-page {
+    padding-top: 0; } }
+
+.privacy-page__wrapper {
+  margin: 60px 0 50px; }
+
+.privacy-page__main-header {
+  margin: 30px 0 30px;
+  text-align: left; }
+  @media (min-width: 600px) {
+    .privacy-page__main-header {
+      margin: 80px 0 40px; } }
+
+.privacy-page__primary-heading {
+  color: #292a2e;
+  font: normal bold 30px/1.14 "MarkOTBold", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .privacy-page__primary-heading {
+      font: normal bold 40px/1.14 "MarkOTBold", arial, sans-serif; } }
+
+.privacy-page__secondary-heading {
+  margin: 22px 0 17px;
+  color: #292a2e;
+  font: normal 22px/1.14 "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .privacy-page__secondary-heading {
+      margin: 35px 0 28px;
+      font: normal 35px/1.14 "MarkOTMedium", arial, sans-serif; } }
+
+.privacy-page__tertiary-heading {
+  margin: 15px 0 5px;
+  color: #292a2e;
+  font: normal 18px/1.14 "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .privacy-page__tertiary-heading {
+      font: normal 22px/1.14 "MarkOTMedium", arial, sans-serif; } }
+
+.privacy-page__last-update {
+  margin-top: 5px;
+  color: #bbbdbf;
+  font: normal 16px/1.14 "MarkOTBook", arial, sans-serif; }
+
+.privacy-page__paragraph {
+  font: normal 16px/1.5 "MarkOTBook", arial, sans-serif;
+  margin-bottom: 10px;
+  word-wrap: break-word; }
+  @media (min-width: 600px) {
+    .privacy-page__paragraph {
+      font: normal 17px/1.5 "MarkOTBook", arial, sans-serif; } }
+
+@media (min-width: 600px) {
+  .hipaa-page {
+    padding-top: 0; } }
+
+.hipaa-page__wrapper {
+  margin: 60px 0 50px; }
+
+.hipaa-page__main-header {
+  margin: 30px 0 30px;
+  text-align: left; }
+  @media (min-width: 600px) {
+    .hipaa-page__main-header {
+      margin: 80px 0 40px; } }
+
+.hipaa-page__primary-heading {
+  color: #292a2e;
+  font: normal bold 30px/1.14 "MarkOTBold", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .hipaa-page__primary-heading {
+      font: normal bold 40px/1.14 "MarkOTBold", arial, sans-serif; } }
+
+.hipaa-page__secondary-heading {
+  margin: 22px 0 17px;
+  color: #292a2e;
+  font: normal 22px/1.14 "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .hipaa-page__secondary-heading {
+      margin: 35px 0 28px;
+      font: normal 35px/1.14 "MarkOTMedium", arial, sans-serif; } }
+
+.hipaa-page__last-update {
+  margin-top: 5px;
+  color: #bbbdbf;
+  font: normal 16px/1.14 "MarkOTBook", arial, sans-serif; }
+
+.hipaa-page__paragraph {
+  font: normal 16px/1.5 "MarkOTBook", arial, sans-serif;
+  margin-bottom: 10px;
+  word-wrap: break-word; }
+  @media (min-width: 600px) {
+    .hipaa-page__paragraph {
+      font: normal 17px/1.5 "MarkOTBook", arial, sans-serif; } }
+
+.hipaa-page__list {
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  list-style-type: disc;
+  font: normal 16px/1.5 "MarkOTBook", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .hipaa-page__list {
+      font: normal 17px/1.5 "MarkOTBook", arial, sans-serif; } }
+
+@media (min-width: 600px) {
+  .about-us-page {
+    padding-top: 0; } }
+
+.about-us-page__content {
+  margin-top: 40px; }
   @media (min-width: 800px) {
-    .about-us-page__link {
-      font-size: 20px; } }
-  .about-us-page__image-banner {
-    height: 130px;
-    background: url("../../img/phil-team.jpg");
-    background-size: cover;
-    background-position: right center; }
-    @media (min-width: 600px) {
-      .about-us-page__image-banner {
-        height: 156px;
-        background-position: center;
-        background-image: url("../../img/phil-team-dt-tb.jpg"); } }
-    @media (min-width: 800px) {
-      .about-us-page__image-banner {
-        height: 208px; } }
-    @media (min-width: 992px) {
-      .about-us-page__image-banner {
-        height: 312px; } }
-    @media (min-width: 1440px) {
-      .about-us-page__image-banner {
-        height: 374px; } }
-  .about-us-page__text-banner {
-    display: block;
-    padding: 12px 0 16px;
-    color: #797c80;
-    background-color: #f4f9fe;
-    font: normal normal 18px/1.56 "Lato", arial, sans-serif; }
-    .about-us-page__text-banner:hover, .about-us-page__text-banner:focus {
-      text-decoration: none; }
-      .about-us-page__text-banner:hover span, .about-us-page__text-banner:focus span {
-        text-decoration: underline; }
-    @media (min-width: 800px) {
-      .about-us-page__text-banner {
-        padding: 20px 0;
-        font: normal normal 20px/1.4 "Lato", arial, sans-serif; } }
-  .about-us-page__fast-growing-section {
-    background-color: #f9f9f9; }
-  .about-us-page__list {
-    max-width: 595px;
-    margin: 30px auto 0; }
-    @media (min-width: 992px) {
-      .about-us-page__list {
-        margin: 46px 0 0; } }
-    .about-us-page__list li {
-      color: #292a2e;
-      margin-bottom: 30px;
-      font: normal 300 16px/1.5 "Lato", arial, sans-serif; }
-      @media (min-width: 800px) {
-        .about-us-page__list li {
-          margin-bottom: 40px;
-          font: normal 300 18px/1.67 "Lato", arial, sans-serif; } }
-      .about-us-page__list li:last-child {
-        margin-bottom: 0; }
-  .about-us-page__list-item-icon {
-    width: 50px;
-    margin-right: 20px; }
-    @media (min-width: 800px) {
-      .about-us-page__list-item-icon {
-        width: 70px;
-        margin-right: 30px; } }
-  .about-us-page__list-item-description {
-    width: calc(100% - 70px); }
-    @media (min-width: 800px) {
-      .about-us-page__list-item-description {
-        width: calc(100% - 100px); } }
-  .about-us-page__list-item-title {
-    display: inline-block;
-    font-family: "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 800px) {
-      .about-us-page__list-item-title {
-        font: normal 500 22px/1.36 "MarkOTMedium", arial, sans-serif; } }
-  .about-us-page__column-image-container {
-    height: 250px;
-    background: url("../../img/map-mb.jpg") no-repeat center;
-    background-size: cover; }
-    @media (min-width: 992px) {
-      .about-us-page__column-image-container {
-        height: 100%;
-        background-image: url("../../img/map-dt.jpg"); } }
-    @media (min-width: 1200px) {
-      .about-us-page__column-image-container {
-        background-position-x: right; } }
-  .about-us-page__people-values-section {
-    height: 100%;
-    background-color: #f9f9f9; }
-  @media (min-width: 1024px) {
-    .about-us-page__people-values-column {
-      max-width: 350px;
-      margin: 0 15px 0 auto; } }
-  .about-us-page__people-values-list {
-    max-width: 512px;
-    margin: 40px auto 0; }
-    @media (min-width: 992px) {
-      .about-us-page__people-values-list {
-        margin: 60px 0 0; } }
-  .about-us-page__column-text {
+    .about-us-page__content {
+      margin-top: 77px; } }
+
+.about-us-page__heading {
+  margin-bottom: 20px;
+  color: #00ccae;
+  font: normal bold 24px/1.25 "MarkOTBold", arial, sans-serif; }
+  @media (min-width: 800px) {
+    .about-us-page__heading {
+      float: left;
+      font: normal bold 36px "MarkOTBold", arial, sans-serif; } }
+
+.about-us-page__right-section {
+  padding-bottom: 40px; }
+  @media (min-width: 800px) {
+    .about-us-page__right-section {
+      float: right;
+      width: 55.5%;
+      margin-right: 15px; } }
+
+.about-us-page__text {
+  margin-bottom: 20px;
+  color: #797c80;
+  font: normal normal 18px/1.56 "Lato", arial, sans-serif; }
+  @media (min-width: 800px) {
+    .about-us-page__text {
+      font: normal normal 24px/1.5 "Lato", arial, sans-serif; } }
+
+@media (min-width: 800px) {
+  .about-us-page__link {
+    font-size: 20px; } }
+
+.about-us-page__image-banner {
+  height: 130px;
+  background: url("../../img/phil-team.jpg");
+  background-size: cover;
+  background-position: right center; }
+  @media (min-width: 600px) {
+    .about-us-page__image-banner {
+      height: 156px;
+      background-position: center;
+      background-image: url("../../img/phil-team-dt-tb.jpg"); } }
+  @media (min-width: 800px) {
+    .about-us-page__image-banner {
+      height: 208px; } }
+  @media (min-width: 992px) {
+    .about-us-page__image-banner {
+      height: 312px; } }
+  @media (min-width: 1440px) {
+    .about-us-page__image-banner {
+      height: 374px; } }
+
+.about-us-page__text-banner {
+  display: block;
+  padding: 12px 0 16px;
+  color: #797c80;
+  background-color: #f4f9fe;
+  font: normal normal 18px/1.56 "Lato", arial, sans-serif; }
+  .about-us-page__text-banner:hover, .about-us-page__text-banner:focus {
+    text-decoration: none; }
+    .about-us-page__text-banner:hover span, .about-us-page__text-banner:focus span {
+      text-decoration: underline; }
+  @media (min-width: 800px) {
+    .about-us-page__text-banner {
+      padding: 20px 0;
+      font: normal normal 20px/1.4 "Lato", arial, sans-serif; } }
+
+.about-us-page__fast-growing-section {
+  background-color: #f9f9f9; }
+
+.about-us-page__list {
+  max-width: 595px;
+  margin: 30px auto 0; }
+  @media (min-width: 992px) {
+    .about-us-page__list {
+      margin: 46px 0 0; } }
+  .about-us-page__list li {
     color: #292a2e;
-    max-width: 512px;
-    text-align: center;
-    margin: 30px auto 0;
+    margin-bottom: 30px;
     font: normal 300 16px/1.5 "Lato", arial, sans-serif; }
     @media (min-width: 800px) {
-      .about-us-page__column-text {
-        margin-top: 60px;
-        font: normal 300 18px/1.63 "Lato", arial, sans-serif; } }
-    @media (min-width: 992px) {
-      .about-us-page__column-text {
-        margin: 60px 0 0;
-        text-align: left;
-        max-width: 590px; } }
-  .about-us-page__image-list {
-    max-width: 458px;
-    margin: 30px auto 0; }
-    @media (min-width: 800px) {
-      .about-us-page__image-list {
-        margin-top: 40px; } }
-    .about-us-page__image-list li {
-      margin-bottom: 18px; }
-      @media (min-width: 600px) {
-        .about-us-page__image-list li {
-          margin-bottom: 50px; } }
-      .about-us-page__image-list li:last-child {
-        margin-bottom: 0; }
-        @media (min-width: 992px) {
-          .about-us-page__image-list li:last-child {
-            margin-bottom: 50px; } }
-  .about-us-page__image-list-item {
-    height: 84px;
-    width: 40.26%;
-    display: flex;
-    max-width: 122px;
-    align-items: center; }
-    @media (min-width: 600px) {
-      .about-us-page__image-list-item {
-        max-width: 169px; } }
-    .about-us-page__image-list-item img {
-      width: 100%; }
-
-.contact-page {
-  padding: 65px 0 0; }
-  @media (min-width: 600px) {
-    .contact-page {
-      padding-top: 0; } }
-  .contact-page__wrapper {
-    margin: 32px 0 25px; }
-    @media (min-width: 600px) {
-      .contact-page__wrapper {
-        margin: 40px 0; } }
-  .contact-page__image {
-    width: 200px;
-    height: 150px;
-    margin: 0 auto;
-    background: url("../../img/s-vis-a-vis-image.png") no-repeat;
-    background-position-x: center;
-    background-size: cover; }
-    @media (min-width: 600px) {
-      .contact-page__image {
-        width: 267px;
-        height: 200px; } }
-  .contact-page__section {
-    margin: 30px auto 0;
-    max-width: 452px; }
-    .contact-page__section:first-child {
-      margin-top: 34px;
-      padding-bottom: 30px;
-      border-bottom: 1px solid #d1d6dc; }
-    .contact-page__section:nth-child(2) {
-      padding-right: 25px; }
-      .contact-page__section:nth-child(2) .ContactPage__secondary-heading {
-        margin-bottom: 12px; }
-    .contact-page__section:last-child {
-      margin-top: 30px; }
-  .contact-page__secondary-heading {
-    color: #00009e;
-    margin: 0 auto 15px;
-    font: normal 22px/1.45 "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .contact-page__secondary-heading {
-        font: normal 24px/1.67 "MarkOTMedium", arial, sans-serif; } }
-  .contact-page__link {
-    font-size: 16px;
-    min-width: 140px;
-    line-height: 1.75;
-    display: inline-block; }
-    @media (min-width: 600px) {
-      .contact-page__link {
-        font-size: 18px;
-        min-width: 170px;
-        line-height: 1.33;
-        letter-spacing: 1px; } }
-  .contact-page__tertiary-heading {
-    color: #292a2e;
-    margin-bottom: 12px;
-    font: normal 500 18px/2 "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .contact-page__tertiary-heading {
-        font-size: 20px; } }
-  .contact-page__text {
-    margin-bottom: 20px;
-    color: #36373d;
-    font: normal normal 16px/1.63 "MarkOTBook", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .contact-page__text {
-        font-size: 18px;
-        line-height: 1.56; } }
-  .contact-page__button-link {
-    display: inline-block;
-    padding: 11px 12px;
-    min-width: 138px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font: normal 500 16px "MarkOTMedium", arial, sans-serif; }
-
-.career-page {
-  padding-top: 65px; }
-  @media (min-width: 600px) {
-    .career-page {
-      padding-top: 0; } }
-  .career-page__wrapper {
-    margin-bottom: 0px; }
-    @media (min-width: 800px) {
-      .career-page__wrapper {
-        margin-bottom: 90px;
-        min-height: 670px; } }
-  .career-page__left-section {
-    display: block; }
-    @media (min-width: 800px) {
-      .career-page__left-section {
-        width: 60%;
-        float: left; } }
-  .career-page__heading {
-    margin: 40px 0 30px;
-    color: #00ccae;
-    font: normal bold 28px/1.14 "MarkOTBold", arial, sans-serif; }
-    @media (min-width: 800px) {
-      .career-page__heading {
-        margin: 80px 0 50px;
-        font: normal bold 36px/1.14 "MarkOTBold", arial, sans-serif; } }
-  .career-page__list {
-    margin-top: 20px; }
-    .career-page__list li {
-      margin-top: 30px; }
-      .career-page__list li:first-child {
-        margin-top: 0; }
-  .career-page__secondary-heading {
-    margin: 30px 0;
-    font: normal 500 24px/1.14 "Lato", arial, sans-serif; }
-  .career-page__vacancy {
-    display: inline-block;
-    color: #00ccae;
-    font: normal 18px/1.5 "Lato", arial, sans-serif; }
-    .career-page__vacancy span {
-      display: block; }
-    .career-page__vacancy:focus, .career-page__vacancy:hover {
-      text-decoration: underline; }
-  .career-page__right-section {
-    display: none; }
-    @media (min-width: 800px) {
-      .career-page__right-section {
-        display: block;
-        float: right;
-        width: 40%;
-        height: 600px;
-        margin-top: 170px;
-        background: url("../../img/Jobs-Page-Illustration_dt@2x.jpg") no-repeat;
-        background-size: cover;
-        background-position-x: center; } }
-  .career-page__bottom-section {
-    height: 140px;
-    margin-top: 60px;
-    background: url("../../img/Jobs-Page-Illustration_m-tb@2x.jpg") no-repeat;
-    background-size: cover;
-    background-position: 50% 20%; }
-    @media (min-width: 800px) {
-      .career-page__bottom-section {
-        display: none; } }
-  .career-page__error-text {
-    color: #d0021b;
-    font: normal 500 18px/1.14 "Lato", arial, sans-serif; }
-    @media (min-width: 800px) {
-      .career-page__error-text {
-        font: normal 500 24px/1.14 "Lato", arial, sans-serif; } }
-  .career-page__no-roles {
-    color: #797c80;
-    font: normal 500 18px/1.14 "Lato", arial, sans-serif;
-    margin-bottom: 20px; }
-    @media (min-width: 800px) {
-      .career-page__no-roles {
+      .about-us-page__list li {
         margin-bottom: 40px;
-        font: normal 500 24px/1.14 "Lato", arial, sans-serif; } }
-  .career-page__link {
-    max-width: 270px;
-    font: normal 500 18px/1.56 "MarkOTBook", arial, sans-serif; }
-  .career-page__loader {
-    padding-top: 5px; }
-  .career-page__loader-section {
-    margin-bottom: 40px; }
-  .career-page__loader-sub-section {
-    margin-top: 30px; }
-  .career-page__loader-box {
-    content: "";
-    height: 20px;
-    max-width: 248px;
-    background: -webkit-linear-gradient(270deg, #eee 5%, #ddd 25%, #eee 50%);
-    background: linear-gradient(270deg, #eee 5%, #ddd 25%, #eee 50%);
-    -webkit-animation: animate-block 1s linear infinite forwards;
-    animation: animate-block 1s linear infinite forwards; }
+        font: normal 300 18px/1.67 "Lato", arial, sans-serif; } }
+    .about-us-page__list li:last-child {
+      margin-bottom: 0; }
+
+.about-us-page__list-item-icon {
+  width: 50px;
+  margin-right: 20px; }
+  @media (min-width: 800px) {
+    .about-us-page__list-item-icon {
+      width: 70px;
+      margin-right: 30px; } }
+
+.about-us-page__list-item-description {
+  width: calc(100% - 70px); }
+  @media (min-width: 800px) {
+    .about-us-page__list-item-description {
+      width: calc(100% - 100px); } }
+
+.about-us-page__list-item-title {
+  display: inline-block;
+  font-family: "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 800px) {
+    .about-us-page__list-item-title {
+      font: normal 500 22px/1.36 "MarkOTMedium", arial, sans-serif; } }
+
+.about-us-page__column-image-container {
+  height: 250px;
+  background: url("../../img/map-mb.jpg") no-repeat center;
+  background-size: cover; }
+  @media (min-width: 992px) {
+    .about-us-page__column-image-container {
+      height: 100%;
+      background-image: url("../../img/map-dt.jpg"); } }
+  @media (min-width: 1200px) {
+    .about-us-page__column-image-container {
+      background-position-x: right; } }
+
+.about-us-page__people-values-section {
+  height: 100%;
+  background-color: #f9f9f9; }
+
+@media (min-width: 1024px) {
+  .about-us-page__people-values-column {
+    max-width: 350px;
+    margin: 0 15px 0 auto; } }
+
+.about-us-page__people-values-list {
+  max-width: 512px;
+  margin: 40px auto 0; }
+  @media (min-width: 992px) {
+    .about-us-page__people-values-list {
+      margin: 60px 0 0; } }
+
+.about-us-page__column-text {
+  color: #292a2e;
+  max-width: 512px;
+  text-align: center;
+  margin: 30px auto 0;
+  font: normal 300 16px/1.5 "Lato", arial, sans-serif; }
+  @media (min-width: 800px) {
+    .about-us-page__column-text {
+      margin-top: 60px;
+      font: normal 300 18px/1.63 "Lato", arial, sans-serif; } }
+  @media (min-width: 992px) {
+    .about-us-page__column-text {
+      margin: 60px 0 0;
+      text-align: left;
+      max-width: 590px; } }
+
+.about-us-page__image-list {
+  max-width: 458px;
+  margin: 30px auto 0; }
+  @media (min-width: 800px) {
+    .about-us-page__image-list {
+      margin-top: 40px; } }
+  .about-us-page__image-list li {
+    margin-bottom: 18px; }
     @media (min-width: 600px) {
-      .career-page__loader-box {
-        max-width: 338px;
-        -webkit-animation-name: animate-block-lg;
-        animation-name: animate-block-lg; } }
-    .career-page__loader-box--small {
-      width: 100%;
-      margin-top: 10px;
-      -webkit-clip-path: inset(0 40% 0 0);
-      clip-path: inset(0 40% 0 0); }
+      .about-us-page__image-list li {
+        margin-bottom: 50px; } }
+    .about-us-page__image-list li:last-child {
+      margin-bottom: 0; }
+      @media (min-width: 992px) {
+        .about-us-page__image-list li:last-child {
+          margin-bottom: 50px; } }
+
+.about-us-page__image-list-item {
+  height: 84px;
+  width: 40.26%;
+  display: flex;
+  max-width: 122px;
+  align-items: center; }
+  @media (min-width: 600px) {
+    .about-us-page__image-list-item {
+      max-width: 169px; } }
+  .about-us-page__image-list-item img {
+    width: 100%; }
+
+@media (min-width: 600px) {
+  .contact-page {
+    padding-top: 0; } }
+
+.contact-page__wrapper {
+  margin: 32px 0 25px; }
+  @media (min-width: 600px) {
+    .contact-page__wrapper {
+      margin: 40px 0; } }
+
+.contact-page__image {
+  width: 200px;
+  height: 150px;
+  margin: 0 auto;
+  background: url("../../img/s-vis-a-vis-image.png") no-repeat;
+  background-position-x: center;
+  background-size: cover; }
+  @media (min-width: 600px) {
+    .contact-page__image {
+      width: 267px;
+      height: 200px; } }
+
+.contact-page__section {
+  margin: 30px auto 0;
+  max-width: 452px; }
+  .contact-page__section:first-child {
+    margin-top: 34px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d1d6dc; }
+  .contact-page__section:nth-child(2) {
+    padding-right: 25px; }
+    .contact-page__section:nth-child(2) .ContactPage__secondary-heading {
+      margin-bottom: 12px; }
+  .contact-page__section:last-child {
+    margin-top: 30px; }
+
+.contact-page__secondary-heading {
+  color: #00009e;
+  margin: 0 auto 15px;
+  font: normal 22px/1.45 "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .contact-page__secondary-heading {
+      font: normal 24px/1.67 "MarkOTMedium", arial, sans-serif; } }
+
+.contact-page__link {
+  font-size: 16px;
+  min-width: 140px;
+  line-height: 1.75;
+  display: inline-block; }
+  @media (min-width: 600px) {
+    .contact-page__link {
+      font-size: 18px;
+      min-width: 170px;
+      line-height: 1.33;
+      letter-spacing: 1px; } }
+
+.contact-page__tertiary-heading {
+  color: #292a2e;
+  margin-bottom: 12px;
+  font: normal 500 18px/2 "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .contact-page__tertiary-heading {
+      font-size: 20px; } }
+
+.contact-page__text {
+  margin-bottom: 20px;
+  color: #36373d;
+  font: normal normal 16px/1.63 "MarkOTBook", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .contact-page__text {
+      font-size: 18px;
+      line-height: 1.56; } }
+
+.contact-page__button-link {
+  display: inline-block;
+  padding: 11px 12px;
+  min-width: 138px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font: normal 500 16px "MarkOTMedium", arial, sans-serif; }
+
+@media (min-width: 600px) {
+  .career-page {
+    padding-top: 0; } }
+
+.career-page__wrapper {
+  margin-bottom: 0px; }
+  @media (min-width: 800px) {
+    .career-page__wrapper {
+      margin-bottom: 90px;
+      min-height: 670px; } }
+
+.career-page__left-section {
+  display: block; }
+  @media (min-width: 800px) {
+    .career-page__left-section {
+      width: 60%;
+      float: left; } }
+
+.career-page__heading {
+  margin: 40px 0 30px;
+  color: #00ccae;
+  font: normal bold 28px/1.14 "MarkOTBold", arial, sans-serif; }
+  @media (min-width: 800px) {
+    .career-page__heading {
+      margin: 77px 0 50px;
+      font: normal bold 36px/1.14 "MarkOTBold", arial, sans-serif; } }
+
+.career-page__list {
+  margin-top: 20px; }
+  .career-page__list li {
+    margin-top: 30px; }
+    .career-page__list li:first-child {
+      margin-top: 0; }
+
+.career-page__secondary-heading {
+  margin: 30px 0;
+  font: normal 500 24px/1.14 "Lato", arial, sans-serif; }
+
+.career-page__vacancy {
+  display: inline-block;
+  color: #00ccae;
+  font: normal 18px/1.5 "Lato", arial, sans-serif; }
+  .career-page__vacancy span {
+    display: block; }
+  .career-page__vacancy:focus, .career-page__vacancy:hover {
+    text-decoration: underline; }
+
+.career-page__right-section {
+  display: none; }
+  @media (min-width: 800px) {
+    .career-page__right-section {
+      display: block;
+      float: right;
+      width: 40%;
+      height: 600px;
+      margin-top: 170px;
+      background: url("../../img/Jobs-Page-Illustration_dt@2x.jpg") no-repeat;
+      background-size: cover;
+      background-position-x: center; } }
+
+.career-page__bottom-section {
+  height: 140px;
+  margin-top: 60px;
+  background: url("../../img/Jobs-Page-Illustration_m-tb@2x.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 20%; }
+  @media (min-width: 800px) {
+    .career-page__bottom-section {
+      display: none; } }
+
+.career-page__error-text {
+  color: #d0021b;
+  font: normal 500 18px/1.14 "Lato", arial, sans-serif; }
+  @media (min-width: 800px) {
+    .career-page__error-text {
+      font: normal 500 24px/1.14 "Lato", arial, sans-serif; } }
+
+.career-page__no-roles {
+  color: #797c80;
+  font: normal 500 18px/1.14 "Lato", arial, sans-serif;
+  margin-bottom: 20px; }
+  @media (min-width: 800px) {
+    .career-page__no-roles {
+      margin-bottom: 40px;
+      font: normal 500 24px/1.14 "Lato", arial, sans-serif; } }
+
+.career-page__link {
+  max-width: 270px;
+  font: normal 500 18px/1.56 "MarkOTBook", arial, sans-serif; }
+
+.career-page__loader {
+  padding-top: 5px; }
+
+.career-page__loader-section {
+  margin-bottom: 40px; }
+
+.career-page__loader-sub-section {
+  margin-top: 30px; }
+
+.career-page__loader-box {
+  content: "";
+  height: 20px;
+  max-width: 248px;
+  background: -webkit-linear-gradient(270deg, #eee 5%, #ddd 25%, #eee 50%);
+  background: linear-gradient(270deg, #eee 5%, #ddd 25%, #eee 50%);
+  -webkit-animation: animate-block 1s linear infinite forwards;
+  animation: animate-block 1s linear infinite forwards; }
+  @media (min-width: 600px) {
+    .career-page__loader-box {
+      max-width: 338px;
+      -webkit-animation-name: animate-block-lg;
+      animation-name: animate-block-lg; } }
+  .career-page__loader-box--small {
+    width: 100%;
+    margin-top: 10px;
+    -webkit-clip-path: inset(0 40% 0 0);
+    clip-path: inset(0 40% 0 0); }
 
 @-moz-keyframes animate-block {
   0% {
@@ -2344,26 +2450,38 @@ img {
     background-position: calc(100% - 7px) bottom; }
     @media (min-width: 600px) {
       .manufacturers-page__banner-wrapper::before {
-        width: 50%;
-        left: auto;
-        height: 482px;
-        background-image: url("../../img/icons/mfn-banner-desktop.png");
-        background-position-x: 0;
-        background-size: auto 475px; } }
+        width: 100%;
+        left: 0;
+        height: 325px;
+        background-position-x: left;
+        background-size: auto 325px; } }
     @media (min-width: 800px) {
       .manufacturers-page__banner-wrapper::before {
+        width: 50%;
+        left: auto;
         background-size: auto;
-        height: 582px;
-        background-size: auto 582px; } }
+        height: 345px;
+        background-position-x: right;
+        background-size: auto 345px;
+        background-image: url("../../img/icons/mfn-banner-desktop.png"); } }
+    @media (min-width: 1200px) {
+      .manufacturers-page__banner-wrapper::before {
+        width: 50%;
+        left: auto;
+        background-size: auto;
+        height: 100%;
+        background-position-x: right;
+        background-size: auto 550px;
+        background-image: url("../../img/icons/mfn-banner-desktop.png"); } }
 
 .manufacturers-page__header {
   background-color: transparent;
   position: static; }
-  .manufacturers-page__header.Header--fixed-top {
+  .manufacturers-page__header.header--fixed-top {
     background-color: #fff;
     position: fixed; }
     @media (min-width: 600px) {
-      .manufacturers-page__header.Header--fixed-top {
+      .manufacturers-page__header.header--fixed-top {
         position: static;
         background-color: transparent; } }
 
@@ -2372,26 +2490,37 @@ img {
   padding: 23px 0 0; }
   @media (min-width: 600px) {
     .manufacturers-page__banner {
-      height: 340px; } }
+      height: 590px;
+      padding-top: 32px; } }
   @media (min-width: 800px) {
     .manufacturers-page__banner {
-      height: 454px; } }
+      height: 454px;
+      padding-top: 77px;
+      height: 570px; } }
 
 .manufacturers-page__banner-heading {
   max-width: 303px;
   margin-bottom: 20px;
   color: #00ccae;
   font: normal bold 30px "MarkOTBold", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .manufacturers-page__banner-heading {
+      font: normal bold 26px "MarkOTBold", arial, sans-serif;
+      max-width: 415px;
+      margin-bottom: 32px; } }
   @media (min-width: 800px) {
     .manufacturers-page__banner-heading {
-      font-size: 40px;
-      max-width: 440px;
-      margin-bottom: 60px; } }
+      font-size: 42px;
+      margin-bottom: 60px;
+      line-height: 64px; } }
 
 .manufacturers-page__banner-text {
   max-width: 303px;
   color: #797c80;
   font: normal normal 16px/1.5 "Lato", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .manufacturers-page__banner-text {
+      max-width: 415px; } }
   @media (min-width: 800px) {
     .manufacturers-page__banner-text {
       max-width: 370px;
@@ -2689,449 +2818,498 @@ img {
   margin-top: 30px;
   font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
 
-.patient-contact-page {
-  padding-top: 65px; }
-  @media (min-width: 600px) {
-    .patient-contact-page {
-      padding-top: 0; } }
-  .patient-contact-page__content {
-    max-width: 500px;
-    padding: 40px 0 60px; }
-    @media (min-width: 800px) {
-      .patient-contact-page__content {
-        padding: 40px 0 90px; } }
-  .patient-contact-page__heading {
-    margin-bottom: 20px;
-    color: #00ccae;
-    font: normal 500 24px/1.33 "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .patient-contact-page__heading {
-        font-size: 36px;
-        margin-bottom: 40px; } }
-  .patient-contact-page__text {
-    color: #797c80;
-    font: normal normal 18px/1.56 "Lato", arial, sans-serif; }
-  .patient-contact-page__form {
-    margin-top: 30px; }
-    @media (min-width: 600px) {
-      .patient-contact-page__form {
-        margin-top: 40px; } }
-  .patient-contact-page__button {
-    margin-top: 10px;
-    min-width: 128px;
-    padding: 9px 0 10px;
-    letter-spacing: 1px;
-    font: normal 500 18px "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .patient-contact-page__button {
-        margin-top: 30px; } }
-  .patient-contact-page__confirmation-message {
-    margin-top: 30px;
-    color: #4a90e2; }
-    @media (min-width: 600px) {
-      .patient-contact-page__confirmation-message {
-        margin-top: 60px; } }
-    @media (min-width: 800px) {
-      .patient-contact-page__confirmation-message {
-        width: 550px; } }
-  .patient-contact-page__form-text {
-    color: #292a2e;
-    margin-bottom: 30px;
-    font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .patient-contact-page__form-text {
-        max-width: 500px;
-        margin: 30px 0;
-        font: normal 300 22px/1.36 "Lato", arial, sans-serif; } }
-    @media (min-width: 992px) {
-      .patient-contact-page__form-text {
-        max-width: none; } }
-  .patient-contact-page__error-text {
-    margin-top: 30px;
-    font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
+@media (min-width: 600px) {
+  .patient-contact-page {
+    padding-top: 0; } }
 
-.pharmacy-page {
-  padding-top: 65px; }
+.patient-contact-page__content {
+  max-width: 500px;
+  padding: 40px 0 60px; }
+  @media (min-width: 800px) {
+    .patient-contact-page__content {
+      padding: 77px 0 90px; } }
+
+.patient-contact-page__heading {
+  margin-bottom: 20px;
+  color: #00ccae;
+  font: normal 500 24px/1.33 "MarkOTMedium", arial, sans-serif; }
   @media (min-width: 600px) {
-    .pharmacy-page {
-      padding-top: 0; } }
-  .pharmacy-page__banner {
-    background: url("../img/pharmacist-photo-m.jpg") no-repeat center center;
-    background-size: cover; }
-    @media (min-width: 600px) {
-      .pharmacy-page__banner {
-        height: 318px;
-        background-image: url("../img/pharmacist-photo.jpg"); } }
-    @media (min-width: 992px) {
-      .pharmacy-page__banner {
-        height: 400px;
-        padding-top: 24px; } }
-    .pharmacy-page__banner .container {
-      position: relative; }
-  .pharmacy-page__banner-sub-text {
-    display: none; }
-    @media (min-width: 992px) {
-      .pharmacy-page__banner-sub-text {
-        display: block;
-        color: #fff;
-        position: absolute;
-        right: 36px;
-        top: 6px;
-        text-align: right;
-        font: normal bold 14px/1.29 "MarkOTBold", arial, sans-serif; } }
-  .pharmacy-page__banner-text-block {
-    color: #fff;
-    max-width: 256px;
-    padding: 20px 32px;
-    transform: translateY(140px);
-    font: normal bold 18px "MarkOTBold", arial, sans-serif;
-    background-color: #00ccae; }
-    @media (min-width: 360px) {
-      .pharmacy-page__banner-text-block {
-        padding: 20px 36px; } }
-    @media (min-width: 600px) {
-      .pharmacy-page__banner-text-block {
-        font-size: 30px;
-        max-width: 410px;
-        padding: 40px 94px;
-        padding: 31px 16px;
-        transform: translateY(222px); } }
-    @media (min-width: 992px) {
-      .pharmacy-page__banner-text-block {
-        margin: 0;
-        width: 344px;
-        height: 344px;
-        transform: none;
-        text-align: left;
-        padding: 96px 57px;
-        border-radius: 50% 50% 0 50%; } }
-  .pharmacy-page__top-content {
-    padding-top: 45px; }
-    @media (min-width: 600px) {
-      .pharmacy-page__top-content {
-        padding-top: 82px; } }
-    @media (min-width: 992px) {
-      .pharmacy-page__top-content {
-        padding-top: 0;
-        background: linear-gradient(90deg, #fff 60%, #f4f9fe 40%); } }
-  .pharmacy-page__top-content-heading {
-    max-width: 226px;
-    margin: 0 auto 30px;
-    font: normal bold 28px "MarkOTBold", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__top-content-heading {
-        max-width: 409px;
-        font-size: 36px;
-        margin-bottom: 73px; } }
-    @media (min-width: 992px) {
-      .pharmacy-page__top-content-heading {
-        max-width: none;
-        margin: 0 0 51px; } }
-  .pharmacy-page__list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px; }
-    @media (min-width: 600px) {
-      .pharmacy-page__list li {
-        margin-bottom: 65px; } }
-    .pharmacy-page__list li:last-child {
-      margin-bottom: 0; }
-  .pharmacy-page__list-item-icon {
-    width: 50px;
-    margin-right: 18px; }
-    @media (min-width: 600px) {
-      .pharmacy-page__list-item-icon {
-        width: 72px;
-        margin-right: 30px; } }
-  .pharmacy-page__list-item-description {
-    color: #292a2e;
-    width: calc(100% - 68px); }
-    @media (min-width: 600px) {
-      .pharmacy-page__list-item-description {
-        width: calc(100% - 102px); } }
-  .pharmacy-page__list-item-title {
-    display: inline-block;
-    font: normal 500 16px/1.57 "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__list-item-title {
-        font-size: 22px;
-        line-height: 1.67; } }
-  .pharmacy-page__list-item-text {
-    font: normal 300 14px/1.57 "Lato", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__list-item-text {
-        font-size: 18px;
-        line-height: 1.67; } }
-  .pharmacy-page__success-column {
-    text-align: center;
-    background-color: #f4f9fe; }
-    @media (min-width: 992px) {
-      .pharmacy-page__success-column {
-        text-align: left; } }
-  .pharmacy-page__success-column-text {
-    max-width: 358px;
-    margin: 0 auto 9px;
-    color: #00ccae;
-    font: normal 500 16px/1.75 "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__success-column-text {
-        margin-bottom: 41px;
-        font-size: 22px;
-        line-height: 1.36; } }
-    @media (min-width: 992px) {
-      .pharmacy-page__success-column-text {
-        max-width: 308px;
-        margin: 0 0 50px; } }
-  .pharmacy-page__success-column-image {
-    width: 190px;
-    margin: 0 auto; }
-    @media (min-width: 600px) {
-      .pharmacy-page__success-column-image {
-        width: 250px; } }
-    @media (min-width: 992px) {
-      .pharmacy-page__success-column-image {
-        margin: 0;
-        width: 263px; } }
-  .pharmacy-page__work-section {
-    padding: 40px 0 60px;
-    background-color: #fed65a; }
-  .pharmacy-page__work-section-heading {
-    margin-bottom: 50px;
-    font-family: "MarkOTBold", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__work-section-heading {
-        font-size: 42px;
-        margin-bottom: 40px; } }
-    @media (min-width: 992px) {
-      .pharmacy-page__work-section-heading {
-        margin-bottom: 60px; } }
-  .pharmacy-page__work-col-title {
-    font: normal normal 22px/1.36 "MarkOTBook", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__work-col-title {
-        font-size: 28px;
-        line-height: 1.29; } }
-    @media (min-width: 992px) {
-      .pharmacy-page__work-col-title {
-        max-width: 224px; }
-        .pharmacy-page__work-col-title::after {
-          content: "";
-          height: 1px;
-          width: 100%;
-          margin: 30px 0;
-          display: block;
-          background-color: #fff; } }
-  .pharmacy-page__work-col-text {
-    line-height: 1.5; }
-    @media (min-width: 992px) {
-      .pharmacy-page__work-col-text {
-        max-width: 224px; } }
+    .patient-contact-page__heading {
+      font-size: 36px;
+      margin-bottom: 40px; } }
+
+.patient-contact-page__text {
+  color: #797c80;
+  font: normal normal 18px/1.56 "Lato", arial, sans-serif; }
+
+.patient-contact-page__form {
+  margin-top: 30px; }
+  @media (min-width: 600px) {
+    .patient-contact-page__form {
+      margin-top: 40px; } }
+
+.patient-contact-page__button {
+  margin-top: 10px;
+  min-width: 128px;
+  padding: 9px 0 10px;
+  letter-spacing: 1px;
+  font: normal 500 18px "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .patient-contact-page__button {
+      margin-top: 30px; } }
+
+.patient-contact-page__confirmation-message {
+  margin-top: 30px;
+  color: #4a90e2; }
+  @media (min-width: 600px) {
+    .patient-contact-page__confirmation-message {
+      margin-top: 60px; } }
+  @media (min-width: 800px) {
+    .patient-contact-page__confirmation-message {
+      width: 550px; } }
+
+.patient-contact-page__form-text {
+  color: #292a2e;
+  margin-bottom: 30px;
+  font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .patient-contact-page__form-text {
+      max-width: 500px;
+      margin: 30px 0;
+      font: normal 300 22px/1.36 "Lato", arial, sans-serif; } }
   @media (min-width: 992px) {
-    .pharmacy-page__bottom-content {
-      background: linear-gradient(90deg, #f4f9fe 60%, #fff 40%); } }
-  .pharmacy-page__bottom-content-heading {
-    font: normal bold 28px/1.29 "MarkOTBold", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__bottom-content-heading {
-        line-height: 1;
-        font-size: 36px; } }
-  .pharmacy-page__testimonials-section {
-    background-color: #f4f9fe; }
-    @media (min-width: 992px) {
-      .pharmacy-page__testimonials-section {
-        background-color: transparent; } }
-  .pharmacy-page__testimonials-section-container {
-    max-width: 500px;
-    margin: 0 auto; }
-    @media (min-width: 992px) {
-      .pharmacy-page__testimonials-section-container {
-        margin-right: 12px; } }
-    @media (min-width: 1200px) {
-      .pharmacy-page__testimonials-section-container {
-        margin-right: 105px; } }
-  .pharmacy-page__testimonial-container {
-    margin-top: 40px; }
-    @media (min-width: 600px) {
-      .pharmacy-page__testimonial-container {
-        margin-top: 60px; } }
-  .pharmacy-page__nametag-container {
-    display: flex;
-    margin-bottom: 22px;
-    justify-content: space-between; }
-    @media (min-width: 600px) {
-      .pharmacy-page__nametag-container {
-        margin-bottom: 40px; } }
-    .pharmacy-page__nametag-container::after {
-      display: none; }
-  .pharmacy-page__nametag {
-    opacity: 0.2;
-    min-width: 70px;
-    cursor: pointer;
-    text-align: center;
+    .patient-contact-page__form-text {
+      max-width: none; } }
+
+.patient-contact-page__error-text {
+  margin-top: 30px;
+  font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
+
+@media (min-width: 600px) {
+  .pharmacy-page {
+    padding-top: 0; } }
+
+.pharmacy-page__banner {
+  background: url("../img/pharmacist-photo-m.jpg") no-repeat center center;
+  background-size: cover; }
+  @media (min-width: 600px) {
+    .pharmacy-page__banner {
+      height: 318px;
+      background-image: url("../img/pharmacist-photo.jpg"); } }
+  @media (min-width: 992px) {
+    .pharmacy-page__banner {
+      height: 400px;
+      padding-top: 24px; } }
+  .pharmacy-page__banner .container {
     position: relative; }
-    .pharmacy-page__nametag:first-child {
-      margin-left: 0; }
-    .pharmacy-page__nametag--active {
-      opacity: 1; }
-      .pharmacy-page__nametag--active .PharmacyPage__nametag-caret {
-        display: inline-block; }
-  .pharmacy-page__empty-div {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0; }
-  .pharmacy-page__nametag-initial {
-    width: 46px;
-    height: 46px;
-    padding: 12px;
-    display: flex;
-    color: #f9f9f9;
-    border-radius: 50%;
-    text-align: center;
-    margin: 0 auto 16px;
-    align-items: center;
-    justify-content: center;
-    background-color: #00ccae;
-    font: normal bold 22px/1 "MarkOTBold", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__nametag-initial {
-        width: 66px;
-        height: 66px;
-        font-size: 36px; } }
-  .pharmacy-page__nametag-text {
-    color: #000072;
-    font: normal bold 16px "Lato", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__nametag-text {
-        font-size: 22px; } }
-    .pharmacy-page__nametag-text--light {
-      color: #797c80;
-      font: normal normal 14px/1.57 "Lato", arial, sans-serif; }
-      @media (min-width: 600px) {
-        .pharmacy-page__nametag-text--light {
-          font-size: 18px;
-          line-height: 1.67; } }
-  .pharmacy-page__nametag-caret {
-    top: auto;
-    right: auto;
-    content: "";
-    z-index: 10;
-    width: 18px;
-    height: 18px;
-    bottom: -32px;
-    display: none;
-    position: absolute;
-    border-style: solid;
-    left: calc(50% - 9px);
-    background: #f4f9fe;
-    border-width: 2px 0 0 2px;
-    border-color: #00ccae;
-    -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg); }
-    @media (min-width: 600px) {
-      .pharmacy-page__nametag-caret {
-        bottom: -49px; } }
-  .pharmacy-page__testimonial {
-    cursor: pointer;
-    border-radius: 4px;
-    padding: 20px 12px;
-    border: 2px solid #00ccae;
+
+.pharmacy-page__banner-sub-text {
+  display: none; }
+  @media (min-width: 992px) {
+    .pharmacy-page__banner-sub-text {
+      display: block;
+      color: #fff;
+      position: absolute;
+      right: 36px;
+      top: 6px;
+      text-align: right;
+      font: normal bold 14px/1.29 "MarkOTBold", arial, sans-serif; } }
+
+.pharmacy-page__banner-text-block {
+  color: #fff;
+  max-width: 256px;
+  padding: 20px 32px;
+  transform: translateY(140px);
+  font: normal bold 18px "MarkOTBold", arial, sans-serif;
+  background-color: #00ccae; }
+  @media (min-width: 360px) {
+    .pharmacy-page__banner-text-block {
+      padding: 20px 36px; } }
+  @media (min-width: 600px) {
+    .pharmacy-page__banner-text-block {
+      font-size: 30px;
+      max-width: 410px;
+      padding: 40px 94px;
+      padding: 31px 16px;
+      transform: translateY(222px); } }
+  @media (min-width: 992px) {
+    .pharmacy-page__banner-text-block {
+      margin: 0;
+      width: 344px;
+      height: 344px;
+      transform: none;
+      text-align: left;
+      padding: 96px 57px;
+      border-radius: 50% 50% 0 50%; } }
+
+.pharmacy-page__top-content {
+  padding-top: 45px; }
+  @media (min-width: 600px) {
+    .pharmacy-page__top-content {
+      padding-top: 82px; } }
+  @media (min-width: 992px) {
+    .pharmacy-page__top-content {
+      padding-top: 0;
+      background: linear-gradient(90deg, #fff 60%, #f4f9fe 40%); } }
+
+.pharmacy-page__top-content-heading {
+  max-width: 226px;
+  margin: 0 auto 30px;
+  font: normal bold 28px "MarkOTBold", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__top-content-heading {
+      max-width: 409px;
+      font-size: 36px;
+      margin-bottom: 73px; } }
+  @media (min-width: 992px) {
+    .pharmacy-page__top-content-heading {
+      max-width: none;
+      margin: 0 0 51px; } }
+
+.pharmacy-page__list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px; }
+  @media (min-width: 600px) {
+    .pharmacy-page__list li {
+      margin-bottom: 65px; } }
+  .pharmacy-page__list li:last-child {
+    margin-bottom: 0; }
+
+.pharmacy-page__list-item-icon {
+  width: 50px;
+  margin-right: 18px; }
+  @media (min-width: 600px) {
+    .pharmacy-page__list-item-icon {
+      width: 72px;
+      margin-right: 30px; } }
+
+.pharmacy-page__list-item-description {
+  color: #292a2e;
+  width: calc(100% - 68px); }
+  @media (min-width: 600px) {
+    .pharmacy-page__list-item-description {
+      width: calc(100% - 102px); } }
+
+.pharmacy-page__list-item-title {
+  display: inline-block;
+  font: normal 500 16px/1.57 "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__list-item-title {
+      font-size: 22px;
+      line-height: 1.67; } }
+
+.pharmacy-page__list-item-text {
+  font: normal 300 14px/1.57 "Lato", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__list-item-text {
+      font-size: 18px;
+      line-height: 1.67; } }
+
+.pharmacy-page__success-column {
+  text-align: center;
+  background-color: #f4f9fe; }
+  @media (min-width: 992px) {
+    .pharmacy-page__success-column {
+      text-align: left; } }
+
+.pharmacy-page__success-column-text {
+  max-width: 358px;
+  margin: 0 auto 9px;
+  color: #00ccae;
+  font: normal 500 16px/1.75 "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__success-column-text {
+      margin-bottom: 41px;
+      font-size: 22px;
+      line-height: 1.36; } }
+  @media (min-width: 992px) {
+    .pharmacy-page__success-column-text {
+      max-width: 308px;
+      margin: 0 0 50px; } }
+
+.pharmacy-page__success-column-image {
+  width: 190px;
+  margin: 0 auto; }
+  @media (min-width: 600px) {
+    .pharmacy-page__success-column-image {
+      width: 250px; } }
+  @media (min-width: 992px) {
+    .pharmacy-page__success-column-image {
+      margin: 0;
+      width: 263px; } }
+
+.pharmacy-page__work-section {
+  padding: 40px 0 60px;
+  background-color: #fed65a; }
+
+.pharmacy-page__work-section-heading {
+  margin-bottom: 50px;
+  font-family: "MarkOTBold", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__work-section-heading {
+      font-size: 42px;
+      margin-bottom: 40px; } }
+  @media (min-width: 992px) {
+    .pharmacy-page__work-section-heading {
+      margin-bottom: 60px; } }
+
+.pharmacy-page__work-col-title {
+  font: normal normal 22px/1.36 "MarkOTBook", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__work-col-title {
+      font-size: 28px;
+      line-height: 1.29; } }
+  @media (min-width: 992px) {
+    .pharmacy-page__work-col-title {
+      max-width: 224px; }
+      .pharmacy-page__work-col-title::after {
+        content: "";
+        height: 1px;
+        width: 100%;
+        margin: 30px 0;
+        display: block;
+        background-color: #fff; } }
+
+.pharmacy-page__work-col-text {
+  line-height: 1.5; }
+  @media (min-width: 992px) {
+    .pharmacy-page__work-col-text {
+      max-width: 224px; } }
+
+@media (min-width: 992px) {
+  .pharmacy-page__bottom-content {
+    background: linear-gradient(90deg, #f4f9fe 60%, #fff 40%); } }
+
+.pharmacy-page__bottom-content-heading {
+  font: normal bold 28px/1.29 "MarkOTBold", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__bottom-content-heading {
+      line-height: 1;
+      font-size: 36px; } }
+
+.pharmacy-page__testimonials-section {
+  background-color: #f4f9fe; }
+  @media (min-width: 992px) {
+    .pharmacy-page__testimonials-section {
+      background-color: transparent; } }
+
+.pharmacy-page__testimonials-section-container {
+  max-width: 500px;
+  margin: 0 auto; }
+  @media (min-width: 992px) {
+    .pharmacy-page__testimonials-section-container {
+      margin-right: 12px; } }
+  @media (min-width: 1200px) {
+    .pharmacy-page__testimonials-section-container {
+      margin-right: 105px; } }
+
+.pharmacy-page__testimonial-container {
+  margin-top: 40px; }
+  @media (min-width: 600px) {
+    .pharmacy-page__testimonial-container {
+      margin-top: 60px; } }
+
+.pharmacy-page__nametag-container {
+  display: flex;
+  margin-bottom: 22px;
+  justify-content: space-between; }
+  @media (min-width: 600px) {
+    .pharmacy-page__nametag-container {
+      margin-bottom: 40px; } }
+  .pharmacy-page__nametag-container::after {
+    display: none; }
+
+.pharmacy-page__nametag {
+  opacity: 0.2;
+  min-width: 70px;
+  cursor: pointer;
+  text-align: center;
+  position: relative; }
+  .pharmacy-page__nametag:first-child {
+    margin-left: 0; }
+  .pharmacy-page__nametag--active {
+    opacity: 1; }
+    .pharmacy-page__nametag--active .PharmacyPage__nametag-caret {
+      display: inline-block; }
+
+.pharmacy-page__empty-div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0; }
+
+.pharmacy-page__nametag-initial {
+  width: 46px;
+  height: 46px;
+  padding: 12px;
+  display: flex;
+  color: #f9f9f9;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0 auto 16px;
+  align-items: center;
+  justify-content: center;
+  background-color: #00ccae;
+  font: normal bold 22px/1 "MarkOTBold", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__nametag-initial {
+      width: 66px;
+      height: 66px;
+      font-size: 36px; } }
+
+.pharmacy-page__nametag-text {
+  color: #000072;
+  font: normal bold 16px "Lato", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__nametag-text {
+      font-size: 22px; } }
+  .pharmacy-page__nametag-text--light {
+    color: #797c80;
     font: normal normal 14px/1.57 "Lato", arial, sans-serif; }
     @media (min-width: 600px) {
-      .pharmacy-page__testimonial {
-        padding: 30px;
+      .pharmacy-page__nametag-text--light {
         font-size: 18px;
-        line-height: 1.22; } }
-  .pharmacy-page__testimonial-text {
-    color: #000072;
-    margin-bottom: 20px; }
-    @media (min-width: 600px) {
-      .pharmacy-page__testimonial-text {
-        margin-bottom: 40px;
-        font-size: 22px;
-        line-height: 1.36; } }
-  .pharmacy-page__testimonial-btn {
-    color: #00ccae;
-    display: inline-block; }
-    .pharmacy-page__testimonial-btn:hover span {
-      text-decoration: underline; }
-    .pharmacy-page__testimonial-btn:hover .PharmacyPage__testimonial-btn-icon {
-      text-decoration: none; }
-  .pharmacy-page__testimonial-btn-icon {
-    font-family: "MarkOTMedium", arial, sans-serif; }
-  .pharmacy-page__form-text {
-    font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__form-text {
-        font-size: 22px; } }
-  .pharmacy-page__form {
-    margin-top: 30px; }
+        line-height: 1.67; } }
+
+.pharmacy-page__nametag-caret {
+  top: auto;
+  right: auto;
+  content: "";
+  z-index: 10;
+  width: 18px;
+  height: 18px;
+  bottom: -32px;
+  display: none;
+  position: absolute;
+  border-style: solid;
+  left: calc(50% - 9px);
+  background: #f4f9fe;
+  border-width: 2px 0 0 2px;
+  border-color: #00ccae;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
   @media (min-width: 600px) {
-    .pharmacy-page__form-group {
-      margin-bottom: 20px; } }
-  .pharmacy-page__button {
-    min-width: 138px;
-    margin-top: 10px;
-    padding: 12px 20px;
-    font: normal 500 16px "MarkOTMedium", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__button {
-        margin-top: 20px; } }
-  .pharmacy-page__bottom-banner {
-    padding: 40px 0;
-    background-color: #0000ac; }
-    @media (min-width: 600px) {
-      .pharmacy-page__bottom-banner {
-        padding: 55px 0; } }
-    @media (min-width: 992px) {
-      .pharmacy-page__bottom-banner {
-        padding: 80px 0; } }
-  .pharmacy-page__bottom-banner-text {
-    color: #fff;
-    text-align: center;
-    font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__bottom-banner-text {
-        margin: 0 auto;
-        font-size: 22px;
-        max-width: 480px; } }
-    @media (min-width: 992px) {
-      .pharmacy-page__bottom-banner-text {
-        font-size: 30px;
-        line-height: 1.4;
-        max-width: 960px; } }
-  .pharmacy-page__modal .PharmacyPage__nametag-initial {
-    margin-bottom: 12px; }
-    @media (min-width: 600px) {
-      .pharmacy-page__modal .PharmacyPage__nametag-initial {
-        margin-bottom: 16px; } }
+    .pharmacy-page__nametag-caret {
+      bottom: -49px; } }
+
+.pharmacy-page__testimonial {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 20px 12px;
+  border: 2px solid #00ccae;
+  font: normal normal 14px/1.57 "Lato", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__testimonial {
+      padding: 30px;
+      font-size: 18px;
+      line-height: 1.22; } }
+
+.pharmacy-page__testimonial-text {
+  color: #000072;
+  margin-bottom: 20px; }
+  @media (min-width: 600px) {
+    .pharmacy-page__testimonial-text {
+      margin-bottom: 40px;
+      font-size: 22px;
+      line-height: 1.36; } }
+
+.pharmacy-page__testimonial-btn {
+  color: #00ccae;
+  display: inline-block; }
+  .pharmacy-page__testimonial-btn:hover span {
+    text-decoration: underline; }
+  .pharmacy-page__testimonial-btn:hover .PharmacyPage__testimonial-btn-icon {
+    text-decoration: none; }
+
+.pharmacy-page__testimonial-btn-icon {
+  font-family: "MarkOTMedium", arial, sans-serif; }
+
+.pharmacy-page__form-text {
+  font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__form-text {
+      font-size: 22px; } }
+
+.pharmacy-page__form {
+  margin-top: 30px; }
+
+@media (min-width: 600px) {
+  .pharmacy-page__form-group {
+    margin-bottom: 20px; } }
+
+.pharmacy-page__button {
+  min-width: 138px;
+  margin-top: 10px;
+  padding: 12px 20px;
+  font: normal 500 16px "MarkOTMedium", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__button {
+      margin-top: 20px; } }
+
+.pharmacy-page__bottom-banner {
+  padding: 40px 0;
+  background-color: #0000ac; }
+  @media (min-width: 600px) {
+    .pharmacy-page__bottom-banner {
+      padding: 55px 0; } }
   @media (min-width: 992px) {
-    .pharmacy-page__modal .PharmacyPage__nametag-text {
-      font-size: 24px; } }
-  .pharmacy-page__modal .PharmacyPage__nametag-text--light {
-    font-size: 20px; }
-  .pharmacy-page__modal .PharmacyPage__nametag-caret {
-    bottom: -31px;
-    background-color: #fff; }
-    @media (min-width: 600px) {
-      .pharmacy-page__modal .PharmacyPage__nametag-caret {
-        bottom: -50px; } }
-  .pharmacy-page__modal .PharmacyPage__testimonial {
-    padding: 20px 16px; }
-    @media (min-width: 600px) {
-      .pharmacy-page__modal .PharmacyPage__testimonial {
-        padding: 30px; } }
-  .pharmacy-page__modal-testimonial-text {
-    font: normal normal 16px/1.38 "Lato", arial, sans-serif; }
-    @media (min-width: 600px) {
-      .pharmacy-page__modal-testimonial-text {
-        font-size: 22px;
-        line-height: 1.36; } }
-  .pharmacy-page__error-text {
-    margin-top: 30px;
-    font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
+    .pharmacy-page__bottom-banner {
+      padding: 80px 0; } }
+
+.pharmacy-page__bottom-banner-text {
+  color: #fff;
+  text-align: center;
+  font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__bottom-banner-text {
+      margin: 0 auto;
+      font-size: 22px;
+      max-width: 480px; } }
+  @media (min-width: 992px) {
+    .pharmacy-page__bottom-banner-text {
+      font-size: 30px;
+      line-height: 1.4;
+      max-width: 960px; } }
+
+.pharmacy-page__modal .PharmacyPage__nametag-initial {
+  margin-bottom: 12px; }
+  @media (min-width: 600px) {
+    .pharmacy-page__modal .PharmacyPage__nametag-initial {
+      margin-bottom: 16px; } }
+
+@media (min-width: 992px) {
+  .pharmacy-page__modal .PharmacyPage__nametag-text {
+    font-size: 24px; } }
+
+.pharmacy-page__modal .PharmacyPage__nametag-text--light {
+  font-size: 20px; }
+
+.pharmacy-page__modal .PharmacyPage__nametag-caret {
+  bottom: -31px;
+  background-color: #fff; }
+  @media (min-width: 600px) {
+    .pharmacy-page__modal .PharmacyPage__nametag-caret {
+      bottom: -50px; } }
+
+.pharmacy-page__modal .PharmacyPage__testimonial {
+  padding: 20px 16px; }
+  @media (min-width: 600px) {
+    .pharmacy-page__modal .PharmacyPage__testimonial {
+      padding: 30px; } }
+
+.pharmacy-page__modal-testimonial-text {
+  font: normal normal 16px/1.38 "Lato", arial, sans-serif; }
+  @media (min-width: 600px) {
+    .pharmacy-page__modal-testimonial-text {
+      font-size: 22px;
+      line-height: 1.36; } }
+
+.pharmacy-page__error-text {
+  margin-top: 30px;
+  font: normal 300 16px/1.38 "Lato", arial, sans-serif; }
 
 .linkedin-page__banner {
   height: 816px;
@@ -3156,11 +3334,11 @@ img {
 .linkedin-page__header {
   background-color: transparent;
   position: static; }
-  .linkedin-page__header.Header--fixed-top {
+  .linkedin-page__header.header--fixed-top {
     background-color: #fff;
     position: fixed; }
     @media (min-width: 600px) {
-      .linkedin-page__header.Header--fixed-top {
+      .linkedin-page__header.header--fixed-top {
         position: static;
         background-color: transparent; } }
 
@@ -3172,7 +3350,7 @@ img {
     .linkedin-page__banner-heading {
       font-size: 42px;
       line-height: 1.52;
-      margin-top: 43px; } }
+      margin-top: 77px; } }
 
 .linkedin-page__banner-text {
   margin-top: 30px;

@@ -1,5 +1,5 @@
 .career-page {
-  padding-top: 65px;
+  // padding-top: 65px;
 
   @include for-size(small) {
     padding-top: 0;
@@ -29,7 +29,7 @@
     font: normal bold 28px/1.14 $font-family--primary-bold;
 
     @include for-size(medium) {
-      margin: 80px 0 50px;
+      margin: 77px 0 50px;
       font: normal bold 36px/1.14 $font-family--primary-bold;
     }
   }

@@ -1,6 +1,4 @@
 .pharmacy-page {
-  padding-top: 65px;
-
   @include for-size(small) {
     padding-top: 0;
   }
