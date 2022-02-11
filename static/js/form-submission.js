@@ -2,7 +2,7 @@ $(document).ready(function(e){
     //PHIL PATIENT ACCESS PLATFORM INQUIRY
     $("#manufacturersInquiry").submit(function (e) {
         e.preventDefault();
-        var baseUrl = "https://capi.dev.phil.us/api/web/v1/manufacturers/inquiry";
+        var baseUrl = apiEndPoint + "/api/web/v1/manufacturers/inquiry";
         var headers = {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -11,21 +11,20 @@ $(document).ready(function(e){
         var body = $('#manufacturersInquiry').serializeArray();
 
         if(formValidation(body)) {
-            //JUST FOR TESTING THE RESPONSE MESSAGE
-            $('.manufacturers-page__button').prop('disabled',true);
-            setTimeout(function() { 
-                $('.manufacturers-page__button').css('display','none');
-                $('.manufacturers-page__form-text').css('display','block');
-                $('.form__input__input').val("");
-            }, 2000);
-            
             $.ajax({
                 type: "POST",
                 url: baseUrl,
                 headers: headers,
                 data: body,
                 success: function (result) {
-                    console.log(result);
+                    if (result.data == "OK") {
+                        $('.manufacturers-page__button').prop('disabled',true);
+                        setTimeout(function() { 
+                            $('.manufacturers-page__button').css('display','none');
+                            $('.manufacturers-page__form-text').css('display','block');
+                            $('.form__input__input').val("");
+                        }, 2000);
+                    }
                 },
                 error: function (error) {
                     console.log(error);
@@ -37,7 +36,7 @@ $(document).ready(function(e){
     //Pharmacy Inquiry FOR
     $("#pharmacyInquiry").submit(function (e) {
         e.preventDefault();
-        var baseUrl = "https://capi.dev.phil.us/api/web/v1/pharmacy/inquiry";
+        var baseUrl = apiEndPoint + "/api/web/v1/pharmacy/inquiry";
         var headers = {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -46,21 +45,20 @@ $(document).ready(function(e){
         var body = $('#pharmacyInquiry').serializeArray();
 
         if(formValidation(body)) {
-            //JUST FOR TESTING THE RESPONSE MESSAGE
-            $('.pharmacy-inquiry-submit').prop('disabled',true);
-            setTimeout(function() { 
-                $('.pharmacy-inquiry-submit').css('display','none');
-                $('.pharmacy-page__form-text').css('display','block');
-                $('.form__input__input').val("");
-            }, 2000);
-            
             $.ajax({
                 type: "POST",
                 url: baseUrl,
                 headers: headers,
                 data: body,
                 success: function (result) {
-                    console.log(result);
+                    if (result.data == "OK") {
+                        $('.pharmacy-inquiry-submit').prop('disabled',true);
+                        setTimeout(function() { 
+                            $('.pharmacy-inquiry-submit').css('display','none');
+                            $('.pharmacy-page__form-text').css('display','block');
+                            $('.form__input__input').val("");
+                        }, 2000);
+                    }
                 },
                 error: function (error) {
                     console.log(error);
@@ -72,7 +70,7 @@ $(document).ready(function(e){
     //PATIENT CONTACT FORM
     $("#patientContact").submit(function (e) {
         e.preventDefault();
-        var baseUrl = "https://capi.dev.phil.us/api/web/v1/contact-us";
+        var baseUrl = apiEndPoint + "/api/web/v1/contact-us";
         var headers = {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
@@ -80,22 +78,21 @@ $(document).ready(function(e){
 
         var body = $('#patientContact').serializeArray();
         if(formValidation(body)) {
-            //JUST FOR TESTING THE RESPONSE MESSAGE
-            $('.patient-contact-page__button').prop('disabled',true);
-            setTimeout(function() { 
-                $('.patient-contact-page__button').css('display','none');
-                $('.patient-contact-page__form-text').css('display','block');
-                $('.form__input__input').val("");
-                $('.form__textarea__input').val("");
-            }, 2000);
-            
             $.ajax({
                 type: "POST",
                 url: baseUrl,
                 headers: headers,
                 data: body,
                 success: function (result) {
-                    console.log(result);
+                    if (result.data == "OK") {
+                        $('.patient-contact-page__button').prop('disabled',true);
+                        setTimeout(function() { 
+                            $('.patient-contact-page__button').css('display','none');
+                            $('.patient-contact-page__form-text').css('display','block');
+                            $('.form__input__input').val("");
+                            $('.form__textarea__input').val("");
+                        }, 2000);
+                    }
                 },
                 error: function (error) {
                     console.log(error);

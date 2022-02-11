@@ -2,6 +2,7 @@ baseURL: https://gifted-goldberg-e5cca9.netlify.app/
 languageCode: en-us
 title: The Phil Platform
 params:
+  apiEndpoint : "https://web.dev.phil.us/"
   description: Phil is an affordable, next-generation market access platform delivering unprecedented outcomes for patients, prescribers, manufacturers and all other stakeholders.
   sp_title : "Phil Announces up to $100M Strategic Growth Investment"
   sp_short_desc : "Phil Announces up to $100M Strategic Growth Investment from Warburg
@@ -9,3 +10,5 @@ params:
   sp_long_desc : "Phil, a software therapy deployment platform, today announced a $56 million Series D fundraise led by Warburg Pincus, a leading global growth investor. The investment is part of an arrangement for Warburg Pincus to invest up to $100 million and enables Phil to accelerate the development.The investment is part of an arrangement for Warburg Pincus to invest up to $100 million and enables Phil to accelerate the development. The investment is part of an arrangement for Warburg Pincus to invest up to $100 million and enables Phil to accelerate the development."
   link : "/press-releases/Phil_Series_D-Announcement-Warburg_Pincus"
   date: 2022-01-25T16:54:07+05:45
+
+

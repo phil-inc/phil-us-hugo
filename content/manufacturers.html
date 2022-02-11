@@ -175,6 +175,18 @@ type: manufacturers
         </div>
         <div class="two-even-columns-grid__right-column undefined">
             <div class="container two-even-columns-grid__right-column-container">
+                <ul class="manufacturers-page__items-list manufacturers-page__items-list--mobile no-display">
+                    <li>360° Script View</li>
+                    <li>Full-Service Prior Authorization</li>
+                    <li>Benefit Verification</li>
+                    <li>Inventory Management</li>
+                    <li>Flexible Couponing</li>
+                    <li>Rx Sampling Solution</li>
+                    <li>Real-time Performance Dashboard</li>
+                    <li>Smartphone/Messaging-based Communication</li>
+                    <li>Patient-centric Digital Experience</li>
+                    <li>Dedicated Customer Support</li>
+                </ul>
                 <ul class="manufacturers-page__items-list manufacturers-page__items-list--desktop">
                     <li>360° Script View</li>
                     <li>Full-Service Prior Authorization</li>
@@ -188,7 +200,9 @@ type: manufacturers
                     <li>Dedicated Customer Support</li>
                 </ul>
                 <button type="button" class="button flat-button manufacturers-page__expand-btn">
-                    <span>See all solutions</span><img src="/img/icons/chevron.svg" alt="Arrow" />
+                    <span>See all solutions</span>
+                    <img src="/img/icons/chevron.svg" alt="Arrow" class="down"/>
+                    <img src="/img/icons/chevronUp.svg" alt="Arrow" class="up no-display"/>
                 </button>
             </div>
         </div>
@@ -282,6 +296,22 @@ type: manufacturers
                 $(this).addClass("active");
                 $(this).find('span.manufacturers-page__accordion-icon').html("-");
                 $(this).find('p.manufacturers-page__accordion-text').css('display','block');
+            }
+        });
+
+        $('.manufacturers-page__expand-btn').click(function(e){
+            if ($(this).hasClass('expand')) {
+                $(this).removeClass("expand");
+                $(this).find('span').html('Show all solutions');
+                $(this).find('img.down').removeClass('no-display');
+                $(this).find('img.up').addClass('no-display');
+                $('.manufacturers-page__items-list--mobile').addClass('no-display');
+            } else {
+                $(this).addClass("expand");
+                $(this).find('span').html('Show Less');
+                $(this).find('img.down').addClass('no-display');
+                $(this).find('img.up').removeClass('no-display');
+                $('.manufacturers-page__items-list--mobile').removeClass('no-display');
             }
         });
     });
