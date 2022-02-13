@@ -14,6 +14,11 @@ fields:
 - type: text
   name: url
   label: url
+- name: spotlight
+  type: text
+  config:
+    required: false
+  label: spotlight
 pages:
 - content/press-releases/lupin-announces-partnership-with-phil-inc.in-support-of-solosec.md
 - content/press-releases/phil-announces-partnership-with-impel-neuropharma-in-support-of-trudhesa.md
