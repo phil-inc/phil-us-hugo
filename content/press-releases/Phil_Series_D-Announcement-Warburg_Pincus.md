@@ -1,11 +1,11 @@
 ---
-title: "Phil Announces up to $100M Strategic Growth Investment "
-date: 2022-01-20 17:14:19 -0800
+title: 'Phil Announces up to $100M Strategic Growth Investment '
+date: 2022-01-20T17:14:19.000-08:00
 type: press-releases-content
-url : press-releases/Phil_Series_D-Announcement-Warburg_Pincus
+url: press-releases/Phil_Series_D-Announcement-Warburg_Pincus
+spotlight: ''
+
 ---
-
-
 # Phil Announces up to $100M Strategic Growth Investment from Warburg Pincus, Fred Hassan to join Board of Directors
 
 _Investment and board appointment to support accelerated growth and innovation within prescription management solutions_
