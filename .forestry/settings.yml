@@ -8,7 +8,7 @@ sections:
   path: assets
   label: Scripts
   create: all
-  match: "**/*"
+  match: "*"
 - type: directory
   path: content/press-releases
   label: Press releases
