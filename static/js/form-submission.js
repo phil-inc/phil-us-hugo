@@ -10,12 +10,13 @@ $(document).ready(function(e){
 
         var body = $('#manufacturersInquiry').serializeArray();
 
-        if(formValidation(body)) {
+        var postBody = formValidation(body);
+        if(postBody) {
             $.ajax({
                 type: "POST",
                 url: baseUrl,
                 headers: headers,
-                data: body,
+                data: JSON.stringify(postBody),
                 success: function (result) {
                     if (result.data == "OK") {
                         $('.manufacturers-page__button').prop('disabled',true);
@@ -44,12 +45,13 @@ $(document).ready(function(e){
 
         var body = $('#pharmacyInquiry').serializeArray();
 
-        if(formValidation(body)) {
+        var postBody = formValidation(body);
+        if(postBody) {
             $.ajax({
                 type: "POST",
                 url: baseUrl,
                 headers: headers,
-                data: body,
+                data: JSON.stringify(postBody),
                 success: function (result) {
                     if (result.data == "OK") {
                         $('.pharmacy-inquiry-submit').prop('disabled',true);
@@ -77,12 +79,14 @@ $(document).ready(function(e){
         }
 
         var body = $('#patientContact').serializeArray();
-        if(formValidation(body)) {
+        
+        var postBody = formValidation(body);
+        if(postBody) {
             $.ajax({
                 type: "POST",
                 url: baseUrl,
                 headers: headers,
-                data: body,
+                data: JSON.stringify(postBody),
                 success: function (result) {
                     if (result.data == "OK") {
                         $('.patient-contact-page__button').prop('disabled',true);
@@ -103,7 +107,9 @@ $(document).ready(function(e){
 
     function formValidation(body){
         var validation = true;
+        var jsonBody = {};
         body.forEach(function(e,i){
+            jsonBody[e.name] = e.value;
             if (e.name != 'phone' && e.value == "") {
                 validation = false;
                 if (e.name == "description") {
@@ -115,28 +121,27 @@ $(document).ready(function(e){
                     $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
                     $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide '+$('input[name='+e.name+']').attr('data-name')+'.</span>');
                 }
-            }
-            
-            if ((e.name == "contactEmail" || e.name == "email") && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.value))) {
-                validation = false;
-                $('input[name='+e.name+']').addClass('form__error');
-                $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
-                $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a valid email format.</span>');
-            } 
-
-            if (e.name == "dateOfBirth" && moment(e.value).isValid() == false) {
-                validation = false;
-                $('input[name='+e.name+']').addClass('form__error');
-                $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
-                $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a valid date.</span>');
+            } else {
+                if ((e.name == "contactEmail" || e.name == "email") && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.value))) {
+                    validation = false;
+                    $('input[name='+e.name+']').addClass('form__error');
+                    $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
+                    $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a valid email format.</span>');
+                } 
+    
+                if (e.name == "dateOfBirth" && moment(e.value).isValid() == false) {
+                    validation = false;
+                    $('input[name='+e.name+']').addClass('form__error');
+                    $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
+                    $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a valid date.</span>');
+                }
             }
         });
-
         if (validation == false) {
             return false;
         }
 
-        return true;
+        return jsonBody;
     }
 
     $(document).on('focus','.form__error', function(){
