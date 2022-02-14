@@ -5,7 +5,7 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
-  path: static/js
+  path: assets
   label: Scripts
   create: all
   match: "**/*"
