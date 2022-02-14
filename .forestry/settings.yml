@@ -5,6 +5,11 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
+  path: Static/js
+  label: Scripts
+  create: all
+  match: "**/*"
+- type: directory
   path: content/press-releases
   label: Press releases
   create: all
