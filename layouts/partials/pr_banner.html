@@ -4,9 +4,24 @@
             <img class="pr-banner__icon" src="/img/icons/infoOutlineGray.svg" alt="info" />
         </div>
         <div class="pr-banner__right right">
-            
-            <span class="bold">Press Release:&nbsp;</span><span>{{ $.Site.Params.sp_short_desc }} &nbsp;</span><a title="Read more about this"
+            <span class="bold">Press Release:&nbsp;</span><span class="press-release-banner">{{ $.Site.Params.sp_short_desc }} &nbsp;</span><a class="pr-banner-link" title="Read more about this"
                 href={{ printf "%s" $.Site.Params.link }}>Read more</a>
         </div>
     </div>
 </div>
+<script>
+    var regularPages = JSON.parse({{ jsonify .Site.RegularPages }});
+    var pr = false;
+    regularPages.forEach(function(e,i){
+        if (e.Type == "press-releases-content" && e.Params.spotlight == true) {
+            $('.press-release-banner').html(e.Plain.split("\n"));
+            $('.press-release-banner').html(e.Plain.substring(0, 120) + '...');
+            pr = true;
+        }
+    });
+    
+    if (!pr) {
+        $('.pr-banner').css('display','none');
+        $('.pr-banner-link').attr('href',e.Permalink);
+    }
+</script>

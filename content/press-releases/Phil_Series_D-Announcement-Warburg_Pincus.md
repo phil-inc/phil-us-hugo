@@ -1,8 +1,10 @@
 ---
-title: "Phil Announces up to $100M Strategic Growth Investment "
+title: "Phil Announces up to $100M Strategic Growth Investment"
 date: 2022-01-20 17:14:19 -0800
 type: press-releases-content
 url : press-releases/Phil_Series_D-Announcement-Warburg_Pincus
+spotlight : true
+description : "Phil, a software therapy deployment platform, today announced a $56 million Series D fundraise led by Warburg Pincus, a leading global growth investor. The investment is part of an arrangement for Warburg Pincus to invest up to $100 million and enables Phil to accelerate the development."
 ---
 
 

@@ -115,19 +115,27 @@ $(document).ready(function(e){
                     $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
                     $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide '+$('input[name='+e.name+']').attr('data-name')+'.</span>');
                 }
-            } else if ((e.name == "contactEmail" || e.name == "email") && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.value))) {
+            }
+            
+            if ((e.name == "contactEmail" || e.name == "email") && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.value))) {
                 validation = false;
                 $('input[name='+e.name+']').addClass('form__error');
                 $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
                 $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a valid email format.</span>');
-            } else if (e.name == "date") {
+            } 
 
+            if (e.name == "dateOfBirth" && moment(e.value).isValid() == false) {
+                validation = false;
+                $('input[name='+e.name+']').addClass('form__error');
+                $('input[name='+e.name+']').closest('.form__input').addClass('form__input__error');
+                $('input[name='+e.name+']').after('<span class="form__input__error-text">Please provide a valid date.</span>');
             }
         });
 
         if (validation == false) {
             return false;
         }
+
         return true;
     }
 

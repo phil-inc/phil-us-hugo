@@ -2,6 +2,8 @@
 title: "Another News"
 date: 2022-01-25T16:54:07+05:45
 type: press-releases-content
+spotlight : false
+description : "Phil, a software therapy deployment platform, today announced a $56 million Series D fundraise led by Warburg Pincus, a leading global growth investor. The investment is part of an arrangement for Warburg Pincus to invest up to $100 million and enables Phil to accelerate the development."
 ---
 
 # Phil Announces up to $100M Strategic Growth Investment from Warburg Pincus, Fred Hassan to join Board of Directors

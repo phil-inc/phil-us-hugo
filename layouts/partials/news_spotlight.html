@@ -23,7 +23,7 @@
                     <p class="desktop-view-paragraph">
                         {{ $.Site.Params.sp_long_desc }}
                     </p>
-                    <a class="IconTextLink clearfix left" title="Explore Our Market Access Platform" href={{ printf "%s"
+                    <a class="IconTextLink clearfix left spotlight-read-more" title="Explore Our Market Access Platform" href={{ printf "%s"
                         $.Site.Params.link }}><span class="IconTextLink__icon--right">→</span><span
                             class="IconTextLink__text--auto">Read more</span></a>
                 </div>
@@ -40,3 +40,15 @@
         </div>
     </div>
 </div>
+<script>
+    var regularPages = JSON.parse({{ jsonify .Site.RegularPages }});
+    regularPages.forEach(function(e,i){
+        if (e.Type == "press-releases-content" && e.Params.spotlight == true) {
+            $('.news-page__heading').html(e.Title);
+            $('.news-page__date').html(moment(e.Date).format('MMM D, Y'));
+            $('.desktop-view-paragraph').html(e.Params.description);
+            $('.spotlight-read-more').attr('href',e.Permalink);
+        }
+    });
+</script>
+
