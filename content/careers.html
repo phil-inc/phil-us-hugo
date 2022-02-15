@@ -6,12 +6,16 @@ date: 2022-01-27T14:15:58.000+05:45
 <div class="container">
     <div class="career-page__left-section">
         <h1 class="career-page__heading">Careers at Phil</h1>
+        <div class="loader"></div>
         <div class="carrer-div">
         </div>
     </div>
     <div class="career-page__right-section"></div>
 </div>
 <div class="career-page__bottom-section"></div>
+<style>
+
+</style>
 <script>
     $(document).ready(function () {
         var baseUrl = apiEndPoint + "/api/web/v1/careers";
@@ -23,6 +27,12 @@ date: 2022-01-27T14:15:58.000+05:45
             type: "GET",
             url: baseUrl,
             headers: headers,
+            beforeSend: function() {
+                $(".loader").show();
+            },
+            complete: function(){
+                $(".loader").hide();
+            },
             success: function (result) {
                 formatCareerData(result);
             },
@@ -30,7 +40,6 @@ date: 2022-01-27T14:15:58.000+05:45
                 console.log(error);
             }
         });
-
         function formatCareerData(result){
             var deptWiseJobs = {};
             result.data.jobs.forEach(function(e,i){
