@@ -19,6 +19,15 @@ fields:
   config:
     required: false
   label: spotlight
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: description
 pages:
 - content/press-releases/Phil_Series_D-Announcement-Warburg_Pincus.md
 - content/press-releases/lupin-announces-partnership-with-phil-inc.in-support-of-solosec.md
