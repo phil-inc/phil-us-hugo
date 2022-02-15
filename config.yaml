@@ -1,8 +1,7 @@
-baseURL: https://gifted-goldberg-e5cca9.netlify.app/
+baseURL: https://web.phil.us/
 languageCode: en-us
 title: The Phil Platform
 params:
-  apiEndpoint : "https://web.dev.phil.us/"
   description: Phil is an affordable, next-generation market access platform delivering unprecedented outcomes for patients, prescribers, manufacturers and all other stakeholders.
   sp_title : "Phil Announces up to $100M Strategic Growth Investment"
   sp_short_desc : "Phil Announces up to $100M Strategic Growth Investment from Warburg
