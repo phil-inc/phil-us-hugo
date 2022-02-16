@@ -30,7 +30,7 @@
     var regularPages = JSON.parse({{ jsonify .Site.RegularPages }});
     var pr = false;
     regularPages.forEach(function(e,i){
-        if (e.Type == "press-releases-content" && e.Params.spotlight == true) {
+        if (e.Type == "press-releases-content" && e.Params.spotlight == "true") {
             //news_spotlight
             $('.news-page__heading').html(e.Title);
             $('.news-page__date').html(moment(e.Date).format('MMM D, Y'));
