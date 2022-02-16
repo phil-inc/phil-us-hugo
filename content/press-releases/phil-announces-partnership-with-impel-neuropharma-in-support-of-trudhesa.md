@@ -1,5 +1,8 @@
 +++
+banner = ""
 date = 2021-09-27T18:15:00Z
+description = "Phil, Inc. announces partnership with Impel NeuroPharma, Inc. (NASDAQ: IMPL) in support of Trudhesa™ (dihydroergotamine mesylate) nasal spray (0.725 mg per spray) to provide technology-powered patient support and distribution services through Phil’s proprietary workflow to enhance the patient’s access to therapy. Trudhesa is indicated for the acute treatment of migraine with or without aura in adults."
+spotlight = "true"
 title = "Phil Announces Partnership with Impel NeuroPharma in Support of Trudhesa"
 type = "press-releases-content"
 url = "press-releases/Impel-Announces-Partnership-with-Phil-Inc-in-support-of-Trudhesa"
