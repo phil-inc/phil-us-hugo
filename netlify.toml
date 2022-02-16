@@ -1,4 +1,4 @@
-[[redirect]]
+[[redirects]]
 from = "/r/*"
 to = "https://capi.phil.us/api/redirect/:splat"
 status = 307
