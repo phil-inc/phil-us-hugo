@@ -40,15 +40,4 @@
         </div>
     </div>
 </div>
-<script>
-    var regularPages = JSON.parse({{ jsonify .Site.RegularPages }});
-    regularPages.forEach(function(e,i){
-        if (e.Type == "press-releases-content" && e.Params.spotlight == true) {
-            $('.news-page__heading').html(e.Title);
-            $('.news-page__date').html(moment(e.Date).format('MMM D, Y'));
-            $('.desktop-view-paragraph').html(e.Params.description);
-            $('.spotlight-read-more').attr('href',e.Permalink);
-        }
-    });
-</script>
 
