@@ -20,7 +20,7 @@ Published: September 28, 2021
 
 ## About Trudhesa™ (dihydroergotamine mesylate) Nasal Spray
 
-Trudhesa™ (dihydroergotamine mesylate) nasal spray (0.725 mg per spray) is approved by the U.S. Food and Drug Administration for the acute treatment of migraine with or without aura in adults in the U.S. Using Impel’s proprietary Precision Olfactory Delivery (POD®) Technology, Trudhesa gently delivers dihydroergotamine mesylate (DHE)—a proven, well-established therapeutic—quickly to the bloodstream through the vascular-rich upper nasal space. Trudhesa bypasses the gut and potential absorption issues, offering the potential for rapid, sustained, and consistent relief without injection or infusion, even when administered hours after the start of a migraine attack.1
+Trudhesa™ (dihydroergotamine mesylate) nasal spray (0.725 mg per spray) is approved by the U.S. Food and Drug Administration for the acute treatment of migraine with or without aura in adults in the U.S. Using Impel’s proprietary Precision Olfactory Delivery (POD®) Technology, Trudhesa gently delivers dihydroergotamine mesylate (DHE)—a proven, well-established therapeutic—quickly to the bloodstream through the vascular-rich upper nasal space. Trudhesa bypasses the gut and potential absorption issues, offering the potential for rapid, sustained, and consistent relief without injection or infusion, even when administered hours after the start of a migraine attack.¹
 
 ## Trudhesa Indication and Important Safety Information
 
@@ -77,8 +77,8 @@ Impel, POD, Trudesa and Trudhesa Direct are trademarks of Impel NeuroPharma, Inc
 
 ## About Phil, Inc.
 
-Phil is a software therapy deployment platform, offering pharmaceutical manufacturers a modern alternative to traditional access, affordability and distribution options. Through its digital stakeholder experiences, patient access services, market access solutions and distribution models, pharma manufacturers are able to deliver affordable and timely therapy access to patients. For more information on Phil, visit [phil.us](https://web.dev.phil.us/).
+Phil is a software therapy deployment platform, offering pharmaceutical manufacturers a modern alternative to traditional access, affordability and distribution options. Through its digital stakeholder experiences, patient access services, market access solutions and distribution models, pharma manufacturers are able to deliver affordable and timely therapy access to patients. For more information on Phil, visit [phil.us](https://phil.us/).
 
-Contact Phil at: [phil.us/manufacturers](https://web.dev.phil.us/manufacturers)
+Contact Phil at: [phil.us/manufacturers](https://phil.us/manufacturers)
 
-1 Impel Neuropharma. (2020). INP104-301. Table 3.8.2.
+¹ Impel Neuropharma. (2020). INP104-301. Table 3.8.2.
