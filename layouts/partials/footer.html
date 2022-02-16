@@ -36,6 +36,14 @@
             $('.news-page__date').html(moment(e.Date).format('MMM D, Y'));
             $('.desktop-view-paragraph').html(e.Params.description);
             $('.spotlight-read-more').attr('href',e.Permalink);
+            
+            if (e.Params.banner != "") {
+                $('.news-spotlight-banner').attr('src',e.Params.banner);
+            } else {
+                $('.spotlight_right-column').css('display','none');
+                $('.news-page__responsive-view').css('display','none');
+                $('.spotlight_left-column').addClass('spotlight-full');
+            }
 
             //pr_banner
             $('.press-release-banner').html(e.Plain.substring(0, 120) + '...');

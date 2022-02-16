@@ -325,3 +325,13 @@
   }
 
 }
+
+.spotlight-full {
+  width: 100%;
+  .news-page__left-content {
+    padding-right: 0px;
+    .desktop-view-paragraph {
+      margin-top: 0px;
+    }
+  }
+}
