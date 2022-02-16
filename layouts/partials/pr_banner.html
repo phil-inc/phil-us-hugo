@@ -9,19 +9,3 @@
         </div>
     </div>
 </div>
-<script>
-    var regularPages = JSON.parse({{ jsonify .Site.RegularPages }});
-    var pr = false;
-    regularPages.forEach(function(e,i){
-        if (e.Type == "press-releases-content" && e.Params.spotlight == true) {
-            $('.press-release-banner').html(e.Plain.split("\n"));
-            $('.press-release-banner').html(e.Plain.substring(0, 120) + '...');
-            pr = true;
-        }
-    });
-    
-    if (!pr) {
-        $('.pr-banner').css('display','none');
-        $('.pr-banner-link').attr('href',e.Permalink);
-    }
-</script>

@@ -33,22 +33,11 @@
             <div class="container two-even-columns-grid__right-column-container">
                 <div class="news-page__right-section-content">
                     <div class="news-page__right-section-content__image-wrapper">
-                        <img src="/img/spotlight.png" alt="" />
+                        <img class="news-spotlight-banner" src="/img/spotlight.png" alt="" />
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script>
-    var regularPages = JSON.parse({{ jsonify .Site.RegularPages }});
-    regularPages.forEach(function(e,i){
-        if (e.Type == "press-releases-content" && e.Params.spotlight == true) {
-            $('.news-page__heading').html(e.Title);
-            $('.news-page__date').html(moment(e.Date).format('MMM D, Y'));
-            $('.desktop-view-paragraph').html(e.Params.description);
-            $('.spotlight-read-more').attr('href',e.Permalink);
-        }
-    });
-</script>
 

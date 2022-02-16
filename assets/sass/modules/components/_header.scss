@@ -93,6 +93,10 @@
       color: $rolling-stone;
       font-size: 18px;
       font-family: $font-family--secondary;
+      display: block;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
