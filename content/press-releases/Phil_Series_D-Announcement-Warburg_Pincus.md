@@ -1,6 +1,6 @@
 ---
 title: Phil Announces up to $100M Strategic Growth Investment
-date: 2022-01-20T17:14:19.000-08:00
+date: 2021-06-04T00:14:19+00:00
 type: press-releases-content
 url: press-releases/Phil_Series_D-Announcement-Warburg_Pincus
 spotlight: 'true'
