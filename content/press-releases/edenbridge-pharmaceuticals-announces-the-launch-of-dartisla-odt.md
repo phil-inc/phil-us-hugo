@@ -6,7 +6,7 @@ draft = true
 spotlight = "true"
 title = "Edenbridge Pharmaceuticals Announces the Launch of DARTISLA ODT"
 type = "press-releases-content"
-url = ""
+url = "press-releases/Edenbridge-Pharmaceuticals-Announces-the-Launch-of-DARTISLA-ODT"
 
 +++
 PARSIPPANY, N.J.--([BUSINESS WIRE](https://www.businesswire.com/))--Edenbridge Pharmaceuticals, LLC (“Edenbridge”) today announced that DARTISLA ODT (glycopyrrolate) is now available by prescription in the United States through Phil, the commercialization partner and eHub for DARTISLA ODT, as well as in retail pharmacies throughout the country. To ensure access to patients in need, Edenbridge is sponsoring the DARTISLA ODT Copay Program, which allows eligible patients to obtain the product for as little as $0 when filled through Phil or $20 when filled at other pharmacies.
