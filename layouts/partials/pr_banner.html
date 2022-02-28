@@ -5,7 +5,7 @@
             <img class="pr-banner__icon" src="/img/icons/infoOutlineGray.svg" alt="info" />
         </div>
         <div class="pr-banner__right right">
-            <span class="bold">Press Release:&nbsp;</span><span class="press-release-banner">{{.Plain | safeHTML | truncate 120}} &nbsp;</span><a class="pr-banner-link" title="Read more about this"
+            <span class="bold">Press Release:&nbsp;</span><span class="press-release-banner">{{.Params.description  | safeHTML | truncate 120}} &nbsp;</span><a class="pr-banner-link" title="Read more about this"
                 href="{{.Permalink}}">Read more</a>
         </div>
     </div>
