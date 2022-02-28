@@ -1,0 +1,41 @@
+<html lang="en">
+{{ partial "head.html" . }}
+
+<body>
+    <div class="main-container-wrapper">
+        <div class="series-dpr">
+            {{ partial "header.html" . }}
+            <div class="about-us-page__content">
+                <div class="container">
+                    <h1 class="about-us-page__heading">Join Phil</h1>
+                    <div class="about-us-page__right-section">
+                        <p class="about-us-page__text">
+                            Be part of a rapidly growing team that is revolutionizing the
+                            specialty pharmaceutical industry! You'll join a passionate group
+                            of professionals who are bringing meaningful changes to the
+                            patient experience.
+                        </p>
+                        <a class="IconTextLink clearfix about-us-page__link" title="View open roles" href="/careers"><span
+                                class="IconTextLink__icon">→</span><span class="IconTextLink__text">View open roles</span></a>
+                    </div>
+                </div>
+                <div class="about-us-page__image-banner"></div>
+                {{ range first 1 (where .Site.Pages "Params.spotlight" "true")}}
+                <a href="{{.Permalink}}" title="Press Release link news-room-link"
+                    class="about-us-page__text-banner">
+                    <div class="container">
+                        <span>Newsroom :</span>&nbsp;
+                        <span class="news-room-text">{{.Plain | safeHTML | truncate 120}}</span>
+                        <span class="primary-color news-room">Read more</span>
+                    </div>
+                </a>
+                {{end}}
+                {{ block "main" . }}{{ end }}
+            
+            </div>
+            {{ partial "footer.html" . }}
+        </div>
+    </div>
+</body>
+
+</html>

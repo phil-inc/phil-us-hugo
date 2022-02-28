@@ -1,43 +1,54 @@
-<div>
-    <div class="container">
-        <div class="news-page__title clearfix">
-            <div class="left">
-                <img src="/img/icons/news.svg" alt="" />
+{{ range first 1 (where .Site.Pages "Params.spotlight" "true")}}
+    <div>
+        <div class="container">
+            <div class="news-page__title clearfix">
+                <div class="left">
+                    <img src="/img/icons/news.svg" alt="" />
+                </div>
+                <h5 class="news-page__title__heading">Spotlight</h5>
             </div>
-            <h5 class="news-page__title__heading">Spotlight</h5>
         </div>
-    </div>
-    <div class="container two-even-columns-grid__container">
-        <div class="two-even-columns-grid__left-column spotlight_left-column">
-            <div class="container two-even-columns-grid__left-column-container">
-                <div class="news-page__left-content">
-                    <h1 class="news-page__heading">
-                        {{ $.Site.Params.sp_title }}
-                    </h1>
-                    <span class="news-page__date">{{ dateFormat "Jan 2, 2006" $.Site.Params.date}}</span>
-                    <div class="news-page__responsive-view">
-                        <div class="news-page__responsive-view__image">
-                            <img src="/img/spotlight.png" alt="" />
+        <div class="container two-even-columns-grid__container">
+            {{ if eq .Params.banner ""}}
+            <div class="two-even-columns-grid__left-column spotlight_left-column spotlight-full">
+                {{else}}
+                <div class="two-even-columns-grid__left-column spotlight_left-column">
+                    {{end}}
+                    <div class="container two-even-columns-grid__left-column-container">
+                        <div class="news-page__left-content">
+                            <h1 class="news-page__heading">
+                                {{ .Title }}
+                            </h1>
+                            <span class="news-page__date">{{ dateFormat "Jan 2, 2006" .Date}}</span>
+                            {{ if (not (eq .Params.banner ""))}}
+                            <div class="news-page__responsive-view">
+                                <div class="news-page__responsive-view__image">
+                                    <img src="{{.Params.banner}}" alt="" />
+                                </div>
+                            </div>
+                            {{end}}
+                            <p class="desktop-view-paragraph">
+                                {{.Params.description }}
+                            </p>
+                            <a class="IconTextLink clearfix left spotlight-read-more"
+                                title="Explore Our Market Access Platform" href="{{.Permalink}}"><span
+                                    class="IconTextLink__icon--right">→</span><span
+                                    class="IconTextLink__text--auto">Read more</span></a>
                         </div>
                     </div>
-                    <p class="desktop-view-paragraph">
-                        {{ $.Site.Params.sp_long_desc }}
-                    </p>
-                    <a class="IconTextLink clearfix left spotlight-read-more" title="Explore Our Market Access Platform" href={{ printf "%s"
-                        $.Site.Params.link }}><span class="IconTextLink__icon--right">→</span><span
-                            class="IconTextLink__text--auto">Read more</span></a>
                 </div>
-            </div>
-        </div>
-        <div class="two-even-columns-grid__right-column spotlight_right-column">
-            <div class="container two-even-columns-grid__right-column-container">
-                <div class="news-page__right-section-content">
-                    <div class="news-page__right-section-content__image-wrapper">
-                        <img class="news-spotlight-banner" src="/img/spotlight.png" alt="" />
+                {{ if (not (eq .Params.banner ""))}}
+                <div class="two-even-columns-grid__right-column spotlight_right-column">
+                    <div class="container two-even-columns-grid__right-column-container">
+                        <div class="news-page__right-section-content">
+                            <div class="news-page__right-section-content__image-wrapper">
+                                <img class="news-spotlight-banner" src="{{.Params.banner}}" alt="" />
+                            </div>
+                        </div>
                     </div>
                 </div>
+                {{end}}
             </div>
         </div>
     </div>
-</div>
-
+{{end}}

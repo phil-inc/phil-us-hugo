@@ -24,40 +24,4 @@
         </div>
     </div>
 </footer>
-
 <script src="/js/main.js"></script>
-<script>
-    var regularPages = JSON.parse({{ jsonify .Site.RegularPages }});
-    var pr = false;
-    regularPages.forEach(function(e,i){
-        if (e.Type == "press-releases-content" && e.Params.spotlight == "true") {
-            //news_spotlight
-            $('.news-page__heading').html(e.Title);
-            $('.news-page__date').html(moment(e.Date).format('MMM D, Y'));
-            $('.desktop-view-paragraph').html(e.Params.description);
-            $('.spotlight-read-more').attr('href',e.Permalink);
-            
-            if (e.Params.banner != "") {
-                $('.news-spotlight-banner').attr('src',e.Params.banner);
-            } else {
-                $('.spotlight_right-column').css('display','none');
-                $('.news-page__responsive-view').css('display','none');
-                $('.spotlight_left-column').addClass('spotlight-full');
-            }
-
-            //pr_banner
-            $('.press-release-banner').html(e.Plain.substring(0, 120) + '...');
-            $('.pr-banner-link').attr('href',e.Permalink);
-            pr = true;
-
-            //about-us banner
-            $('.news-room-text').html(e.Plain.substring(0, 120) + '...');
-            $('.news-room-link').attr('href',e.Permalink);
-        }
-    });
-    
-    if (!pr) {
-        $('.pr-banner').css('display','none');
-        $('.pr-banner-link').attr('href',e.Permalink);
-    }
-</script>

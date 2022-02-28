@@ -1,11 +1,13 @@
+{{ range first 1 (where .Site.Pages "Params.spotlight" "true")}}
 <div class="pr-banner">
     <div class="container">
         <div class="pr-banner__left left">
             <img class="pr-banner__icon" src="/img/icons/infoOutlineGray.svg" alt="info" />
         </div>
         <div class="pr-banner__right right">
-            <span class="bold">Press Release:&nbsp;</span><span class="press-release-banner">{{ $.Site.Params.sp_short_desc }} &nbsp;</span><a class="pr-banner-link" title="Read more about this"
-                href={{ printf "%s" $.Site.Params.link }}>Read more</a>
+            <span class="bold">Press Release:&nbsp;</span><span class="press-release-banner">{{.Plain | safeHTML | truncate 120}} &nbsp;</span><a class="pr-banner-link" title="Read more about this"
+                href="{{.Permalink}}">Read more</a>
         </div>
     </div>
 </div>
+{{ end }}
