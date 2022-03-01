@@ -2,6 +2,7 @@
 title: "Hippa"
 date: 2022-01-27T14:30:38+05:45
 type: policies
+description : "This Notice of Privacy Practices (“Notice”) describes the privacy practices of  Phil, Inc and its affiliates."
 ---
 
 

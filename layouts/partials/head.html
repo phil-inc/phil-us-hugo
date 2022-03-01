@@ -5,15 +5,42 @@
     <meta name="theme-color" content="#000000">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" >
-    <title>{{ .Site.Title }}</title>
-    <meta property="og:title" content="{{ $.Site.Title }}">
+    {{$title := ""}}
+    {{$image := ""}}
+    {{$alt := ""}}
+    {{$description := ""}}
+
+    {{$pageTitle:= .Scratch.Get "pageTitle"}}
+    {{if eq $pageTitle "news-press"}}
+        {{$title = "The Phill Platform - News & Press"}}
+        {{$image = "/img/icons/phil-logo-m.svg"}}
+        {{$alt = "The Phil Platform"}}
+        {{$spotlight := first 1 (where .Site.Pages "Params.spotlight" "true")}}
+        {{$description = (index $spotlight 0).Params.description}}
+    {{else if eq $pageTitle "home"}}
+        {{$title = $.Site.Title}}
+        {{$image = "/img/icons/phil-logo-m.svg"}}
+        {{$alt = "The Phil Platform"}}
+        {{$description = $.Site.Params.Description}}
+    {{else}}
+        {{$title = (printf "%s%s" "The Phill Platform - " .Params.Title )}}
+        {{if and (eq .Params.type "press-releases-content") (not (eq .Params.banner "")) }}
+        {{$image = .Params.banner}}
+        {{else}}
+        {{$image = "/img/icons/phil-logo-m.svg"}}
+        {{end}}
+        {{$alt = "The Phil Platform"}}
+        {{$description = .Params.Description}}
+    {{end}}
+    <title>{{ $title }}</title>
+    <meta property="og:title" content="{{ $title }}">
     <meta property="og:url" content="{{ $.Site.BaseURL }}">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="/static/img/Jobs-Page-Illustration_m-tb@2x.jpg">
-    <meta property="og:image:secure_url" content="/static/img/Jobs-Page-Illustration_m-tb@2x.jpg">
-    <meta property="og:image:alt" content="The Phil Platform">
-    <meta property="og:description" content="{{ $.Site.Params.Description }}">
-    <meta name="description" content="{{ $.Site.Params.Description }}">
+    <meta property="og:image" content="{{$image}}">
+    <meta property="og:image:secure_url" content="{{$image}}">
+    <meta property="og:image:alt" content="{{$alt}}">
+    <meta property="og:description" content="{{$description}}">
+    <meta name="description" content="{{$description}}">
     <meta name="facebook-domain-verification" content="sacfa7h69axwhn0aeqxhr2346bl0v0" />
 
     {{ $css := resources.Get "sass/style.scss"}}
