@@ -9,17 +9,18 @@
     {{$image := ""}}
     {{$alt := ""}}
     {{$description := ""}}
+    {{$baseUrl := $.Site.BaseURL}}
 
     {{$pageTitle:= .Scratch.Get "pageTitle"}}
     {{if eq $pageTitle "news-press"}}
         {{$title = "The Phill Platform - News & Press"}}
-        {{$image = "/img/icons/phil-logo-m.svg"}}
+        {{$image = (printf "%s%s" $baseUrl "/img/icons/phil-logo-m.svg")}}
         {{$alt = "The Phil Platform"}}
         {{$spotlight := first 1 (where .Site.Pages "Params.spotlight" "true")}}
         {{$description = (index $spotlight 0).Params.description}}
     {{else if eq $pageTitle "home"}}
         {{$title = $.Site.Title}}
-        {{$image = "/img/icons/phil-logo-m.svg"}}
+        {{$image = (printf "%s%s" $baseUrl "/img/icons/phil-logo-m.svg")}}
         {{$alt = "The Phil Platform"}}
         {{$description = $.Site.Params.Description}}
     {{else}}
@@ -27,14 +28,14 @@
         {{if and (eq .Params.type "press-releases-content") (not (eq .Params.banner "")) }}
         {{$image = .Params.banner}}
         {{else}}
-        {{$image = "/img/icons/phil-logo-m.svg"}}
+        {{$image = (printf "%s%s" $baseUrl "/img/icons/phil-logo-m.svg")}}
         {{end}}
         {{$alt = "The Phil Platform"}}
         {{$description = .Params.Description}}
     {{end}}
     <title>{{ $title }}</title>
     <meta property="og:title" content="{{ $title }}">
-    <meta property="og:url" content="{{ $.Site.BaseURL }}">
+    <meta property="og:url" content="{{ $baseUrl }}">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{{$image}}">
     <meta property="og:image:secure_url" content="{{$image}}">

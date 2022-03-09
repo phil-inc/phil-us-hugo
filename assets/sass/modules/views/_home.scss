@@ -177,7 +177,7 @@
   @include e(sub-heading) {
     max-width: 320px;
     color: $dark-blue;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font: normal 500 22px/1.45 $font-family--primary-medium;
 
     @include for-size(medium) {
@@ -202,13 +202,13 @@
   }
 
   @include e(text) {
-    color: $shark;
+    color: $rolling-stone;
     max-width: 392px;
-    font: normal normal 16px/1.5 $font-family--primary;
-
+    font: normal normal 16px/1.5 $font-family--secondary;
+    margin-bottom: 20px;
     @include for-size(medium) {
       max-width: 463px;
-      font: normal normal 18px/1.56 $font-family--primary;
+      font: normal normal 18px/1.56 $font-family--secondary;
     }
   }
 

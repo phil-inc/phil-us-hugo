@@ -37,7 +37,7 @@
         background-size: auto;
         height: 100%;
         background-position-x: right;
-        background-size: auto 550px;
+        background-size: auto 650px;
         background-image: url("../../img/icons/mfn-banner-desktop.png");
       }
     }
@@ -59,57 +59,76 @@
   }
 
   @include e(banner) {
-    height: 682px;
+    height: 982px;
     padding: 23px 0 0;
 
+    @include for-size(375) {
+      height: 900px;
+    }
+
+    @include for-size(425) {
+      height: 860px;
+    }
+
     @include for-size(small) {
-      height: 590px;
+      height: 670px;
       padding-top: 32px;
     }
 
     @include for-size(medium) {
-      height: 454px;
       padding-top: 77px;
-      height: 570px;
     }
   }
 
   @include e(banner-heading) {
-    max-width: 303px;
+    max-width: 500px;
     margin-bottom: 20px;
     color: $primary-color;
-    font: normal bold 30px $font-family--primary-bold;
+    font: normal bold 26px $font-family--primary-bold;
 
     @include for-size(small) {
       font: normal bold 26px $font-family--primary-bold;
-      max-width: 415px;
-      margin-bottom: 32px;
+      max-width: 600px;
     }
 
     @include for-size(medium) {
-      font-size: 42px;
-      margin-bottom: 60px;
-      line-height: 64px;
+      font-size: 40px;
+      margin-bottom: 24px;
+      line-height: 52px;
     }
   }
 
   @include e(banner-text) {
-    max-width: 303px;
+    max-width: 600px;
     color: $rolling-stone;
+    margin-bottom: 20px;
     font: normal normal 16px/1.5 $font-family--secondary;
 
-    @include for-size(small) {
-      max-width: 415px;
+    @include for-size(1440) {
+      max-width: 500px;
     }
 
+    @include for-size(1441) {
+      max-width: 600px;
+    }
 
     @include for-size(medium) {
-      max-width: 370px;
+     /// max-width: 600px;
       font: normal normal 22px/1.36 $font-family--primary;
     }
 
+    
+  }
+
+  @include e(banner-link) {
+    max-width: 600px;
+    
+    @include for-size(medium) {
+      max-width: 370px;
+    }
+
     @include for-size(large) {
-      max-width: 440px;
+      max-width: 500px;
     }
   }
 
@@ -117,10 +136,11 @@
     padding: 38px 0;
 
     @include for-size(medium) {
-      padding: 60px 0;
+      padding: 80px 0;
     }
 
     @include m(platform) {
+      display: none;
       position: relative;
 
       @include for-size(medium) {
@@ -161,17 +181,18 @@
   @include e(section-heading) {
     margin-bottom: 20px;
     color: $primary-color;
-    font: normal 500 24px/1.42 $font-family--primary-medium;
+    font: normal 500 26px/1.42 $font-family--primary-bold;
 
     @include for-size(medium) {
       font-size: 40px;
-      max-width: 430px;
+    //  max-width: 430px;
       line-height: 1.28;
       margin-bottom: 30px;
     }
   }
 
   @include e(section-text) {
+    margin-bottom: 14px;
     color: $rolling-stone;
     font: normal normal 16px/1.5 $font-family--secondary;
 
@@ -181,7 +202,7 @@
   }
 
   @include e(accordion-wrapper) {
-    margin: 40px 0 8px;
+    margin: 73px 0 8px;
 
     @include for-size(medium) {
       margin-bottom: 0;
@@ -410,16 +431,27 @@
   }
 
   @include e(column-text) {
+    text-align: left;
     color: $navy-blue;
-    font: normal normal 16px/1.63 $font-family--primary;
+    font: normal normal 16px/1.63 $font-family--primary-medium;
 
     @include for-size(medium) {
-      text-align: left;
       padding-left: 30px;
-      max-width: 470px;
-      float: right;
+      max-width: 500px;
       margin-top: 43px;
-      font: normal normal 22px/1.45 $font-family--primary;
+      font: normal normal 22px/1.45 $font-family--primary-medium;
+    }
+
+    @include e(sub) {
+      margin-top: 12px;
+      color: $black;
+      text-align: left;
+      font: normal normal 16px/24px $font-family--primary;
+
+      @include for-size(medium) {
+        margin-top: 16px;
+        font: normal normal 18px/26px $font-family--primary;
+      }
     }
   }
 
@@ -500,4 +532,8 @@
     margin-top: 30px;
     font: normal 300 16px/1.38 $font-family--secondary;
   }
+}
+
+label {
+  margin-bottom: 10px !important;
 }
