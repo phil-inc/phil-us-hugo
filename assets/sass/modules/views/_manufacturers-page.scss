@@ -37,7 +37,17 @@
         background-size: auto;
         height: 100%;
         background-position-x: right;
-        background-size: auto 550px;
+        background-size: auto 500px;
+        background-image: url("../../img/icons/mfn-banner-desktop.png");
+      }
+
+      @include for-size(1440) {
+        width: 50%;
+        left: auto;
+        background-size: auto;
+        height: 100%;
+        background-position-x: right;
+        background-size: auto 600px;
         background-image: url("../../img/icons/mfn-banner-desktop.png");
       }
     }
@@ -532,8 +542,12 @@
     margin-top: 30px;
     font: normal 300 16px/1.38 $font-family--secondary;
   }
-}
 
-label {
-  margin-bottom: 10px !important;
+  @include e(icon-text-link) {
+    font-size: 16px;
+
+    @include for-size(medium) {
+      font-size: 22px;
+    }
+  }
 }
