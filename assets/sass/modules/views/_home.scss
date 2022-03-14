@@ -205,12 +205,21 @@
     color: $rolling-stone;
     max-width: 392px;
     font: normal normal 16px/1.5 $font-family--secondary;
-    margin-bottom: 20px;
-    @include for-size(medium) {
+    margin-bottom: 30px;
+    @include for-size(small) {
       max-width: 463px;
-      font: normal normal 18px/1.56 $font-family--secondary;
+      font: normal normal 20px/1.56 $font-family--secondary;
     }
   }
+
+  // @include e(button-link) {
+  //   display: inline-block;
+  //   padding: 11px 12px;
+  //   min-width: 138px;
+  //   border-radius: 4px;
+  //   text-transform: uppercase;
+  //   font: normal 500 16px $font-family--primary-medium;
+  // }
 
   @include e(button-link) {
     margin: 20px 0;
@@ -220,7 +229,7 @@
     background: transparent;
     text-transform: uppercase;
     font: normal normal 16px/1.15 $font-family--primary-medium;
-
+    color: $primary-color;
     @include for-size(medium) {
       margin: 20px 0 30px;
     }
