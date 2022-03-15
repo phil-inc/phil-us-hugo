@@ -80,7 +80,7 @@
 
   @include e(left-section) {
     padding: 36px 0;
-    min-height: 460px;
+    min-height: 500px;
     position: relative;
     color: $rolling-stone;
 
@@ -150,8 +150,9 @@
   @include e(right-section) {
     padding: 64px 0;
     background-color: $pale-blue;
-
+    display: none;
     @include for-size(medium) {
+      display: block;
       padding: 0;
       background: none;
     }
@@ -198,6 +199,20 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @include e(mobile) {
+      display: block;
+      margin-top: 24px;
+      max-width: 220px;
+
+      @include for-size(small){
+        max-width: 420px;
+      }
+      
+      @include for-size(medium) {
+        display: none;
+      }
     }
   }
 
@@ -327,11 +342,12 @@
 
   @include e(manufacturers) {
     position: relative;
-    padding: 147px 0 62px;
-    background: $alabaster url("/img/icons/home-delivery-m.svg") no-repeat;
+    padding: 64px 0 62px;
+    background: $alabaster;
     background-position: calc(100% + 100px) -34px;
 
     @include for-size(medium) {
+      background: $alabaster url("/img/icons/home-delivery-m.svg") no-repeat;
       padding: 188px 0;
       background-image: none;
     }
@@ -342,7 +358,7 @@
       right: 0;
       width: 50px;
       z-index: 10;
-      bottom: -69px;
+      bottom: -91px;
       height: 187px;
       position: absolute;
       background: url("/img/icons/home-dot-m.svg") no-repeat right bottom;
