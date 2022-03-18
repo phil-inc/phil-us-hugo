@@ -201,11 +201,19 @@
       display: block;
       margin-top: 24px;
       max-width: 220px;
+      
+      @include for-size(400){
+        max-width: 320px;
+      }
+
+      @include for-size(500){
+        max-width: 380px;
+      }
 
       @include for-size(small){
         max-width: 420px;
       }
-      
+
       @include for-size(medium) {
         display: none;
       }
@@ -215,11 +223,11 @@
   @include e(text) {
     color: $rolling-stone;
     max-width: 392px;
-    font: normal normal 16px/1.5 $font-family--secondary;
+    font: normal normal 16px/1.5 $font-family--primary;
     margin-bottom: 30px;
     @include for-size(small) {
       max-width: 463px;
-      font: normal normal 20px/1.56 $font-family--secondary;
+      font: normal normal 20px/1.56 $font-family--primary;
     }
   }
 
