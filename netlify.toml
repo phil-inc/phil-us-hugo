@@ -3,6 +3,7 @@ from = "/r/*"
 to = "https://capi.phil.us/api/redirect/:splat"
 status = 302
 
+[[redirects]]
 from = "/faqs
 to = "https://philhelp.zendesk.com/hc/en-us"
 status = 200
