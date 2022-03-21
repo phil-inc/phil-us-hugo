@@ -66,12 +66,16 @@ description : "If your doctor sent your prescription to Phil, we’ll text you t
             }
         });
 
-        $("input").change(function(e){
-            enableSubmit();
+        $("input").keyup(function(e){
+            setTimeout(function() {
+                enableSubmit();
+            }, 1000); 
         });
 
-        $("textarea").change(function(e){
-            enableSubmit();
+        $("textarea").keyup(function(e){
+            setTimeout(function() {
+                enableSubmit();
+            }, 1000); 
         });
 
         function enableSubmit(body){
