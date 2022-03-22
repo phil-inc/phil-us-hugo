@@ -2,6 +2,7 @@
 title: "Privacy"
 date: 2022-01-27T14:46:22+05:45
 type: policies
+description : "Privacy Policy - The Phil Platform"
 ---
 
 # Privacy Policy
