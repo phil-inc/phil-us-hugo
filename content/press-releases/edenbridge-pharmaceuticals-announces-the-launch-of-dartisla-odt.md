@@ -2,13 +2,14 @@
 banner = "/uploads/edenbridge_logo.jpeg"
 date = 2022-02-28T08:00:00Z
 description = "Edenbridge Pharmaceuticals, LLC (“Edenbridge”) today announced that DARTISLA ODT (glycopyrrolate) is now available by prescription in the United States through Phil, the commercialization partner and eHub for DARTISLA ODT, as well as in retail pharmacies throughout the country. To ensure access to patients in need, Edenbridge is sponsoring the DARTISLA ODT Copay Program, which allows eligible patients to obtain the product for as little as $0 when filled through Phil or $20 when filled at other pharmacies."
-draft = false
 spotlight = "true"
 title = "Edenbridge Pharmaceuticals Announces the Launch of DARTISLA ODT"
 type = "press-releases-content"
 url = "press-releases/Edenbridge-Pharmaceuticals-Announces-the-Launch-of-DARTISLA-ODT"
 
 +++
+**Edenbridge Pharmaceuticals Announces the Launch of DARTISLA ODT**
+
 PARSIPPANY, N.J.--([BUSINESS WIRE](https://www.businesswire.com/))--Edenbridge Pharmaceuticals, LLC (“Edenbridge”) today announced that DARTISLA ODT (glycopyrrolate) is now available by prescription in the United States through Phil, the commercialization partner and eHub for DARTISLA ODT, as well as in retail pharmacies throughout the country. To ensure access to patients in need, Edenbridge is sponsoring the DARTISLA ODT Copay Program, which allows eligible patients to obtain the product for as little as $0 when filled through Phil or $20 when filled at other pharmacies.
 
 “DARTISLA ODT is the first and only FDA-approved orally disintegrating tablet of glycopyrrolate, and we are excited to introduce this novel formulation of glycopyrrolate to patients and healthcare providers,” noted Daniel G. Worley Jr., Edenbridge’s Vice President of Business Development and General Counsel. “Further, Edenbridge is committed to ensuring patient access to this product, and we are pleased to be sponsoring the DARTISLA ODT Copay Program to facilitate getting DARTISLA ODT into the hands of people that need it most.”

@@ -40,13 +40,11 @@ function toggleMobileNavigation() {
 $(document).ready(function(e){
   var url = $(location).attr('href'),
   parts = url.split("/"),
-  urlLastStr = parts[parts.length-2];
+  last_part = parts[parts.length-2];
   
-  if (urlLastStr == "press-releases") {
+  if (last_part == "press-releases") {
     $('.news_press_link').addClass('active');
-  } else if (urlLastStr == "manufacturers"){
+  } else {
     $('.manufacturer_link').addClass('active');
-  } else if (urlLastStr == "patient"){
-    $('.patient_link').addClass('active');
   }
  });

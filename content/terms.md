@@ -2,7 +2,6 @@
 title: "Terms"
 date: 2022-01-27T14:48:31+05:45
 type: policies
-description : "Welcome to Phil, an online prescription management and delivery platform (the “Services”) made available by Phil, Inc."
 ---
 
 # Terms of Use

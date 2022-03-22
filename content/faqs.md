@@ -1,0 +1,4 @@
+---
+title: "Faqs"
+type: faqs
+---
