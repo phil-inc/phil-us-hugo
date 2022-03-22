@@ -2,7 +2,6 @@
 title: "Patient Contact"
 date: 2022-01-20T15:12:58-08:00
 url: contact/patient
-description : "If your doctor sent your prescription to Phil, we’ll text you to confirm your order within one business day."
 ---
 <div class="container">
     <div class="patient-contact-page__content">
@@ -66,16 +65,12 @@ description : "If your doctor sent your prescription to Phil, we’ll text you t
             }
         });
 
-        $("input").keyup(function(e){
-            setTimeout(function() {
-                enableSubmit();
-            }, 1000); 
+        $("input").change(function(e){
+            enableSubmit();
         });
 
-        $("textarea").keyup(function(e){
-            setTimeout(function() {
-                enableSubmit();
-            }, 1000); 
+        $("textarea").change(function(e){
+            enableSubmit();
         });
 
         function enableSubmit(body){

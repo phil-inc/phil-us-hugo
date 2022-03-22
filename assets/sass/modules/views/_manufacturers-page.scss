@@ -37,17 +37,7 @@
         background-size: auto;
         height: 100%;
         background-position-x: right;
-        background-size: auto 500px;
-        background-image: url("../../img/icons/mfn-banner-desktop.png");
-      }
-
-      @include for-size(1440) {
-        width: 50%;
-        left: auto;
-        background-size: auto;
-        height: 100%;
-        background-position-x: right;
-        background-size: auto 600px;
+        background-size: auto 550px;
         background-image: url("../../img/icons/mfn-banner-desktop.png");
       }
     }
@@ -69,76 +59,57 @@
   }
 
   @include e(banner) {
-    height: 982px;
+    height: 682px;
     padding: 23px 0 0;
 
-    @include for-size(375) {
-      height: 900px;
-    }
-
-    @include for-size(425) {
-      height: 860px;
-    }
-
     @include for-size(small) {
-      height: 670px;
+      height: 590px;
       padding-top: 32px;
     }
 
     @include for-size(medium) {
+      height: 454px;
       padding-top: 77px;
+      height: 570px;
     }
   }
 
   @include e(banner-heading) {
-    max-width: 500px;
+    max-width: 303px;
     margin-bottom: 20px;
     color: $primary-color;
-    font: normal bold 26px $font-family--primary-bold;
+    font: normal bold 30px $font-family--primary-bold;
 
     @include for-size(small) {
       font: normal bold 26px $font-family--primary-bold;
-      max-width: 600px;
+      max-width: 415px;
+      margin-bottom: 32px;
     }
 
     @include for-size(medium) {
-      font-size: 40px;
-      margin-bottom: 24px;
-      line-height: 52px;
+      font-size: 42px;
+      margin-bottom: 60px;
+      line-height: 64px;
     }
   }
 
   @include e(banner-text) {
-    max-width: 600px;
+    max-width: 303px;
     color: $rolling-stone;
-    margin-bottom: 20px;
     font: normal normal 16px/1.5 $font-family--secondary;
 
-    @include for-size(1440) {
-      max-width: 500px;
+    @include for-size(small) {
+      max-width: 415px;
     }
 
-    @include for-size(1441) {
-      max-width: 600px;
-    }
 
     @include for-size(medium) {
-     /// max-width: 600px;
+      max-width: 370px;
       font: normal normal 22px/1.36 $font-family--primary;
     }
 
-    
-  }
-
-  @include e(banner-link) {
-    max-width: 600px;
-    
-    @include for-size(medium) {
-      max-width: 370px;
-    }
-
     @include for-size(large) {
-      max-width: 500px;
+      max-width: 440px;
     }
   }
 
@@ -146,11 +117,10 @@
     padding: 38px 0;
 
     @include for-size(medium) {
-      padding: 80px 0;
+      padding: 60px 0;
     }
 
     @include m(platform) {
-      display: none;
       position: relative;
 
       @include for-size(medium) {
@@ -191,17 +161,17 @@
   @include e(section-heading) {
     margin-bottom: 20px;
     color: $primary-color;
-    font: normal 500 26px/1.42 $font-family--primary-bold;
+    font: normal 500 24px/1.42 $font-family--primary-medium;
 
     @include for-size(medium) {
       font-size: 40px;
+      max-width: 430px;
       line-height: 1.28;
-      margin-bottom: 24px;
+      margin-bottom: 30px;
     }
   }
 
   @include e(section-text) {
-    margin-bottom: 16px;
     color: $rolling-stone;
     font: normal normal 16px/1.5 $font-family--secondary;
 
@@ -211,10 +181,10 @@
   }
 
   @include e(accordion-wrapper) {
-    margin: 37px 0 0;
+    margin: 40px 0 8px;
 
     @include for-size(medium) {
-      margin: 73px 0 8px;
+      margin-bottom: 0;
     }
   }
 
@@ -440,27 +410,16 @@
   }
 
   @include e(column-text) {
-    text-align: left;
     color: $navy-blue;
-    font: normal normal 16px/1.63 $font-family--primary-medium;
+    font: normal normal 16px/1.63 $font-family--primary;
 
     @include for-size(medium) {
-      padding-left: 30px;
-      max-width: 500px;
-      margin-top: 43px;
-      font: normal normal 22px/1.45 $font-family--primary-medium;
-    }
-
-    @include e(sub) {
-      margin-top: 12px;
-      color: $black;
       text-align: left;
-      font: normal normal 16px/24px $font-family--primary;
-
-      @include for-size(medium) {
-        margin-top: 16px;
-        font: normal normal 18px/26px $font-family--primary;
-      }
+      padding-left: 30px;
+      max-width: 470px;
+      float: right;
+      margin-top: 43px;
+      font: normal normal 22px/1.45 $font-family--primary;
     }
   }
 
@@ -540,41 +499,5 @@
   @include e(error-text) {
     margin-top: 30px;
     font: normal 300 16px/1.38 $font-family--secondary;
-  }
-
-  @include e(icon-link) {
-    display: block;
-    color: $primary-color;
-    
-
-    @include e(icon) {
-      font: normal 500 18px/1.56 $font-family--primary-medium;
-      float: left;
-      margin-right: 4px;
-      @include m(right) {
-        float: right;
-        margin-left: 8px;
-      }
-    }
-
-    @include e(text) {
-      font: normal 500 16px/1.56 $font-family--primary-medium;
-      width: calc(100% - 24px);
-      float: left;
-
-      @include for-size(medium) {
-        font-size: 22px;
-      }
-    }
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-
-      .manufacturers-page__icon-link-text,
-      .manufacturers-page__icon-link-text--auto {
-        text-decoration: underline;
-      }
-    }
   }
 }

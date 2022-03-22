@@ -4,13 +4,12 @@
   right: 0;
   z-index: 1000;
   position: relative;
-  padding: 16px 0;
+  padding: 16px 0 12px;
   background-color: $white;
   transition: background-color 0.3s ease;
   -moz-box-shadow: 0 1px 2px 0 rgba(141, 141, 148, 0.22);
   -webkit-box-shadow: 0 1px 2px 0 rgba(141, 141, 148, 0.22);
   box-shadow: 0 1px 2px 0 rgba(141, 141, 148, 0.22);
-  
 
   .button__image-close {
     display: none;
@@ -30,7 +29,6 @@
 
   @include for-size(small) {
     position: relative;
-    padding: 28px 0;
   }
 
   @include m(fixed-top) {
@@ -108,13 +106,9 @@
 
     @include e(item) {
       display: inline-block;
-      margin-right: 16px;
+      margin-right: 32px;
       &:last-child {
         margin-right: 0;
-      }
-
-      @include for-size(medium) {
-        margin-right: 48px;
       }
     }
 
