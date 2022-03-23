@@ -13,7 +13,7 @@
 
     {{$pageTitle:= .Scratch.Get "pageTitle"}}
     {{if eq $pageTitle "news-press"}}
-        {{$title = "The Phill Platform - News & Press"}}
+        {{$title = "The Phil Platform - News & Press"}}
         {{$image = (printf "%s%s" $baseUrl "/img/icons/phil-logo-m.svg")}}
         {{$alt = "The Phil Platform"}}
         {{$spotlight := first 1 (where .Site.Pages "Params.spotlight" "true")}}
@@ -24,7 +24,7 @@
         {{$alt = "The Phil Platform"}}
         {{$description = $.Site.Params.Description}}
     {{else}}
-        {{$title = (printf "%s%s" "The Phill Platform - " .Params.Title )}}
+        {{$title = (printf "%s%s" "The Phil Platform - " .Params.Title )}}
         {{if and (eq .Params.type "press-releases-content") (not (eq .Params.banner "")) }}
         {{$image = .Params.banner}}
         {{else}}
