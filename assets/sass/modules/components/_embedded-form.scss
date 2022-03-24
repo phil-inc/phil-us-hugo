@@ -1,0 +1,87 @@
+.hs-form-field {
+    margin-bottom: 20px !important;
+
+    @include for-size(small) {
+        margin-bottom: 30px !important;
+    }
+}
+
+input ,select  {
+    width: 100% !important;
+    outline: none;
+    color: $black;
+    padding: 12px 10px;
+    border-radius: 4px;
+    border: 2px solid $mischka;
+    background-color: transparent;
+    font: normal 500 18px $font-family--secondary;
+
+    &::-moz-placeholder {
+      color: $rolling-stone;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $rolling-stone;
+    }
+
+    &:-ms-input-placeholder {
+      color: $rolling-stone;
+    }
+
+    &::placeholder {
+      color: $rolling-stone;
+    }
+
+    &:focus {
+      border-color: $primary-color;
+    }
+}
+
+.hs-error-msg {
+    color: $monza;
+    margin-top: 8px;
+    display: inline-block;
+    font: normal normal 18px $font-family--secondary;
+}
+
+.error {
+    border-color: $monza;
+}
+
+label {
+    margin-bottom: 10px;
+    display: inline-block;
+    color: $rolling-stone;
+    font: normal normal 18px/1.33 $font-family--secondary;
+
+    @include for-size(small) {
+      line-height: 1.44;
+    }
+}
+
+.hs_submit {
+    display: flex;
+}
+
+.primary {
+    color: $white;
+    border-radius: 2px;
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    min-width: 138px;
+    margin-top: 32px;
+    padding: 12px 20px;
+    font: normal 500 16px $font-family--primary-medium;
+  
+    &:hover,
+    &:focus {
+      border-color: $egg-blue;
+      background-color: $egg-blue;
+    }
+  
+    &[disabled] {
+      cursor: not-allowed;
+      border-color: $primary-color;
+      background-color: $primary-color;
+    }
+}
