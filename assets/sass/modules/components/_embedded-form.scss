@@ -1,9 +1,21 @@
 .hs-form-field {
     margin-bottom: 20px !important;
+}
 
-    @include for-size(small) {
-        margin-bottom: 30px !important;
+div.input {
+  margin: 0px !important;
+}
+
+.form-columns-2 > div {
+  padding: 0px;
+  @include for-size(small) {
+    &:nth-of-type(1) {
+      padding-right: 10px;
     }
+    &:nth-of-type(2) {
+      padding-left: 10px;
+    }
+  }
 }
 
 input ,select  {
@@ -37,9 +49,27 @@ input ,select  {
     }
 }
 
+select { 
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
+  background-image: url('../img/icons/down-arrow.png');
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%;
+}
+
+select option { color : $black; }
+select option[value=""] { color: #797c80; }
+select:invalid { color: #797c80; }
+
+.open { 
+  background-image: url('../img/icons/up-arrow.png') !important;
+}
+
 .hs-error-msg {
     color: $monza;
-    margin-top: 8px;
+    margin: 8px 0 0;
     display: inline-block;
     font: normal normal 18px $font-family--secondary;
 }
@@ -49,7 +79,7 @@ input ,select  {
 }
 
 label {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: inline-block;
     color: $rolling-stone;
     font: normal normal 18px/1.33 $font-family--secondary;
@@ -69,9 +99,9 @@ label {
     background-color: $primary-color;
     border: 1px solid $primary-color;
     min-width: 138px;
-    margin-top: 32px;
+    margin-top: 12px;
     padding: 12px 20px;
-    font: normal 500 16px $font-family--primary-medium;
+    font: normal 500 18px $font-family--primary-medium;
   
     &:hover,
     &:focus {

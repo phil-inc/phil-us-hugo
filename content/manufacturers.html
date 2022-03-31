@@ -265,43 +265,6 @@ description : "Unlike expensive hub models that use call-centers enabled by infl
                             formId: "ab090211-a258-4b8a-81d4-31a9c597eefc"
                         });
                         </script>
-
-
-                        <!-- <form id="manufacturersInquiry" method="post">
-                            <div class="form__group">
-                                <label class="form__label">Your name</label>
-                                <div class="form__input fs-block">
-                                    <input name="ownerName" type="text" class="form__input__input" value="" autocomplete="off" data-name="a name" />
-                                </div>
-                            </div>
-                            <div class="form__group">
-                                <label class="form__label">Your title</label>
-                                <div class="form__input">
-                                    <input name="ownerTitle" type="text" class="form__input__input" value="" autocomplete="off" data-name="a title"/>
-                                </div>
-                            </div>
-                            <div class="form__group">
-                                <label class="form__label">Your company</label>
-                                <div class="form__input fs-block">
-                                    <input name="ownerCompany" type="text" class="form__input__input" value="" autocomplete="off" data-name="a company name" />
-                                </div>
-                            </div>
-                            <div class="form__group">
-                                <label class="form__label">Email</label>
-                                <div class="form__input fs-block">
-                                    <input name="contactEmail" class="form__input__input" value="" autocomplete="off" data-name="an email address"/>
-                                </div>
-                            </div>
-                            <div class="form__group">
-                                <label class="form__label">Phone number (optional)</label>
-                                <div class="form__input fs-block">
-                                    <input name="phone" type="text" class="form__input__input" value="" autocomplete="off" />
-                                </div>
-                            </div>
-                            <p class="manufacturers-page__form-text" style="display: none;">Thank you for your interest, we will follow up with you shortly.</p>
-                            <button type="submit" class="button primary-button manufacturers-page__button">
-                                Submit</button>
-                        </form> -->
                     </div>
                 </div>
             </div>
@@ -311,6 +274,20 @@ description : "Unlike expensive hub models that use call-centers enabled by infl
 <script src="/js/form-submission.js"></script>
 <script>
     $(document).ready(function () {
+        $(document).on('focus','#company_department-ab090211-a258-4b8a-81d4-31a9c597eefc',function(e){
+            $(this).addClass('open');
+        }).change(function(e){
+            $(this).removeClass('open');
+        }).blur(function(e){
+            $(this).removeClass('open');
+        }).click(function(e){
+            if ($(this).hasClass('open')) {
+                $(this).removeClass('open');
+            } else {
+                $(this).addClass('open');
+            }
+        });
+        
         $('.manufacturers-page__accordion').click(function(e){
             if ($(this).hasClass("active")) {
                 $(this).removeClass("active");
