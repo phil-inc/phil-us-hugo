@@ -4,6 +4,11 @@ to = "https://capi.phil.us/api/redirect/:splat"
 status = 302
 
 [[redirects]]
+from = "/e/*"
+to = "https://enroll.phil.us/landing/:splat"
+status = 302
+
+[[redirects]]
 from = "/faqs/*"
 to = "https://philhelp.zendesk.com/hc/en-us"
 status = 200
