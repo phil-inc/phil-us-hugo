@@ -4,8 +4,8 @@ to = "https://capi.phil.us/api/redirect/:splat"
 status = 302
 
 [[redirects]]
-from = "/bentest/*"
-to = "https://www.google.com/search?q=:splat"
+from = "/e/*"
+to = "https://enroll.phil.us/landing/:splat"
 status = 302
 
 [[redirects]]
